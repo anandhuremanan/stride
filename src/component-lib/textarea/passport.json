@@ -1,0 +1,388 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Textarea",
+    "folder": "textarea",
+    "exports": [
+      "Textarea"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/count.ts",
+      "core/index.ts",
+      "core/size.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Textarea.tsx",
+      "react/locale.ts",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:a586004558fc7c4059756daa252c36028f3f9b1f4cf55fcccb9b5af2ce1e21e9"
+  },
+  "props": [
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "autoFocus",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "autoResize",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Grow and shrink with the text, between `minRows` and `maxRows`. Default false.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<TextareaSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "cols",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "description",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "A hint under the label, linked as the field's description.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "error",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Message below the field; also marks it invalid.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "form",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "label",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "The field's name, shown above it and linked to it.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<TextareaLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "maxLength",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "maxRows",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Largest height in rows before the text scrolls. No limit by default.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "minRows",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Smallest height in rows. Default `rows`, or 3.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "onValueChange",
+      "type": "function",
+      "signature": "((value: string) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The new text on every change. The native `onChange` fires as well.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<HTMLTextAreaElement> | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The `<textarea>` element.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "resize",
+      "type": "enum",
+      "values": [
+        "both",
+        "horizontal",
+        "none",
+        "vertical"
+      ],
+      "typeText": "TextareaResize | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Which way people can drag to resize. Default `vertical`, or `none` with `autoResize`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "role",
+      "type": "other",
+      "typeText": "AriaRole | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "rows",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "showCount",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "A character counter; shows `count / maxLength` when `maxLength` is set.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "sm"
+      ],
+      "typeText": "FieldSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "TextareaHTMLAttributes<HTMLTextAreaElement>",
+      "omitted": [
+        "defaultValue",
+        "value"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onValueChange",
+      "signature": "((value: string) => void) | undefined"
+    }
+  ],
+  "slots": [
+    "root",
+    "label",
+    "textarea",
+    "description",
+    "error",
+    "count"
+  ],
+  "states": [
+    {
+      "attr": "data-autoresize"
+    },
+    {
+      "attr": "data-disabled"
+    },
+    {
+      "attr": "data-invalid"
+    },
+    {
+      "attr": "data-over"
+    },
+    {
+      "attr": "data-required"
+    },
+    {
+      "attr": "data-resize",
+      "values": [
+        "both",
+        "horizontal",
+        "none",
+        "vertical"
+      ]
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "lg",
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 12,
+    "propsDescribed": 10,
+    "describedPct": 83,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

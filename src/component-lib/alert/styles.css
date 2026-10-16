@@ -1,0 +1,154 @@
+/*
+ * Alert styles.
+ *
+ * A banner that sits in the page, tinted by variant. Tokens read the shared
+ * --gbs-* variables when they are set on an ancestor (set them on :root to
+ * theme every component at once). Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.al-root {
+  --al-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --al-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --al-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --al-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --al-hover: var(--gbs-hover, var(--dg-hover, light-dark(#f4f4f5, #1f1f23)));
+  --al-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --al-info: var(--gbs-info, var(--gbs-accent, var(--dg-accent, light-dark(#2563eb, #60a5fa))));
+  --al-success: var(--gbs-success, light-dark(#15803d, #4ade80));
+  --al-warning: var(--gbs-warning, light-dark(#b45309, #fbbf24));
+  --al-danger: var(--gbs-danger, var(--dg-danger, light-dark(#dc2626, #f87171)));
+  --al-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --al-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --al-accent: var(--al-info);
+  --al-px: 14px;
+  --al-py: 12px;
+
+  color-scheme: inherit;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  padding: var(--al-py) var(--al-px);
+  /* The bar carries the variant at a glance; the tint alone is too faint to
+     read as a signal, and colour is never the only one — there is a glyph. */
+  border: 1px solid var(--al-border);
+  border-inline-start: 3px solid var(--al-accent);
+  border-radius: var(--al-radius);
+  background: color-mix(in oklab, var(--al-accent) 7%, var(--al-bg));
+  font-size: var(--al-font-size);
+  line-height: 1.5;
+  color: var(--al-fg);
+  text-wrap: pretty;
+}
+
+:where(.dark, [data-theme="dark"]) .al-root {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .al-root {
+  color-scheme: light;
+}
+
+:where(.al-root) *,
+:where(.al-root) *::before,
+:where(.al-root) *::after {
+  box-sizing: border-box;
+}
+
+.al-root:where([data-variant="success"]) {
+  --al-accent: var(--al-success);
+}
+.al-root:where([data-variant="warning"]) {
+  --al-accent: var(--al-warning);
+}
+.al-root:where([data-variant="danger"]) {
+  --al-accent: var(--al-danger);
+}
+.al-root:where([data-variant="neutral"]) {
+  --al-accent: var(--al-muted);
+}
+
+.al-root:where([data-size="sm"]) {
+  --al-px: 10px;
+  --al-py: 8px;
+  --al-font-size: 12px;
+  gap: 8px;
+}
+
+.al-icon {
+  display: inline-flex;
+  flex: none;
+  /* Optically centred on the first line of text rather than its box. */
+  margin-top: 1px;
+  color: var(--al-accent);
+}
+.al-icon > svg {
+  width: 16px;
+  height: 16px;
+}
+.al-root:where([data-size="sm"]) .al-icon > svg {
+  width: 14px;
+  height: 14px;
+}
+
+.al-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.al-title {
+  margin: 0;
+  font-weight: 600;
+}
+.al-description {
+  margin: 0;
+  /* Not muted: this is the message, not a hint about one. */
+  color: inherit;
+}
+.al-description a {
+  color: var(--al-accent);
+  text-underline-offset: 2px;
+}
+.al-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.al-dismiss {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin: -2px -4px 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: var(--al-muted);
+  cursor: pointer;
+}
+.al-dismiss:hover {
+  background: var(--al-hover);
+  color: var(--al-fg);
+}
+.al-dismiss:focus-visible {
+  outline: 2px solid var(--al-focus);
+  outline-offset: 1px;
+}
+
+@media (forced-colors: active) {
+  .al-root {
+    border: 1px solid CanvasText;
+    border-inline-start-width: 3px;
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Menu",
+    "folder": "menu",
+    "exports": [
+      "Menu",
+      "MenuCheckboxItem",
+      "MenuGroup",
+      "MenuItem",
+      "MenuRadioGroup",
+      "MenuRadioItem",
+      "MenuSeparator",
+      "MenuSub",
+      "TYPEAHEAD_RESET_MS"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/index.ts",
+      "core/navigation.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Menu.tsx",
+      "react/context.ts",
+      "react/items.tsx",
+      "react/locale.ts",
+      "react/props.ts",
+      "react/useMenuKeys.ts"
+    ],
+    "sourceHash": "sha256:9a6248a4986051f6506746c084b9e89728fecd0a0b430d1962f5f3ed544ce1e5"
+  },
+  "props": [
+    {
+      "name": "align",
+      "type": "enum",
+      "values": [
+        "end",
+        "start"
+      ],
+      "typeText": "MenuAlign | undefined",
+      "required": false,
+      "default": "start",
+      "origin": "derived",
+      "description": "Default `start`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Ticked (controlled).",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "children",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": true,
+      "origin": "derived"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<MenuSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "closeOnSelect",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Close the menu when an item is chosen. Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Open to begin with, when you are not controlling `open`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "destructive",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Styles it as a destructive action.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived"
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 4,
+      "origin": "derived",
+      "description": "Distance from the trigger. Default 4.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "icon",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Drawn before the submenu's label, at the size of the text.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Names the menu for screen readers. Defaults to the locale text.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<MenuLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "onCheckedChange",
+      "type": "function",
+      "signature": "((checked: boolean) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The state after a toggle, as a plain boolean.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onOpenChange",
+      "type": "function",
+      "signature": "((open: boolean, reason?: MenuCloseReason) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "`reason` says what closed it - `escape`, `outside`, `trigger`,\r\n`select` or `api` - and is undefined when opening.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onSelect",
+      "type": "function",
+      "signature": "(() => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Called when the item is chosen, by click, Enter or Space.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onValueChange",
+      "type": "function",
+      "signature": "((value: string) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The newly chosen value.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Controlled open state.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<MenuHandle> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "shortcut",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "A hint such as ⌘K. The menu shows it; binding the key is up to you.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "side",
+      "type": "enum",
+      "values": [
+        "bottom",
+        "left",
+        "right",
+        "top"
+      ],
+      "typeText": "MenuSide | undefined",
+      "required": false,
+      "default": "bottom",
+      "origin": "derived",
+      "description": "Default `bottom`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "trigger",
+      "type": "other",
+      "typeText": "ReactElement<{ [attribute: string]: unknown; }, string | import(\"react\").JSXElementConstructor<any>>",
+      "required": true,
+      "origin": "derived",
+      "description": "The element that opens the menu. It is cloned with the ARIA wiring, so pass\r\na single element — any button in this library works.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The chosen value (controlled).",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "events": [
+    {
+      "name": "onCheckedChange",
+      "signature": "((checked: boolean) => void) | undefined"
+    },
+    {
+      "name": "onOpenChange",
+      "signature": "((open: boolean, reason?: MenuCloseReason) => void) | undefined"
+    },
+    {
+      "name": "onSelect",
+      "signature": "(() => void) | undefined"
+    },
+    {
+      "name": "onValueChange",
+      "signature": "((value: string) => void) | undefined"
+    }
+  ],
+  "slots": [
+    "root",
+    "list",
+    "item",
+    "icon",
+    "label",
+    "shortcut",
+    "separator",
+    "group",
+    "groupLabel",
+    "indicator",
+    "submenu"
+  ],
+  "states": [
+    {
+      "attr": "data-destructive",
+      "values": [
+        "destructive"
+      ]
+    },
+    {
+      "attr": "data-disabled",
+      "values": [
+        "disabled"
+      ]
+    },
+    {
+      "attr": "data-side",
+      "values": [
+        "top"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 20,
+    "propsDescribed": 17,
+    "describedPct": 85,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

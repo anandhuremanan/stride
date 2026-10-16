@@ -1,0 +1,225 @@
+/*
+ * Avatar and AvatarGroup styles.
+ *
+ * The fallback colour comes from --av-hue-index, which the component sets from
+ * a hash of the name: the same person is the same colour everywhere, and the
+ * palette is generated rather than listed, so it follows a themed hue. Tokens
+ * read the shared --gbs-* variables when they are set on an ancestor (set them
+ * on :root to theme every component at once). Rules are unlayered: they beat a
+ * framework reset on specificity, and lose to anything you pass through
+ * `className`. With Tailwind v4, import this file after the framework and
+ * inside its components layer - see the README.
+ */
+
+.av-root,
+.av-group,
+.av-overflow {
+  --av-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --av-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --av-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --av-subtle: var(--gbs-subtle, light-dark(#f4f4f5, #1c1c20));
+  --av-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --av-success: var(--gbs-success, light-dark(#15803d, #4ade80));
+  --av-warning: var(--gbs-warning, light-dark(#b45309, #fbbf24));
+  --av-danger: var(--gbs-danger, var(--dg-danger, light-dark(#dc2626, #f87171)));
+  --av-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --av-size: 32px;
+  --av-font-size: 13px;
+  --av-hue-index: 0;
+  /* Eight hues, 45° apart, starting at the blue end. */
+  --av-hue: calc(210 + var(--av-hue-index) * 45);
+
+  color-scheme: inherit;
+}
+
+:where(.dark, [data-theme="dark"]) :is(.av-root, .av-group, .av-overflow) {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) :is(.av-root, .av-group, .av-overflow) {
+  color-scheme: light;
+}
+
+:where(.av-root, .av-group) *,
+:where(.av-root, .av-group) *::before,
+:where(.av-root, .av-group) *::after {
+  box-sizing: border-box;
+}
+
+.av-root {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--av-size);
+  height: var(--av-size);
+  border-radius: 50%;
+  background: var(--av-subtle);
+  font-size: var(--av-font-size);
+  font-weight: 600;
+  line-height: 1;
+  overflow: hidden;
+  user-select: none;
+  vertical-align: middle;
+}
+.av-root:where([data-shape="square"]) {
+  border-radius: var(--av-radius);
+  overflow: visible;
+}
+.av-root:where([data-shape="square"]) .av-image,
+.av-root:where([data-shape="square"]) .av-fallback {
+  border-radius: var(--av-radius);
+}
+
+.av-root:where([data-size="xs"]) {
+  --av-size: 20px;
+  --av-font-size: 10px;
+}
+.av-root:where([data-size="sm"]) {
+  --av-size: 24px;
+  --av-font-size: 11px;
+}
+.av-root:where([data-size="lg"]) {
+  --av-size: 40px;
+  --av-font-size: 15px;
+}
+.av-root:where([data-size="xl"]) {
+  --av-size: 56px;
+  --av-font-size: 20px;
+}
+
+.av-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* `oklch` keeps every hue at the same lightness, so no one person's initials
+   come out harder to read than another's — which is what a list of hand-picked
+   hex pairs always ends up doing. */
+.av-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: oklch(from light-dark(oklch(0.93 0.05 0), oklch(0.32 0.06 0)) l c var(--av-hue));
+  color: oklch(from light-dark(oklch(0.42 0.13 0), oklch(0.88 0.1 0)) l c var(--av-hue));
+  text-transform: uppercase;
+}
+.av-fallback > svg {
+  width: 60%;
+  height: 60%;
+}
+
+.av-status {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  height: 30%;
+  min-width: 8px;
+  min-height: 8px;
+  border: 2px solid var(--av-bg);
+  border-radius: 50%;
+  background: var(--av-muted);
+}
+.av-root:where([data-shape="square"]) .av-status {
+  right: -2px;
+  bottom: -2px;
+}
+.av-status[data-status="online"] {
+  background: var(--av-success);
+}
+.av-status[data-status="away"] {
+  background: var(--av-warning);
+}
+.av-status[data-status="busy"] {
+  background: var(--av-danger);
+}
+
+/* ---------------------------------------------------------------- group */
+
+.av-group {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+/* Each face overlaps the one before and is ringed in the page colour, so the
+   stack reads as separate people rather than one smear. */
+.av-group > * {
+  margin-inline-start: calc(var(--av-size) / -4);
+  box-shadow: 0 0 0 2px var(--av-bg);
+}
+.av-group > *:first-child {
+  margin-inline-start: 0;
+}
+
+.av-overflow {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--av-size);
+  height: var(--av-size);
+  border-radius: 50%;
+  background: var(--av-subtle);
+  /* Muted grey clears 4.5:1 on the page background but only reaches 4.39:1
+     on this one, so the count moves a step towards the text colour. */
+  color: color-mix(in oklab, var(--av-muted) 65%, var(--av-fg));
+  font-size: calc(var(--av-font-size) - 1px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.av-overflow:where([data-shape="square"]) {
+  border-radius: var(--av-radius);
+}
+.av-group:where([data-size="xs"]),
+.av-overflow:where([data-size="xs"]) {
+  --av-size: 20px;
+  --av-font-size: 10px;
+}
+.av-group:where([data-size="sm"]),
+.av-overflow:where([data-size="sm"]) {
+  --av-size: 24px;
+  --av-font-size: 11px;
+}
+.av-group:where([data-size="lg"]),
+.av-overflow:where([data-size="lg"]) {
+  --av-size: 40px;
+  --av-font-size: 15px;
+}
+.av-group:where([data-size="xl"]),
+.av-overflow:where([data-size="xl"]) {
+  --av-size: 56px;
+  --av-font-size: 20px;
+}
+/* The group's size reaches the avatars inside it, unless one sets its own. */
+.av-group:where([data-size="xs"]) .av-root:not(:where([data-size])) {
+  --av-size: 20px;
+  --av-font-size: 10px;
+}
+.av-group:where([data-size="sm"]) .av-root:not(:where([data-size])) {
+  --av-size: 24px;
+  --av-font-size: 11px;
+}
+.av-group:where([data-size="lg"]) .av-root:not(:where([data-size])) {
+  --av-size: 40px;
+  --av-font-size: 15px;
+}
+.av-group:where([data-size="xl"]) .av-root:not(:where([data-size])) {
+  --av-size: 56px;
+  --av-font-size: 20px;
+}
+
+@media (forced-colors: active) {
+  .av-root,
+  .av-overflow {
+    border: 1px solid CanvasText;
+  }
+  .av-status {
+    border-color: Canvas;
+  }
+}

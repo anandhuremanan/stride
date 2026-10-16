@@ -1,0 +1,505 @@
+/* Layout and the app's own markup. Kit components are themed through --gbs-*. */
+
+/* ------------------------------------------------------------ kit theming */
+
+/* Neutral badges tint the text colour by default, which reads as heavy grey.
+   The design uses a pale accent-grey, so point the badge's own variable there. */
+.bd-root[data-variant="neutral"] {
+  --bd-accent: var(--app-subtle);
+}
+
+/* ------------------------------------------------------------ shell */
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  flex: 0 0 264px;
+  height: 100vh;
+  padding: 24px 20px 18px;
+  /* Still scrolls on very short windows, but never shows a scrollbar. */
+  overflow-y: auto;
+  scrollbar-width: none;
+  background: var(--app-sidebar);
+  border-right: 1px solid var(--app-divider);
+}
+
+/* Shared by the desktop sidebar and the mobile navigation drawer. */
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-height: 100%;
+}
+
+.nav-empty {
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--gbs-muted);
+}
+
+/* Only shown below the tablet breakpoint, where the sidebar becomes a drawer. */
+.nav-toggle {
+  display: none;
+}
+
+.nav-drawer-body {
+  padding: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 12px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  color: var(--gbs-accent-fg);
+  background: var(--gbs-accent);
+}
+
+.brand-name {
+  font-size: 25px;
+  color: var(--app-heading);
+}
+
+.workspace-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid var(--app-divider);
+  border-radius: var(--gbs-radius);
+  background: var(--gbs-bg);
+}
+
+.workspace-switcher-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.workspace-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.workspace-plan {
+  color: var(--gbs-muted);
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-heading {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--app-subtle);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--gbs-fg);
+  text-decoration: none;
+}
+
+.nav-item svg {
+  flex: none;
+  color: var(--gbs-muted);
+}
+
+.nav-item:hover {
+  background: var(--app-accent-soft);
+}
+
+.nav-item[aria-current="page"] {
+  font-weight: 600;
+  background: var(--app-accent-soft);
+}
+
+.nav-item[aria-current="page"] svg {
+  color: var(--gbs-accent);
+}
+
+.nav-item:focus-visible,
+.help-link:focus-visible,
+.brand:focus-visible,
+.section-link:focus-visible,
+.task-row:focus-visible,
+.project-row:focus-visible {
+  outline: 2px solid var(--gbs-focus);
+  outline-offset: 2px;
+}
+
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.help-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 12px;
+  font-size: 13px;
+  color: var(--gbs-muted);
+  text-decoration: none;
+}
+
+.help-link:hover {
+  color: var(--gbs-fg);
+}
+
+.sidebar-divider {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--app-divider);
+}
+
+/* The account row is a ghost Button that opens the account Menu. */
+.account {
+  justify-content: flex-start;
+  gap: 10px;
+  height: auto;
+  padding: 6px 8px;
+  text-align: start;
+  font-weight: 400;
+  color: var(--gbs-fg);
+}
+
+.account > :is(span, div):first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.account-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.account-role {
+  color: var(--gbs-muted);
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 32px;
+  background: var(--gbs-bg);
+  border-bottom: 1px solid var(--app-divider);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-date {
+  color: var(--gbs-muted);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 1216px;
+  padding: 32px;
+}
+
+/* ------------------------------------------------------------ page parts */
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--app-heading);
+}
+
+.page-description {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--gbs-muted);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.section-context {
+  color: var(--gbs-muted);
+}
+
+.section-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gbs-accent);
+  text-decoration: none;
+}
+
+.section-link:hover {
+  text-decoration: underline;
+}
+
+.row-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row-list > li + li {
+  border-top: 1px solid var(--app-divider);
+}
+
+.row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  font-size: 13px;
+}
+
+.row-title {
+  font-weight: 600;
+}
+
+.row-meta {
+  font-size: 12px;
+  color: var(--gbs-muted);
+}
+
+.row-icon {
+  flex: none;
+  color: var(--gbs-muted);
+}
+
+/* ------------------------------------------------------------ overview */
+
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.sprint {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sprint-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px;
+  border-radius: var(--gbs-radius);
+  background: var(--app-accent-soft);
+}
+
+.sprint-goal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sprint-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sprint-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sprint-dates,
+.sprint-remaining {
+  color: var(--app-accent-strong);
+}
+
+.sprint-goal-text {
+  font-size: 14px;
+  color: var(--app-heading);
+}
+
+.sprint-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 0 1 420px;
+}
+
+.overview-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 738fr) minmax(0, 394fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.task-row .row-text {
+  flex: 1;
+}
+
+.task-row:hover .row-title,
+.project-row:hover .row-title {
+  color: var(--gbs-accent);
+}
+
+.list-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--app-divider);
+}
+
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.activity-item {
+  display: flex;
+  gap: 10px;
+}
+
+.activity-title {
+  font-weight: 500;
+}
+
+.activity-time {
+  font-size: 12px;
+  color: var(--app-subtle);
+}
+
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-mark {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--gbs-radius);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app-accent-strong);
+  background: var(--app-accent-soft);
+}
+
+.project-name {
+  flex: 0 0 234px;
+}
+
+.project-owner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 140px;
+  font-size: 13px;
+}
+
+.project-milestone {
+  flex: 1;
+}
+
+@media (max-width: 1100px) {
+  .metric-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overview-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

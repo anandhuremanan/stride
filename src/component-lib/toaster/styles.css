@@ -1,0 +1,282 @@
+/*
+ * Toaster styles.
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (toasts render in a portal on <body>, so set them on :root) and fall back to
+ * the same default palette otherwise. Rules are unlayered: they beat a
+ * framework reset on specificity, and lose to anything you pass through
+ * `className`. With Tailwind v4, import this file after the framework and
+ * inside its components layer - see the README.
+ */
+
+.ts-region {
+  --ts-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --ts-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --ts-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --ts-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --ts-hover: var(--gbs-hover, var(--dg-hover, light-dark(#f4f4f5, #1f1f23)));
+  --ts-accent: var(--gbs-accent, var(--dg-accent, light-dark(#2563eb, #60a5fa)));
+  --ts-accent-fg: var(--gbs-accent-fg, var(--dg-accent-fg, light-dark(#ffffff, #0b1220)));
+  --ts-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --ts-shadow: var(--gbs-shadow, var(--dg-shadow, 0 10px 30px -8px light-dark(rgb(0 0 0 / 0.18), rgb(0 0 0 / 0.6))));
+  --ts-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --ts-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --ts-success: var(--gbs-success, light-dark(#15803d, #4ade80));
+  --ts-error: var(--gbs-danger, var(--dg-danger, light-dark(#dc2626, #f87171)));
+  --ts-warning: var(--gbs-warning, light-dark(#d97706, #fbbf24));
+  --ts-info: var(--gbs-info, var(--gbs-accent, var(--dg-accent, light-dark(#2563eb, #60a5fa))));
+  --ts-width: 356px;
+  --ts-offset: 16px;
+  --ts-gap: 8px;
+  --ts-z-index: 2147483000;
+
+  color-scheme: inherit;
+  position: fixed;
+  z-index: var(--ts-z-index);
+  width: var(--ts-width);
+  max-width: calc(100vw - 2 * var(--ts-offset));
+  font-size: var(--ts-font-size);
+  line-height: 1.4;
+  color: var(--ts-fg);
+  /* The region spans the stack; only the toasts themselves take clicks. */
+  pointer-events: none;
+}
+
+:where(.dark, [data-theme="dark"]) .ts-region {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .ts-region {
+  color-scheme: light;
+}
+
+:where(.ts-region) *,
+:where(.ts-region) *::before,
+:where(.ts-region) *::after {
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------ placement */
+
+.ts-region[data-position^="top"] {
+  top: var(--ts-offset);
+  --ts-enter-y: -8px;
+}
+.ts-region[data-position^="bottom"] {
+  bottom: var(--ts-offset);
+  --ts-enter-y: 8px;
+}
+.ts-region[data-position$="left"] {
+  left: var(--ts-offset);
+}
+.ts-region[data-position$="right"] {
+  right: var(--ts-offset);
+}
+.ts-region[data-position$="center"] {
+  left: 50%;
+  translate: -50% 0;
+}
+
+@media (max-width: 600px) {
+  .ts-region {
+    right: var(--ts-offset);
+    left: var(--ts-offset);
+    width: auto;
+    max-width: none;
+    translate: none;
+  }
+}
+
+.ts-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ts-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+}
+/* Newest toast sits nearest the screen edge. */
+.ts-region[data-position^="bottom"] .ts-list {
+  flex-direction: column-reverse;
+}
+.ts-list:focus-visible {
+  outline: 2px solid var(--ts-focus);
+  outline-offset: 4px;
+  border-radius: var(--ts-radius);
+}
+
+/* --------------------------------------------------------------- toast */
+
+.ts-toast {
+  --ts-type-color: transparent;
+
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding-block: 12px;
+  padding-inline: 14px 10px;
+  overflow: hidden;
+  border: 1px solid var(--ts-border);
+  border-radius: var(--ts-radius);
+  background: var(--ts-bg);
+  color: var(--ts-fg);
+  box-shadow: var(--ts-shadow);
+  pointer-events: auto;
+  outline: none;
+  touch-action: pan-y;
+  opacity: 1;
+  translate: var(--ts-swipe, 0px) 0;
+  transition:
+    opacity 200ms ease,
+    translate 200ms ease;
+}
+@starting-style {
+  .ts-toast {
+    opacity: 0;
+    translate: 0 var(--ts-enter-y, 8px);
+  }
+}
+.ts-toast[data-swiping] {
+  transition: none;
+  cursor: grabbing;
+}
+.ts-toast[data-state="closing"] {
+  opacity: 0;
+  pointer-events: none;
+}
+.ts-toast:focus-visible {
+  outline: 2px solid var(--ts-focus);
+  outline-offset: -2px;
+}
+
+/* A thin bar on the reading-start edge carries the type's color. */
+.ts-toast::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 3px;
+  background: var(--ts-type-color);
+}
+.ts-toast:where([data-type="success"]) {
+  --ts-type-color: var(--ts-success);
+}
+.ts-toast:where([data-type="error"]) {
+  --ts-type-color: var(--ts-error);
+}
+.ts-toast:where([data-type="warning"]) {
+  --ts-type-color: var(--ts-warning);
+}
+.ts-toast:where([data-type="info"]) {
+  --ts-type-color: var(--ts-info);
+}
+
+.ts-icon {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  margin-top: 1px;
+  color: var(--ts-type-color);
+}
+.ts-toast:is(:where([data-type="default"]), :where([data-type="loading"])) .ts-icon {
+  color: var(--ts-muted);
+}
+
+.ts-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.ts-title {
+  font-weight: 600;
+}
+.ts-description {
+  margin-top: 2px;
+  color: var(--ts-muted);
+}
+
+.ts-actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  align-self: center;
+  gap: 6px;
+}
+.ts-button {
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--ts-border);
+  border-radius: 6px;
+  background: var(--ts-bg);
+  color: inherit;
+  font: inherit;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.ts-button:hover {
+  background: var(--ts-hover);
+}
+.ts-button:where([data-variant="action"]) {
+  border-color: var(--ts-accent);
+  background: var(--ts-accent);
+  color: var(--ts-accent-fg);
+}
+.ts-button:where([data-variant="action"]):hover {
+  background: color-mix(in oklab, var(--ts-accent), var(--ts-fg) 12%);
+}
+.ts-button:focus-visible {
+  outline: 2px solid var(--ts-focus);
+  outline-offset: 1px;
+}
+
+.ts-close {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--ts-muted);
+  cursor: pointer;
+}
+.ts-close:hover {
+  background: var(--ts-hover);
+  color: var(--ts-fg);
+}
+.ts-close:focus-visible {
+  outline: 2px solid var(--ts-focus);
+  outline-offset: 1px;
+}
+
+.ts-spinner {
+  animation: ts-spin 0.7s linear infinite;
+}
+@keyframes ts-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ts-toast {
+    transition: none;
+  }
+  .ts-spinner {
+    animation-duration: 2s;
+  }
+}
+
+@media (forced-colors: active) {
+  .ts-toast {
+    border-color: CanvasText;
+  }
+  .ts-toast::before {
+    background: Highlight;
+  }
+}

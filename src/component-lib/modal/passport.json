@@ -1,0 +1,295 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Modal",
+    "folder": "modal",
+    "exports": [
+      "Modal"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/dismiss.ts",
+      "core/index.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Modal.tsx",
+      "react/icons.tsx",
+      "react/locale.ts",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:078ceea5f6cf953d95a999fd958a6b2ed8a61e3c9060665eeca4efd53fb70413"
+  },
+  "props": [
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Accessible name when there is no `title`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "children",
+      "type": "other",
+      "typeText": "Renderable",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<ModalSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "closeButton",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Show the × button. Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "closeOnBackdrop",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "closeOnEscape",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Open to begin with, when you are not controlling `open`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "description",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "A line under the title, linked as the dialog's description.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "footer",
+      "type": "other",
+      "typeText": "Renderable",
+      "required": false,
+      "origin": "derived",
+      "description": "The actions row, pinned below the scrolling content so it stays\r\nreachable however long the body is.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "initialFocus",
+      "type": "other",
+      "typeText": "RefObject<HTMLElement | null> | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Focused on open. Otherwise the first `[data-autofocus]` element, then the first focusable one.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "keepMounted",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Keep the content mounted while closed, preserving its state. Default false.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<ModalLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "onBeforeClose",
+      "type": "function",
+      "signature": "((reason: CloseReason) => boolean | Promise<boolean>) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Return `false` (or a promise of it) to keep the modal open, e.g. for unsaved changes.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onOpenChange",
+      "type": "function",
+      "signature": "((open: boolean, reason?: CloseReason) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "`reason` says what closed it; it is undefined when opening.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Controlled open state.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "placement",
+      "type": "enum",
+      "values": [
+        "bottom",
+        "center",
+        "left",
+        "right",
+        "top"
+      ],
+      "typeText": "ModalPlacement | undefined",
+      "required": false,
+      "default": "center",
+      "origin": "derived",
+      "description": "Default `center`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<ModalHandle> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "full",
+        "lg",
+        "md",
+        "sm",
+        "xl"
+      ],
+      "typeText": "ModalSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Width for dialogs; for drawers, the width (left/right) or height (bottom). Default `md`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "title",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived"
+    }
+  ],
+  "events": [
+    {
+      "name": "onBeforeClose",
+      "signature": "((reason: CloseReason) => boolean | Promise<boolean>) | undefined"
+    },
+    {
+      "name": "onOpenChange",
+      "signature": "((open: boolean, reason?: CloseReason) => void) | undefined"
+    }
+  ],
+  "slots": [
+    "root",
+    "header",
+    "title",
+    "description",
+    "close",
+    "body",
+    "footer"
+  ],
+  "states": [
+    {
+      "attr": "data-placement",
+      "values": [
+        "bottom",
+        "left",
+        "right",
+        "top"
+      ]
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "full",
+        "lg",
+        "sm",
+        "xl"
+      ]
+    },
+    {
+      "attr": "data-state"
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 17,
+    "propsDescribed": 14,
+    "describedPct": 82,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

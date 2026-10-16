@@ -1,0 +1,874 @@
+/*
+ * DataGrid styles. Rules are unlayered: they beat a framework reset on
+ * specificity, and lose to anything you pass through `className`. With
+ * Tailwind v4, import this file after the framework and inside its components
+ * layer - see the README.
+ *
+ * Theme: override the --dg-* variables on .dg-root or any ancestor. Colors
+ * follow the page's `color-scheme`; `.dark` / `[data-theme]` ancestors or
+ * `data-theme` on the grid force a scheme.
+ */
+
+.dg-root {
+  --dg-font-size: var(--gbs-font-size, 13px);
+  --dg-bg: var(--gbs-bg, light-dark(#ffffff, #0b0b0e));
+  --dg-fg: var(--gbs-fg, light-dark(#18181b, #f4f4f5));
+  --dg-muted: var(--gbs-muted, light-dark(#71717a, #a1a1aa));
+  --dg-border: var(--gbs-border, light-dark(#e4e4e7, #27272a));
+  --dg-border-subtle: var(--gbs-border-subtle, light-dark(#f0f0f2, #1c1c20));
+  --dg-header-bg: var(--gbs-header-bg, light-dark(#fafafa, #111114));
+  --dg-header-fg: var(--gbs-header-fg, light-dark(#3f3f46, #d4d4d8));
+  --dg-row-alt: var(--gbs-row-alt, light-dark(#fcfcfd, #0e0e12));
+  --dg-row-hover: var(--gbs-row-hover, light-dark(#f4f4f5, #18181c));
+  --dg-row-selected: var(--gbs-row-selected, light-dark(#eef4ff, #14213d));
+  --dg-row-selected-hover: var(--gbs-row-selected-hover, light-dark(#e2ecff, #1a2a4d));
+  --dg-hover: var(--gbs-hover, light-dark(#f4f4f5, #1f1f23));
+  --dg-input-bg: var(--gbs-input-bg, light-dark(#ffffff, #121216));
+  --dg-accent: var(--gbs-accent, light-dark(#2563eb, #60a5fa));
+  --dg-accent-fg: var(--gbs-accent-fg, light-dark(#ffffff, #0b1220));
+  --dg-accent-soft: var(--gbs-accent-soft, light-dark(#eff6ff, #172554));
+  --dg-accent-strong: var(--gbs-accent-strong, light-dark(#1d4ed8, #bfdbfe));
+  --dg-focus: var(--gbs-focus, light-dark(#2563eb, #60a5fa));
+  --dg-danger: var(--gbs-danger, light-dark(#dc2626, #f87171));
+  --dg-pin-shadow: var(--gbs-pin-shadow, light-dark(rgb(0 0 0 / 0.08), rgb(0 0 0 / 0.5)));
+  --dg-shadow: var(--gbs-shadow, 0 10px 30px -8px light-dark(rgb(0 0 0 / 0.18), rgb(0 0 0 / 0.6)));
+  --dg-radius: var(--gbs-radius, 8px);
+  --dg-cell-px: var(--gbs-cell-px, 12px);
+
+  color-scheme: inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--dg-font-size);
+  line-height: 1.4;
+  color: var(--dg-fg);
+  background: var(--dg-bg);
+  border: 1px solid var(--dg-border);
+  border-radius: var(--dg-radius);
+}
+
+:where(.dark, [data-theme="dark"]) .dg-root,
+.dg-root[data-theme="dark"] {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .dg-root,
+.dg-root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:where(.dg-root) *,
+:where(.dg-root) *::before,
+:where(.dg-root) *::after {
+  box-sizing: border-box;
+}
+
+.dg-root[data-resizing] {
+  cursor: col-resize;
+  user-select: none;
+}
+
+/* ------------------------------------------------------------ controls */
+
+.dg-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--dg-border);
+  border-radius: 6px;
+  background: var(--dg-bg);
+  color: inherit;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.dg-button:hover {
+  background: var(--dg-hover);
+}
+.dg-button:where([data-variant="primary"]) {
+  background: var(--dg-accent);
+  border-color: var(--dg-accent);
+  color: var(--dg-accent-fg);
+}
+.dg-icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.dg-icon-button:hover:not(:disabled) {
+  background: var(--dg-hover);
+}
+.dg-icon-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.dg-link-button {
+  padding: 2px 4px;
+  border: 0;
+  background: none;
+  color: var(--dg-accent);
+  font: inherit;
+  cursor: pointer;
+}
+.dg-link-button:hover {
+  text-decoration: underline;
+}
+.dg-input,
+.dg-select {
+  width: 100%;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--dg-border);
+  border-radius: 6px;
+  background: var(--dg-input-bg);
+  color: inherit;
+  font: inherit;
+}
+.dg-checkbox {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--dg-accent);
+  cursor: pointer;
+}
+:is(.dg-button, .dg-icon-button, .dg-link-button, .dg-input, .dg-select, .dg-menu-item, .dg-checkbox):focus-visible {
+  outline: 2px solid var(--dg-focus);
+  outline-offset: 1px;
+}
+
+.dg-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.dg-flip-rtl:dir(rtl) {
+  transform: scaleX(-1);
+}
+
+/* ------------------------------------------------------------- toolbar */
+
+.dg-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--dg-border);
+  container-type: inline-size;
+}
+.dg-toolbar-spacer {
+  flex: 1 1 0;
+}
+.dg-search {
+  display: flex;
+  flex: 0 1 280px;
+  align-items: center;
+  gap: 6px;
+  min-width: 160px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--dg-border);
+  border-radius: 6px;
+  background: var(--dg-input-bg);
+  color: var(--dg-muted);
+}
+.dg-search:focus-within {
+  outline: 2px solid var(--dg-focus);
+  outline-offset: -1px;
+}
+.dg-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--dg-fg);
+  font: inherit;
+}
+.dg-chips,
+.dg-selection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.dg-selection {
+  color: var(--dg-muted);
+}
+.dg-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 26px;
+  padding-inline: 10px 4px;
+  border-radius: 999px;
+  background: var(--dg-accent-soft);
+  color: var(--dg-accent-strong);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.dg-chip-remove {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.dg-chip-remove:hover {
+  background: rgb(0 0 0 / 0.08);
+}
+@container (max-width: 560px) {
+  .dg-button-label {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------ viewport */
+
+.dg-viewport-wrap {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+}
+.dg-viewport {
+  position: relative;
+  overflow: auto;
+  overscroll-behavior: contain;
+  outline: none;
+  scrollbar-width: var(--gbs-scrollbar-width, thin);
+  scrollbar-color: var(--gbs-scrollbar-thumb, light-dark(#c4c4ca, #3f3f46))
+    var(--gbs-scrollbar-track, transparent);
+}
+.dg-viewport:focus-visible {
+  outline: 2px solid var(--dg-focus);
+  outline-offset: -2px;
+}
+.dg-header-group {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  width: max(100%, var(--dg-total-width));
+}
+.dg-header,
+.dg-row {
+  display: flex;
+  width: max(100%, var(--dg-total-width));
+}
+.dg-header {
+  height: var(--dg-header-height);
+  background: var(--dg-header-bg);
+  border-bottom: 1px solid var(--dg-border);
+}
+.dg-body {
+  position: relative;
+  width: max(100%, var(--dg-total-width));
+}
+.dg-body:empty {
+  min-height: calc(var(--dg-row-height) * 4);
+}
+.dg-root[data-stale] .dg-body {
+  opacity: 0.72;
+  transition: opacity 120ms 80ms;
+}
+.dg-row {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  height: var(--dg-row-height);
+  background: var(--dg-bg);
+  border-bottom: 1px solid var(--dg-border-subtle);
+  contain: layout style;
+}
+.dg-row[data-odd] {
+  background: var(--dg-row-alt);
+}
+.dg-row:hover {
+  background: var(--dg-row-hover);
+}
+.dg-row[data-selected] {
+  background: var(--dg-row-selected);
+}
+.dg-row[data-selected]:hover {
+  background: var(--dg-row-selected-hover);
+}
+.dg-row:has([data-editing], [data-invalid]) {
+  z-index: 2;
+}
+.dg-spacer {
+  flex: none;
+}
+.dg-spacer-fill {
+  flex: 1 1 0;
+}
+
+/* --------------------------------------------------------------- cells */
+
+.dg-cell,
+.dg-header-cell {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  min-width: 0;
+  padding: 0 var(--dg-cell-px);
+  background: inherit;
+}
+.dg-cell {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.dg-cell-text,
+.dg-header-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+:is(.dg-cell, .dg-header-cell):where([data-align="center"]) {
+  justify-content: center;
+}
+:is(.dg-cell, .dg-header-cell):where([data-align="end"]) {
+  justify-content: flex-end;
+}
+.dg-cell:where([data-align="end"]) {
+  font-variant-numeric: tabular-nums;
+}
+:is(.dg-cell, .dg-header-cell)[data-pinned] {
+  position: sticky;
+  z-index: 1;
+}
+:is(.dg-cell, .dg-header-cell)[data-pinned="left"]:where([data-pin-edge]) {
+  box-shadow: 4px 0 6px -4px var(--dg-pin-shadow);
+}
+:is(.dg-cell, .dg-header-cell)[data-pinned="right"]:where([data-pin-edge]) {
+  box-shadow: -4px 0 6px -4px var(--dg-pin-shadow);
+}
+:is(.dg-cell, .dg-header-cell):focus {
+  outline: none;
+}
+:is(.dg-cell, .dg-header-cell):focus-visible,
+.dg-viewport:focus-within :is(.dg-cell, .dg-header-cell)[data-active]:focus {
+  outline: 2px solid var(--dg-focus);
+  outline-offset: -2px;
+  z-index: 2;
+}
+.dg-cell[data-editable] {
+  cursor: cell;
+}
+.dg-cell[data-editing] {
+  z-index: 2;
+  overflow: visible;
+  padding: 0;
+}
+.dg-cell[data-pending] {
+  color: var(--dg-muted);
+  font-style: italic;
+}
+/* A ring layered above the editor input (which would cover an inset shadow). */
+.dg-cell:is([data-editing], [data-invalid])::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 2px solid var(--dg-focus);
+  pointer-events: none;
+}
+.dg-cell[data-invalid]::after,
+.dg-cell[data-editing]:has(.dg-editor-error)::after {
+  border-color: var(--dg-danger);
+}
+.dg-bool {
+  display: inline-flex;
+  color: var(--dg-accent);
+}
+
+.dg-editor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.dg-editor:has(.dg-checkbox) {
+  justify-content: center;
+}
+.dg-editor-input {
+  width: 100%;
+  height: 100%;
+  padding: 0 calc(var(--dg-cell-px) - 2px);
+  border: 0;
+  outline: 0;
+  background: var(--dg-input-bg);
+  color: inherit;
+  font: inherit;
+}
+.dg-editor-error {
+  position: absolute;
+  top: calc(100% + 2px);
+  inset-inline-start: 0;
+  z-index: 5;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--dg-danger);
+  color: #fff;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------------------- header */
+
+.dg-header-cell {
+  gap: 4px;
+  font-weight: 600;
+  color: var(--dg-header-fg);
+  user-select: none;
+}
+.dg-header-cell[data-sortable] {
+  cursor: pointer;
+}
+.dg-header-cell:where([data-align="end"]) .dg-header-menu {
+  order: -1;
+  margin-inline: 0 auto;
+}
+.dg-sort-indicator {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  color: var(--dg-accent);
+}
+.dg-sort-order {
+  font-size: 10px;
+  font-weight: 700;
+}
+.dg-filter-dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dg-accent);
+}
+.dg-header-menu {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin-inline-start: auto;
+  color: var(--dg-muted);
+  opacity: 0;
+}
+.dg-header-cell:hover .dg-header-menu,
+.dg-header-cell:focus-within .dg-header-menu,
+.dg-header-cell[data-active] .dg-header-menu {
+  opacity: 1;
+}
+@media (hover: none) {
+  .dg-header-menu {
+    opacity: 1;
+  }
+}
+.dg-resize-handle {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: -4px;
+  z-index: 2;
+  width: 8px;
+  cursor: col-resize;
+  touch-action: none;
+}
+.dg-resize-handle::after {
+  content: "";
+  position: absolute;
+  inset-block: 25%;
+  inset-inline-start: 3px;
+  width: 2px;
+  border-radius: 1px;
+  background: transparent;
+}
+.dg-header-cell:hover .dg-resize-handle::after {
+  background: var(--dg-border);
+}
+.dg-resize-handle:hover::after,
+.dg-root[data-resizing] .dg-resize-handle::after {
+  background: var(--dg-accent);
+}
+.dg-header-cell[data-drop]::before {
+  content: "";
+  position: absolute;
+  inset-block: 4px;
+  z-index: 3;
+  width: 2px;
+  background: var(--dg-accent);
+}
+.dg-header-cell[data-drop="before"]::before {
+  inset-inline-start: 0;
+}
+.dg-header-cell[data-drop="after"]::before {
+  inset-inline-end: 0;
+}
+
+/* ------------------------------------------------------------ overlays */
+
+.dg-overlay {
+  position: absolute;
+  inset: var(--dg-header-height) 0 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--dg-muted);
+  pointer-events: none;
+}
+.dg-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+.dg-loading {
+  position: absolute;
+  inset-inline: 0;
+  top: var(--dg-header-height);
+  z-index: 4;
+  height: 2px;
+  overflow: hidden;
+}
+.dg-loading-bar {
+  width: 40%;
+  height: 100%;
+  background: var(--dg-accent);
+  animation: dg-loading 1.1s ease-in-out infinite;
+}
+@keyframes dg-loading {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dg-loading-bar {
+    animation-duration: 3s;
+  }
+}
+
+/* ---------------------------------------------------------- pagination */
+
+.dg-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--dg-border);
+  color: var(--dg-muted);
+}
+.dg-page-size {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dg-page-size .dg-select {
+  width: auto;
+}
+.dg-page-range {
+  font-variant-numeric: tabular-nums;
+}
+.dg-page-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-inline-start: auto;
+  color: var(--dg-fg);
+}
+.dg-page-input .dg-input {
+  width: 4.5em;
+  height: 28px;
+  text-align: center;
+}
+.dg-page-count {
+  margin-inline-end: 4px;
+  color: var(--dg-muted);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------ popovers */
+
+.dg-popover {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  min-width: 220px;
+  max-width: min(340px, calc(100vw - 16px));
+  max-height: min(70vh, 560px);
+  padding: 6px;
+  overflow: auto;
+  border: 1px solid var(--dg-border);
+  border-radius: var(--dg-radius);
+  background: var(--dg-bg);
+  color: var(--dg-fg);
+  box-shadow: var(--dg-shadow);
+  font-size: var(--dg-font-size);
+  scrollbar-width: var(--gbs-scrollbar-width, thin);
+  scrollbar-color: var(--gbs-scrollbar-thumb, light-dark(#c4c4ca, #3f3f46))
+    var(--gbs-scrollbar-track, transparent);
+}
+.dg-menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 4px 0;
+}
+.dg-menu-section + .dg-menu-section {
+  border-top: 1px solid var(--dg-border);
+}
+.dg-menu-label {
+  padding: 2px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dg-muted);
+}
+.dg-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+.dg-menu-item:hover {
+  background: var(--dg-hover);
+}
+.dg-menu-item:is([aria-pressed="true"], [aria-checked="true"]) {
+  color: var(--dg-accent);
+  font-weight: 600;
+}
+.dg-menu-item svg {
+  flex: none;
+  color: var(--dg-muted);
+}
+.dg-filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 2px 4px;
+}
+.dg-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+.dg-form-actions .dg-button {
+  height: 28px;
+}
+.dg-check-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 240px;
+  overflow: auto;
+  scrollbar-width: var(--gbs-scrollbar-width, thin);
+  scrollbar-color: var(--gbs-scrollbar-thumb, light-dark(#c4c4ca, #3f3f46))
+    var(--gbs-scrollbar-track, transparent);
+}
+.dg-check-list label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.dg-check-list label:hover {
+  background: var(--dg-hover);
+}
+
+@media (forced-colors: active) {
+  .dg-row[data-selected] {
+    outline: 1px solid Highlight;
+    outline-offset: -1px;
+  }
+  .dg-filter-dot,
+  .dg-loading-bar {
+    background: Highlight;
+  }
+}
+
+/* ---------------------------------------------------------------- ask box */
+/*
+ * The natural-language input, when `ai` is on and an adapter is in scope.
+ * Tokens follow the same --gbs-* chain as everything else, so a themed grid
+ * themes this too without a second set of variables.
+ */
+
+.ask-root {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--dg-border);
+  background: var(--dg-header-bg);
+  font-size: var(--dg-font-size);
+}
+
+.ask-form {
+  display: flex;
+  gap: 8px;
+}
+
+.ask-input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 10px;
+  border: 1px solid var(--dg-border-control, var(--dg-border));
+  border-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  background: var(--gbs-input-bg, var(--dg-bg));
+  color: var(--dg-fg);
+  font: inherit;
+}
+
+.ask-input::placeholder {
+  color: var(--dg-muted);
+}
+
+.ask-input:focus-visible {
+  outline: 2px solid var(--gbs-focus, var(--dg-accent));
+  outline-offset: -1px;
+}
+
+.ask-send,
+.ask-confirm {
+  padding: 7px 14px;
+  border: 1px solid var(--dg-accent);
+  border-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  background: var(--dg-accent);
+  color: var(--gbs-accent-fg, light-dark(#ffffff, #0b1220));
+  font: inherit;
+  cursor: pointer;
+}
+
+.ask-send:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.ask-hints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ask-hint {
+  padding: 3px 9px;
+  border: 1px dashed var(--dg-border);
+  border-radius: 999px;
+  background: none;
+  color: var(--dg-muted);
+  font: inherit;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.ask-hint:hover {
+  border-style: solid;
+  color: var(--dg-fg);
+}
+
+.ask-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 9px;
+  border-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  background: var(--dg-row-alt);
+}
+
+/* The validator's verdict, colour-coded but never colour-only: the message
+   always says what happened in words. */
+.ask-ok {
+  background: color-mix(in oklab, var(--gbs-success, #16a34a) 12%, transparent);
+}
+
+.ask-ask {
+  background: color-mix(in oklab, var(--gbs-warning, #d97706) 14%, transparent);
+}
+
+.ask-no,
+.ask-err {
+  background: color-mix(in oklab, var(--gbs-danger, #dc2626) 12%, transparent);
+}
+
+.ask-message {
+  flex: 1;
+  min-width: 0;
+}
+
+.ask-suggestion,
+.ask-warning {
+  color: var(--dg-muted);
+  font-size: 0.9em;
+}
+
+.ask-layer {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--dg-hover);
+  color: var(--dg-muted);
+  font-size: 0.8em;
+  font-variant: small-caps;
+}
+
+.ask-dismiss {
+  border: 0;
+  background: none;
+  color: var(--dg-muted);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ask-thinking {
+  color: var(--dg-muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ask-thinking {
+    animation: 1.2s ease-in-out infinite ask-pulse;
+  }
+}
+
+@keyframes ask-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}

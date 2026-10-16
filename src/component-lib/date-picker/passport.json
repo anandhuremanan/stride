@@ -1,0 +1,423 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "DatePicker",
+    "folder": "date-picker",
+    "exports": [
+      "DEFAULT_DATE_FORMAT",
+      "DatePicker",
+      "DateRangePicker"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/calendar.ts",
+      "core/format.ts",
+      "core/index.ts",
+      "core/today.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Calendar.tsx",
+      "react/CalendarPanel.tsx",
+      "react/DatePicker.tsx",
+      "react/DateRangePicker.tsx",
+      "react/MonthYearPanels.tsx",
+      "react/Popover.tsx",
+      "react/icons.tsx",
+      "react/locale.ts",
+      "react/props.ts",
+      "react/useDatePicker.ts"
+    ],
+    "sourceHash": "sha256:2370299b9b495fd18671fb31106c1ba88e834227e3b9632207c048da66982370"
+  },
+  "props": [
+    {
+      "name": "allowInput",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Let people type a date instead of picking one. Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<DatePickerSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "clearable",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Show the clear button. Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "closeOnSelect",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Close the calendar after choosing a date. Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "defaultValue",
+      "type": "other",
+      "typeText": "DateInput | null | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "description",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "A hint under the label, linked as the control's description.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived"
+    },
+    {
+      "name": "error",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Message shown below the control; also marks the control invalid.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "fixedWeeks",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Always six week rows, so the popover never changes height. Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "format",
+      "type": "other",
+      "typeText": "DateFormat | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "How the chosen date is displayed. `Intl.DateTimeFormatOptions` for the\nusual cases, or a function for a shape Intl cannot express. Left out,\nthe locale's own date format is used - which is the right default far\nmore often than a hand-written one.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "isDateDisabled",
+      "type": "function",
+      "signature": "((date: Date) => boolean) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Called for every rendered day; return true to block it (weekends, holidays).",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "label",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "The control's name, shown above it and linked to it.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "locale",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "BCP-47 tag deciding month names, field order and the first day of the week.\nDefaults to the runtime's locale — pass it explicitly when you render on a\nserver, so the markup matches what the browser produces.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<DatePickerLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "max",
+      "type": "other",
+      "typeText": "DateInput | null | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Latest selectable day. Later days are shown but cannot be picked.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "min",
+      "type": "other",
+      "typeText": "DateInput | null | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Earliest selectable day. Earlier days are shown but cannot be picked.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Posts the value as `yyyy-mm-dd` in a hidden input.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "numberOfMonths",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 1,
+      "origin": "derived",
+      "description": "Months shown side by side. Default 1, or 2 for the range picker.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onChange",
+      "type": "function",
+      "signature": "((date: Date | null) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The chosen day as a `Date` at local midnight, or `null` once cleared.\r\nAccepts a string or a number in `value`, but always hands back a\r\n`Date`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onOpenChange",
+      "type": "function",
+      "signature": "((open: boolean) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The calendar opened or closed.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "presets",
+      "type": "other",
+      "typeText": "readonly DatePreset[] | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Shortcuts shown beside the calendar (\"Last 7 days\").",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Shows the value but blocks typing and picking.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<DatePickerHandle<Date | null>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived"
+    },
+    {
+      "name": "showToday",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Show the \"Today\" shortcut in the footer. Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "showWeekNumbers",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Number each week down the left of the calendar. Default false.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "sm"
+      ],
+      "typeText": "DatePickerSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "value",
+      "type": "other",
+      "typeText": "DateInput | null | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "weekStartsOn",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "0 = Sunday. Defaults to the locale's first day of the week.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "signature": "((date: Date | null) => void) | undefined"
+    },
+    {
+      "name": "onOpenChange",
+      "signature": "((open: boolean) => void) | undefined"
+    }
+  ],
+  "slots": [
+    "root",
+    "label",
+    "control",
+    "input",
+    "popover",
+    "calendar",
+    "day",
+    "footer",
+    "presets"
+  ],
+  "states": [
+    {
+      "attr": "data-autofocus"
+    },
+    {
+      "attr": "data-disabled"
+    },
+    {
+      "attr": "data-in-range"
+    },
+    {
+      "attr": "data-invalid"
+    },
+    {
+      "attr": "data-key"
+    },
+    {
+      "attr": "data-outside"
+    },
+    {
+      "attr": "data-range-end"
+    },
+    {
+      "attr": "data-range-start"
+    },
+    {
+      "attr": "data-required"
+    },
+    {
+      "attr": "data-selected"
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "lg",
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-state",
+      "values": [
+        "open"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-today"
+    },
+    {
+      "attr": "data-weekend"
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 28,
+    "propsDescribed": 22,
+    "describedPct": 79,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

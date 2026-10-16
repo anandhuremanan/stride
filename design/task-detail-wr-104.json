@@ -1,0 +1,2502 @@
+{
+  "frame": "Task detail · WR-104",
+  "nodes": [
+    {
+      "name": "Task detail · WR-104",
+      "type": "FRAME",
+      "layout": {
+        "direction": "row"
+      },
+      "size": [
+        1440,
+        1237
+      ],
+      "style": {
+        "fill": "#f8faf9"
+      },
+      "children": [
+        {
+          "name": "Workspace navigation",
+          "type": "FRAME",
+          "layout": {
+            "direction": "column",
+            "gap": 28,
+            "padding": [
+              28,
+              16,
+              20,
+              16
+            ]
+          },
+          "size": [
+            224,
+            1237
+          ],
+          "style": {
+            "fill": "#f1f5f3",
+            "stroke": "#e1e8e4"
+          },
+          "children": [
+            {
+              "name": "Brand",
+              "type": "FRAME",
+              "layout": {
+                "direction": "row",
+                "gap": 10,
+                "padding": [
+                  0,
+                  0,
+                  0,
+                  12
+                ],
+                "align": "CENTER"
+              },
+              "size": [
+                120,
+                30
+              ],
+              "children": [
+                {
+                  "name": "Brand mark",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "align": "CENTER",
+                    "justify": "CENTER"
+                  },
+                  "size": [
+                    30,
+                    30
+                  ],
+                  "style": {
+                    "fill": "#15796f",
+                    "radius": 9
+                  },
+                  "children": [
+                    {
+                      "name": "layers-2",
+                      "type": "FRAME",
+                      "size": [
+                        19,
+                        19
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Brand name",
+                  "type": "TEXT",
+                  "text": "stride",
+                  "style": {
+                    "fill": "#20332e",
+                    "fontSize": 25,
+                    "fontWeight": 400
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Workspace switcher",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 6,
+                "padding": [
+                  12,
+                  12,
+                  12,
+                  12
+                ]
+              },
+              "size": [
+                192,
+                64
+              ],
+              "style": {
+                "fill": "#ffffff",
+                "stroke": "#e1e8e4",
+                "radius": 8
+              },
+              "children": [
+                {
+                  "name": "Workspace",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "align": "CENTER",
+                    "justify": "SPACE_BETWEEN"
+                  },
+                  "size": [
+                    168,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "name": "Workspace name",
+                      "type": "TEXT",
+                      "text": "Acme Studio",
+                      "style": {
+                        "fill": "#000000",
+                        "fontSize": 13,
+                        "fontWeight": 600
+                      }
+                    },
+                    {
+                      "name": "chevrons-up-down",
+                      "type": "FRAME",
+                      "size": [
+                        14,
+                        14
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Plan",
+                  "type": "TEXT",
+                  "text": "Team workspace · 4 members",
+                  "style": {
+                    "fill": "#71717a",
+                    "fontSize": 12,
+                    "fontWeight": 400
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Workspace links",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 4
+              },
+              "size": [
+                192,
+                174
+              ],
+              "children": [
+                {
+                  "name": "Navigation group",
+                  "type": "TEXT",
+                  "text": "WORKSPACE",
+                  "style": {
+                    "fill": "#718079",
+                    "fontSize": 11,
+                    "fontWeight": 600
+                  }
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "layout-dashboard",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Overview",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folders",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Projects",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "circle-check",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "My tasks",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "users",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Team & settings",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Project shortcuts",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 6
+              },
+              "size": [
+                192,
+                182
+              ],
+              "children": [
+                {
+                  "name": "Navigation group",
+                  "type": "TEXT",
+                  "text": "YOUR PROJECTS",
+                  "style": {
+                    "fill": "#718079",
+                    "fontSize": 11,
+                    "fontWeight": 600
+                  }
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "fill": "#e8f4f0",
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Website redesign",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Client portal",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Brand refresh",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Help center",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sidebar spacer",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column"
+              },
+              "size": [
+                192,
+                512
+              ]
+            },
+            {
+              "name": "Account",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 16
+              },
+              "size": [
+                192,
+                87
+              ],
+              "children": [
+                {
+                  "name": "Help link",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 10,
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    175,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "name": "circle-help",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Help",
+                      "type": "TEXT",
+                      "text": "Help & getting started",
+                      "style": {
+                        "fill": "#71717a",
+                        "fontSize": 13,
+                        "fontWeight": 400
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Divider",
+                  "type": "RECTANGLE",
+                  "size": [
+                    192,
+                    1
+                  ],
+                  "style": {
+                    "fill": "#e1e8e4"
+                  }
+                },
+                {
+                  "name": "Signed-in account",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 10,
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      8
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "children": [
+                    {
+                      "name": "Person",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        24,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "name": "Avatar",
+                          "type": "INSTANCE",
+                          "component": "Avatar",
+                          "properties": {
+                            "Status dot": false,
+                            "Initials": "MC",
+                            "Content": "Initials",
+                            "Size": "sm"
+                          },
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "CENTER"
+                          },
+                          "size": [
+                            24,
+                            24
+                          ],
+                          "style": {
+                            "fill": "#e8f4f0",
+                            "radius": 999
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Account details",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 2
+                      },
+                      "size": [
+                        102,
+                        36
+                      ],
+                      "children": [
+                        {
+                          "name": "Account name",
+                          "type": "TEXT",
+                          "text": "Maya Chen",
+                          "style": {
+                            "fill": "#000000",
+                            "fontSize": 13,
+                            "fontWeight": 600
+                          }
+                        },
+                        {
+                          "name": "Role",
+                          "type": "TEXT",
+                          "text": "Workspace owner",
+                          "style": {
+                            "fill": "#71717a",
+                            "fontSize": 12,
+                            "fontWeight": 400
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "chevron-down",
+                      "type": "FRAME",
+                      "size": [
+                        14,
+                        14
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Application content",
+          "type": "FRAME",
+          "layout": {
+            "direction": "column"
+          },
+          "size": [
+            1216,
+            1237
+          ],
+          "children": [
+            {
+              "name": "App header",
+              "type": "FRAME",
+              "layout": {
+                "direction": "row",
+                "padding": [
+                  0,
+                  32,
+                  0,
+                  32
+                ],
+                "align": "CENTER",
+                "justify": "SPACE_BETWEEN"
+              },
+              "size": [
+                1216,
+                68
+              ],
+              "style": {
+                "fill": "#ffffff",
+                "stroke": "#e1e8e4"
+              },
+              "children": [
+                {
+                  "name": "Breadcrumbs",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 10,
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    316,
+                    22
+                  ],
+                  "children": [
+                    {
+                      "name": "Workspace crumb",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb item",
+                      "properties": {
+                        "Show icon": false,
+                        "Label": "Acme Studio",
+                        "Type": "Link",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 5,
+                        "padding": [
+                          2,
+                          4,
+                          2,
+                          4
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        87,
+                        22
+                      ],
+                      "style": {
+                        "radius": 4
+                      }
+                    },
+                    {
+                      "name": "Separator",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb separator",
+                      "layout": {
+                        "direction": "row",
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        14,
+                        14
+                      ]
+                    },
+                    {
+                      "name": "Current scope",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb item",
+                      "properties": {
+                        "Show icon": false,
+                        "Label": "Website redesign",
+                        "Type": "Current",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 5,
+                        "padding": [
+                          2,
+                          4,
+                          2,
+                          4
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        116,
+                        22
+                      ],
+                      "style": {
+                        "radius": 4
+                      }
+                    },
+                    {
+                      "name": "Separator",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb separator",
+                      "layout": {
+                        "direction": "row",
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        14,
+                        14
+                      ]
+                    },
+                    {
+                      "name": "Page crumb",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb item",
+                      "properties": {
+                        "Show icon": false,
+                        "Label": "Board",
+                        "Type": "Current",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 5,
+                        "padding": [
+                          2,
+                          4,
+                          2,
+                          4
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        45,
+                        22
+                      ],
+                      "style": {
+                        "radius": 4
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Header actions",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 20,
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    173,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "name": "Current date",
+                      "type": "TEXT",
+                      "text": "Fri, 16 Oct 2026",
+                      "style": {
+                        "fill": "#71717a",
+                        "fontSize": 12,
+                        "fontWeight": 400
+                      }
+                    },
+                    {
+                      "name": "bell",
+                      "type": "FRAME",
+                      "size": [
+                        18,
+                        18
+                      ]
+                    },
+                    {
+                      "name": "Person",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        24,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "name": "Avatar",
+                          "type": "INSTANCE",
+                          "component": "Avatar",
+                          "properties": {
+                            "Status dot": false,
+                            "Initials": "MC",
+                            "Content": "Initials",
+                            "Size": "sm"
+                          },
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "CENTER"
+                          },
+                          "size": [
+                            24,
+                            24
+                          ],
+                          "style": {
+                            "fill": "#e8f4f0",
+                            "radius": 999
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Page content",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 24,
+                "padding": [
+                  32,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              "size": [
+                1216,
+                1169
+              ],
+              "children": [
+                {
+                  "name": "Project header",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "column",
+                    "gap": 22
+                  },
+                  "size": [
+                    1152,
+                    160
+                  ],
+                  "children": [
+                    {
+                      "name": "Page heading",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 24,
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        1152,
+                        100
+                      ],
+                      "children": [
+                        {
+                          "name": "Heading",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 8
+                          },
+                          "size": [
+                            1028,
+                            62
+                          ],
+                          "children": [
+                            {
+                              "name": "Page title",
+                              "type": "TEXT",
+                              "text": "Website redesign",
+                              "style": {
+                                "fill": "#20332e",
+                                "fontSize": 28,
+                                "fontWeight": 600
+                              }
+                            },
+                            {
+                              "name": "Page description",
+                              "type": "TEXT",
+                              "text": "A clearer, faster home for Acme Studio.",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 14,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Page actions",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "gap": 10
+                          },
+                          "size": [
+                            100,
+                            100
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Project navigation",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 12
+                      },
+                      "size": [
+                        1152,
+                        38
+                      ],
+                      "style": {
+                        "stroke": "#e1e8e4"
+                      },
+                      "children": [
+                        {
+                          "name": "Project tab",
+                          "type": "INSTANCE",
+                          "component": "Tab",
+                          "properties": {
+                            "Badge": "3",
+                            "Show badge": false,
+                            "Label": "Backlog",
+                            "Variant": "Line",
+                            "State": "Default"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            74,
+                            38
+                          ]
+                        },
+                        {
+                          "name": "Project tab",
+                          "type": "INSTANCE",
+                          "component": "Tab",
+                          "properties": {
+                            "Badge": "3",
+                            "Show badge": false,
+                            "Label": "Sprints",
+                            "Variant": "Line",
+                            "State": "Default"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            69,
+                            38
+                          ]
+                        },
+                        {
+                          "name": "Project tab",
+                          "type": "INSTANCE",
+                          "component": "Tab",
+                          "properties": {
+                            "Badge": "3",
+                            "Show badge": false,
+                            "Label": "Board",
+                            "Variant": "Line",
+                            "State": "Selected"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            61,
+                            38
+                          ]
+                        },
+                        {
+                          "name": "Project tab",
+                          "type": "INSTANCE",
+                          "component": "Tab",
+                          "properties": {
+                            "Badge": "3",
+                            "Show badge": false,
+                            "Label": "Reports",
+                            "Variant": "Line",
+                            "State": "Default"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            73,
+                            38
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Return to context",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "align": "CENTER",
+                    "justify": "SPACE_BETWEEN"
+                  },
+                  "size": [
+                    1152,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "name": "Return link",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        172,
+                        18
+                      ],
+                      "children": [
+                        {
+                          "name": "arrow-left",
+                          "type": "FRAME",
+                          "size": [
+                            16,
+                            16
+                          ]
+                        },
+                        {
+                          "name": "Return label",
+                          "type": "TEXT",
+                          "text": "Back to Sprint 04 board",
+                          "style": {
+                            "fill": "#15796f",
+                            "fontSize": 13,
+                            "fontWeight": 500
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Save state",
+                      "type": "TEXT",
+                      "text": "All changes saved",
+                      "style": {
+                        "fill": "#71717a",
+                        "fontSize": 12,
+                        "fontWeight": 400
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Open task workspace",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 20
+                  },
+                  "size": [
+                    1152,
+                    879
+                  ],
+                  "children": [
+                    {
+                      "name": "Board context",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 16
+                      },
+                      "size": [
+                        214,
+                        526
+                      ],
+                      "children": [
+                        {
+                          "name": "Context title",
+                          "type": "TEXT",
+                          "text": "Sprint 04",
+                          "style": {
+                            "fill": "#000000",
+                            "fontSize": 14,
+                            "fontWeight": 600
+                          }
+                        },
+                        {
+                          "name": "Context dates",
+                          "type": "TEXT",
+                          "text": "12–23 Oct 2026",
+                          "style": {
+                            "fill": "#71717a",
+                            "fontSize": 12,
+                            "fontWeight": 400
+                          }
+                        },
+                        {
+                          "name": "Status",
+                          "type": "INSTANCE",
+                          "component": "Badge",
+                          "properties": {
+                            "Status dot": false,
+                            "Label": "In review · 1",
+                            "Variant": "Accent",
+                            "Appearance": "Soft"
+                          },
+                          "layout": {
+                            "direction": "row",
+                            "gap": 4,
+                            "padding": [
+                              0,
+                              8,
+                              0,
+                              8
+                            ],
+                            "align": "CENTER",
+                            "justify": "CENTER"
+                          },
+                          "size": [
+                            83,
+                            20
+                          ],
+                          "style": {
+                            "fill": "#fff4df",
+                            "radius": 999
+                          }
+                        },
+                        {
+                          "name": "Summary card",
+                          "type": "INSTANCE",
+                          "component": "Card",
+                          "properties": {
+                            "Show footer": true,
+                            "Show actions": false,
+                            "Show header": true,
+                            "Show description": true,
+                            "Description": "WR-104  ·  Story",
+                            "Title": "Build responsive header",
+                            "Variant": "Outlined",
+                            "Padding": "md"
+                          },
+                          "layout": {
+                            "direction": "column"
+                          },
+                          "size": [
+                            214,
+                            162
+                          ],
+                          "style": {
+                            "fill": "#ffffff",
+                            "stroke": "#e4e4e7",
+                            "radius": 8
+                          }
+                        },
+                        {
+                          "name": "Next work title",
+                          "type": "TEXT",
+                          "text": "Up next",
+                          "style": {
+                            "fill": "#000000",
+                            "fontSize": 14,
+                            "fontWeight": 600
+                          }
+                        },
+                        {
+                          "name": "Summary card",
+                          "type": "INSTANCE",
+                          "component": "Card",
+                          "properties": {
+                            "Show footer": true,
+                            "Show actions": false,
+                            "Show header": true,
+                            "Show description": true,
+                            "Description": "WR-107  ·  Story",
+                            "Title": "Implement mobile menu",
+                            "Variant": "Outlined",
+                            "Padding": "md"
+                          },
+                          "layout": {
+                            "direction": "column"
+                          },
+                          "size": [
+                            214,
+                            162
+                          ],
+                          "style": {
+                            "fill": "#ffffff",
+                            "stroke": "#e4e4e7",
+                            "radius": 8
+                          }
+                        },
+                        {
+                          "name": "Dependency hint",
+                          "type": "TEXT",
+                          "text": "The mobile menu builds on the approved header.",
+                          "style": {
+                            "fill": "#71717a",
+                            "fontSize": 12,
+                            "fontWeight": 400
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Task conversation",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 16
+                      },
+                      "size": [
+                        622,
+                        879
+                      ],
+                      "children": [
+                        {
+                          "name": "Open task",
+                          "type": "INSTANCE",
+                          "component": "Modal",
+                          "properties": {
+                            "Close button": true,
+                            "Show description": true,
+                            "Show footer": false,
+                            "Description": "WR-104 · Story · Created by Maya Chen",
+                            "Title": "Build responsive header",
+                            "Placement": "Right",
+                            "Size": "md"
+                          },
+                          "layout": {
+                            "direction": "column"
+                          },
+                          "size": [
+                            622,
+                            212
+                          ],
+                          "style": {
+                            "fill": "#ffffff",
+                            "stroke": "#e4e4e7",
+                            "radius": 8
+                          }
+                        },
+                        {
+                          "name": "Content panel",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 20,
+                            "padding": [
+                              20,
+                              20,
+                              20,
+                              20
+                            ]
+                          },
+                          "size": [
+                            622,
+                            170
+                          ],
+                          "style": {
+                            "fill": "#ffffff",
+                            "stroke": "#e4e4e7",
+                            "radius": 8
+                          },
+                          "children": [
+                            {
+                              "name": "Section heading",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "align": "CENTER",
+                                "justify": "SPACE_BETWEEN"
+                              },
+                              "size": [
+                                582,
+                                24
+                              ],
+                              "children": [
+                                {
+                                  "name": "Title",
+                                  "type": "TEXT",
+                                  "text": "Acceptance checklist",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 18,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                {
+                                  "name": "Context",
+                                  "type": "TEXT",
+                                  "text": "2 of 3 complete",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Acceptance criteria",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "column",
+                                "gap": 16
+                              },
+                              "size": [
+                                582,
+                                86
+                              ],
+                              "children": [
+                                {
+                                  "name": "Checklist item",
+                                  "type": "INSTANCE",
+                                  "component": "Checkbox",
+                                  "properties": {
+                                    "Show description": false,
+                                    "Description": "",
+                                    "Label": "Desktop navigation matches approved wireframes",
+                                    "Checked": "True",
+                                    "State": "Default",
+                                    "Size": "md"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 8
+                                  },
+                                  "size": [
+                                    332,
+                                    18
+                                  ]
+                                },
+                                {
+                                  "name": "Checklist item",
+                                  "type": "INSTANCE",
+                                  "component": "Checkbox",
+                                  "properties": {
+                                    "Show description": false,
+                                    "Description": "",
+                                    "Label": "Keyboard focus states are visible",
+                                    "Checked": "True",
+                                    "State": "Default",
+                                    "Size": "md"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 8
+                                  },
+                                  "size": [
+                                    228,
+                                    18
+                                  ]
+                                },
+                                {
+                                  "name": "Checklist item",
+                                  "type": "INSTANCE",
+                                  "component": "Checkbox",
+                                  "properties": {
+                                    "Description": "",
+                                    "Show description": false,
+                                    "Label": "Maya signs off at 375 px and 1440 px",
+                                    "Checked": "False",
+                                    "State": "Default",
+                                    "Size": "md"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 8
+                                  },
+                                  "size": [
+                                    255,
+                                    18
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Content panel",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 20,
+                            "padding": [
+                              20,
+                              20,
+                              20,
+                              20
+                            ]
+                          },
+                          "size": [
+                            622,
+                            465
+                          ],
+                          "style": {
+                            "fill": "#ffffff",
+                            "stroke": "#e4e4e7",
+                            "radius": 8
+                          },
+                          "children": [
+                            {
+                              "name": "Section heading",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "align": "CENTER",
+                                "justify": "SPACE_BETWEEN"
+                              },
+                              "size": [
+                                582,
+                                24
+                              ],
+                              "children": [
+                                {
+                                  "name": "Title",
+                                  "type": "TEXT",
+                                  "text": "Discussion",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 18,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                {
+                                  "name": "Context",
+                                  "type": "TEXT",
+                                  "text": "2 comments",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Comments",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "column",
+                                "gap": 22
+                              },
+                              "size": [
+                                582,
+                                167
+                              ],
+                              "children": [
+                                {
+                                  "name": "Comment",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 10
+                                  },
+                                  "size": [
+                                    582,
+                                    84
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Person",
+                                      "type": "FRAME",
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 8,
+                                        "align": "CENTER"
+                                      },
+                                      "size": [
+                                        24,
+                                        24
+                                      ],
+                                      "children": [
+                                        {
+                                          "name": "Avatar",
+                                          "type": "INSTANCE",
+                                          "component": "Avatar",
+                                          "properties": {
+                                            "Status dot": false,
+                                            "Initials": "NW",
+                                            "Content": "Initials",
+                                            "Size": "sm"
+                                          },
+                                          "layout": {
+                                            "direction": "row",
+                                            "align": "CENTER",
+                                            "justify": "CENTER"
+                                          },
+                                          "size": [
+                                            24,
+                                            24
+                                          ],
+                                          "style": {
+                                            "fill": "#e8f4f0",
+                                            "radius": 999
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Comment detail",
+                                      "type": "FRAME",
+                                      "layout": {
+                                        "direction": "column",
+                                        "gap": 7
+                                      },
+                                      "size": [
+                                        548,
+                                        84
+                                      ],
+                                      "children": [
+                                        {
+                                          "name": "Author",
+                                          "type": "FRAME",
+                                          "layout": {
+                                            "direction": "row",
+                                            "justify": "SPACE_BETWEEN"
+                                          },
+                                          "size": [
+                                            548,
+                                            18
+                                          ],
+                                          "children": [
+                                            {
+                                              "name": "Name",
+                                              "type": "TEXT",
+                                              "text": "Noah Williams",
+                                              "style": {
+                                                "fill": "#000000",
+                                                "fontSize": 13,
+                                                "fontWeight": 600
+                                              }
+                                            },
+                                            {
+                                              "name": "Time",
+                                              "type": "TEXT",
+                                              "text": "Today, 09:12",
+                                              "style": {
+                                                "fill": "#71717a",
+                                                "fontSize": 12,
+                                                "fontWeight": 400
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Comment body",
+                                          "type": "TEXT",
+                                          "text": "Ready for a look, @Maya. Desktop and keyboard states are in place. Could you check the spacing on the mobile version?",
+                                          "style": {
+                                            "fill": "#000000",
+                                            "fontSize": 13,
+                                            "fontWeight": 400
+                                          }
+                                        },
+                                        {
+                                          "name": "Link",
+                                          "type": "TEXT",
+                                          "text": "View header preview ↗",
+                                          "style": {
+                                            "fill": "#15796f",
+                                            "fontSize": 12,
+                                            "fontWeight": 500
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Comment",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 10
+                                  },
+                                  "size": [
+                                    582,
+                                    61
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Person",
+                                      "type": "FRAME",
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 8,
+                                        "align": "CENTER"
+                                      },
+                                      "size": [
+                                        24,
+                                        24
+                                      ],
+                                      "children": [
+                                        {
+                                          "name": "Avatar",
+                                          "type": "INSTANCE",
+                                          "component": "Avatar",
+                                          "properties": {
+                                            "Status dot": false,
+                                            "Initials": "MC",
+                                            "Content": "Initials",
+                                            "Size": "sm"
+                                          },
+                                          "layout": {
+                                            "direction": "row",
+                                            "align": "CENTER",
+                                            "justify": "CENTER"
+                                          },
+                                          "size": [
+                                            24,
+                                            24
+                                          ],
+                                          "style": {
+                                            "fill": "#e8f4f0",
+                                            "radius": 999
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Comment detail",
+                                      "type": "FRAME",
+                                      "layout": {
+                                        "direction": "column",
+                                        "gap": 7
+                                      },
+                                      "size": [
+                                        548,
+                                        61
+                                      ],
+                                      "children": [
+                                        {
+                                          "name": "Author",
+                                          "type": "FRAME",
+                                          "layout": {
+                                            "direction": "row",
+                                            "justify": "SPACE_BETWEEN"
+                                          },
+                                          "size": [
+                                            548,
+                                            18
+                                          ],
+                                          "children": [
+                                            {
+                                              "name": "Name",
+                                              "type": "TEXT",
+                                              "text": "Maya Chen",
+                                              "style": {
+                                                "fill": "#000000",
+                                                "fontSize": 13,
+                                                "fontWeight": 600
+                                              }
+                                            },
+                                            {
+                                              "name": "Time",
+                                              "type": "TEXT",
+                                              "text": "Today, 09:28",
+                                              "style": {
+                                                "fill": "#71717a",
+                                                "fontSize": 12,
+                                                "fontWeight": 400
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Comment body",
+                                          "type": "TEXT",
+                                          "text": "Thanks Noah! I’ll review the two breakpoints this morning so we can move on to the menu.",
+                                          "style": {
+                                            "fill": "#000000",
+                                            "fontSize": 13,
+                                            "fontWeight": 400
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Comment composer",
+                              "type": "INSTANCE",
+                              "component": "Textarea",
+                              "properties": {
+                                "Counter": false,
+                                "Value": "Share an update or mention a teammate…",
+                                "Label": "Add a comment",
+                                "State": "Default"
+                              },
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                582,
+                                138
+                              ]
+                            },
+                            {
+                              "name": "Comment actions",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "justify": "MAX"
+                              },
+                              "size": [
+                                582,
+                                36
+                              ],
+                              "children": [
+                                {
+                                  "name": "Action",
+                                  "type": "INSTANCE",
+                                  "component": "Button",
+                                  "properties": {
+                                    "Trailing icon": false,
+                                    "Leading icon": false,
+                                    "Label": "Post comment",
+                                    "Variant": "Primary",
+                                    "Size": "md",
+                                    "State": "Default"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 8,
+                                    "padding": [
+                                      0,
+                                      14,
+                                      0,
+                                      14
+                                    ],
+                                    "align": "CENTER",
+                                    "justify": "CENTER"
+                                  },
+                                  "size": [
+                                    118,
+                                    36
+                                  ],
+                                  "style": {
+                                    "fill": "#15796f",
+                                    "radius": 8
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Task sidebar",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 16
+                      },
+                      "size": [
+                        276,
+                        712
+                      ],
+                      "children": [
+                        {
+                          "name": "Content panel",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 20,
+                            "padding": [
+                              20,
+                              20,
+                              20,
+                              20
+                            ]
+                          },
+                          "size": [
+                            276,
+                            532
+                          ],
+                          "style": {
+                            "fill": "#ffffff",
+                            "stroke": "#e4e4e7",
+                            "radius": 8
+                          },
+                          "children": [
+                            {
+                              "name": "Section heading",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "align": "CENTER",
+                                "justify": "SPACE_BETWEEN"
+                              },
+                              "size": [
+                                236,
+                                24
+                              ],
+                              "children": [
+                                {
+                                  "name": "Title",
+                                  "type": "TEXT",
+                                  "text": "Details",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 18,
+                                    "fontWeight": 600
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Task property",
+                              "type": "INSTANCE",
+                              "component": "Select trigger",
+                              "properties": {
+                                "Label": "Status",
+                                "Type": "Single",
+                                "State": "Default"
+                              },
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                236,
+                                58
+                              ]
+                            },
+                            {
+                              "name": "Task property",
+                              "type": "INSTANCE",
+                              "component": "Select trigger",
+                              "properties": {
+                                "Label": "Assignee",
+                                "Type": "Single",
+                                "State": "Default"
+                              },
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                236,
+                                58
+                              ]
+                            },
+                            {
+                              "name": "Task property",
+                              "type": "INSTANCE",
+                              "component": "Select trigger",
+                              "properties": {
+                                "Label": "Priority",
+                                "Type": "Single",
+                                "State": "Default"
+                              },
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                236,
+                                58
+                              ]
+                            },
+                            {
+                              "name": "Task property",
+                              "type": "INSTANCE",
+                              "component": "Select trigger",
+                              "properties": {
+                                "Label": "Sprint",
+                                "Type": "Single",
+                                "State": "Default"
+                              },
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                236,
+                                58
+                              ]
+                            },
+                            {
+                              "name": "Task property",
+                              "type": "INSTANCE",
+                              "component": "Select trigger",
+                              "properties": {
+                                "Label": "Estimate",
+                                "Type": "Single",
+                                "State": "Default"
+                              },
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                236,
+                                58
+                              ]
+                            },
+                            {
+                              "name": "Due date",
+                              "type": "INSTANCE",
+                              "component": "Date field",
+                              "properties": {
+                                "Type": "Single",
+                                "State": "Filled"
+                              },
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                236,
+                                58
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Content panel",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 20,
+                            "padding": [
+                              20,
+                              20,
+                              20,
+                              20
+                            ]
+                          },
+                          "size": [
+                            276,
+                            164
+                          ],
+                          "style": {
+                            "fill": "#ffffff",
+                            "stroke": "#e4e4e7",
+                            "radius": 8
+                          },
+                          "children": [
+                            {
+                              "name": "Section heading",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "align": "CENTER",
+                                "justify": "SPACE_BETWEEN"
+                              },
+                              "size": [
+                                236,
+                                24
+                              ],
+                              "children": [
+                                {
+                                  "name": "Title",
+                                  "type": "TEXT",
+                                  "text": "Activity",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 18,
+                                    "fontWeight": 600
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Task history",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "column",
+                                "gap": 16
+                              },
+                              "size": [
+                                236,
+                                80
+                              ],
+                              "children": [
+                                {
+                                  "name": "Status activity",
+                                  "type": "TEXT",
+                                  "text": "Noah moved this task from In progress to In review. Today at 09:10",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Creation activity",
+                                  "type": "TEXT",
+                                  "text": "Maya added this task to Sprint 04. 12 Oct at 10:30",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tokens": {
+    "colours": [
+      {
+        "value": "#71717a",
+        "uses": 189
+      },
+      {
+        "value": "#ffffff",
+        "uses": 169
+      },
+      {
+        "value": "#000000",
+        "uses": 139
+      },
+      {
+        "value": "#e8f4f0",
+        "uses": 85
+      },
+      {
+        "value": "#fafafa",
+        "uses": 35
+      },
+      {
+        "value": "#15796f",
+        "uses": 32
+      },
+      {
+        "value": "#f0f3f1",
+        "uses": 32
+      },
+      {
+        "value": "#20332e",
+        "uses": 21
+      },
+      {
+        "value": "#718079",
+        "uses": 21
+      },
+      {
+        "value": "#fff4df",
+        "uses": 16
+      },
+      {
+        "value": "#e1e8e4",
+        "uses": 14
+      },
+      {
+        "value": "#11665d",
+        "uses": 11
+      },
+      {
+        "value": "#f8faf9",
+        "uses": 9
+      },
+      {
+        "value": "#f1f5f3",
+        "uses": 9
+      },
+      {
+        "value": "#edf6ee",
+        "uses": 9
+      },
+      {
+        "value": "#f4f4f5",
+        "uses": 8
+      },
+      {
+        "value": "#a8cbc0",
+        "uses": 2
+      },
+      {
+        "value": "#9b6415",
+        "uses": 1
+      },
+      {
+        "value": "#b2bdb7",
+        "uses": 1
+      },
+      {
+        "value": "#cbdcd4",
+        "uses": 1
+      },
+      {
+        "value": "#bbc6c0",
+        "uses": 1
+      },
+      {
+        "value": "#c59a4e",
+        "uses": 1
+      },
+      {
+        "value": "#7daf9d",
+        "uses": 1
+      }
+    ],
+    "radii": [
+      {
+        "value": 999,
+        "uses": 124
+      },
+      {
+        "value": 8,
+        "uses": 95
+      },
+      {
+        "value": 6,
+        "uses": 72
+      },
+      {
+        "value": 5,
+        "uses": 72
+      },
+      {
+        "value": 4,
+        "uses": 31
+      },
+      {
+        "value": 9,
+        "uses": 9
+      },
+      {
+        "value": 10,
+        "uses": 5
+      }
+    ],
+    "fontSizes": [
+      {
+        "value": 12,
+        "uses": 167
+      },
+      {
+        "value": 13,
+        "uses": 123
+      },
+      {
+        "value": 18,
+        "uses": 32
+      },
+      {
+        "value": 11,
+        "uses": 22
+      },
+      {
+        "value": 14,
+        "uses": 21
+      },
+      {
+        "value": 25,
+        "uses": 13
+      },
+      {
+        "value": 28,
+        "uses": 9
+      }
+    ]
+  }
+}

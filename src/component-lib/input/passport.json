@@ -1,0 +1,542 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Input",
+    "folder": "input",
+    "exports": [
+      "Input",
+      "OtpInput"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/count.ts",
+      "core/index.ts",
+      "core/otp.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Input.tsx",
+      "react/OtpInput.tsx",
+      "react/dom.ts",
+      "react/icons.tsx",
+      "react/locale.ts",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:50ff11f4a9255189704b330123d35d4f4e3550bd4cf2eed2d0735c92ba876b03"
+  },
+  "props": [
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "autoComplete",
+      "type": "other",
+      "typeText": "HTMLInputAutoCompleteAttribute | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "autoFocus",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<InputSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "clearable",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "A button that empties the field. Default false.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "defaultChecked",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "default": "",
+      "origin": "derived"
+    },
+    {
+      "name": "description",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "A hint under the label, linked as the field's description.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "error",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Message below the field; also marks it invalid.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "form",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "groups",
+      "type": "other",
+      "typeText": "number[] | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Group sizes with a separator between them, e.g. `[3, 3]`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "inputMode",
+      "type": "enum",
+      "values": [
+        "decimal",
+        "email",
+        "none",
+        "numeric",
+        "search",
+        "tel",
+        "text",
+        "url"
+      ],
+      "typeText": "'none' | 'search' | 'email' | 'tel' | 'text' | 'url' | 'numeric' | 'decimal' | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "label",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "The field's name, shown above it and linked to it.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "leading",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Content before the text, e.g. an icon or \"https://\".",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "length",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 6,
+      "origin": "derived",
+      "description": "Number of characters. Default 6.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<InputLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "mask",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Show dots instead of the characters.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "max",
+      "type": "other",
+      "typeText": "string | number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "maxLength",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "min",
+      "type": "other",
+      "typeText": "string | number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "minLength",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "mode",
+      "type": "enum",
+      "values": [
+        "alphabetic",
+        "alphanumeric",
+        "numeric"
+      ],
+      "typeText": "OtpMode | undefined",
+      "required": false,
+      "default": "numeric",
+      "origin": "derived",
+      "description": "Default `numeric`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "onComplete",
+      "type": "function",
+      "signature": "((value: string) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Every cell is filled.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onValueChange",
+      "type": "function",
+      "signature": "((value: string) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The new text on every change. The native `onChange` fires as well.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "pattern",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<HTMLInputElement> | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The `<input>` element.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "revealPassword",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "For `type=\"password\"`, a button that shows the text. Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "role",
+      "type": "other",
+      "typeText": "AriaRole | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "showCount",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "A character counter under the field; shows `count / maxLength` when `maxLength` is set.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "sm"
+      ],
+      "typeText": "FieldSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "step",
+      "type": "other",
+      "typeText": "string | number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "trailing",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Content after the text, e.g. a unit such as \"kg\".",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "type",
+      "type": "other",
+      "typeText": "HTMLInputTypeAttribute | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "uppercase",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Turn letters into capitals as they are typed.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "InputHTMLAttributes<HTMLInputElement>",
+      "omitted": [
+        "defaultValue",
+        "inputMode",
+        "maxLength",
+        "minLength",
+        "pattern",
+        "prefix",
+        "size",
+        "type",
+        "value"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onComplete",
+      "signature": "((value: string) => void) | undefined"
+    },
+    {
+      "name": "onValueChange",
+      "signature": "((value: string) => void) | undefined"
+    }
+  ],
+  "slots": [
+    "root",
+    "label",
+    "control",
+    "input",
+    "description",
+    "error",
+    "count",
+    "cells",
+    "cell",
+    "separator"
+  ],
+  "states": [
+    {
+      "attr": "data-active"
+    },
+    {
+      "attr": "data-cell"
+    },
+    {
+      "attr": "data-disabled"
+    },
+    {
+      "attr": "data-filled"
+    },
+    {
+      "attr": "data-focused"
+    },
+    {
+      "attr": "data-invalid"
+    },
+    {
+      "attr": "data-over"
+    },
+    {
+      "attr": "data-readonly"
+    },
+    {
+      "attr": "data-required"
+    },
+    {
+      "attr": "data-side",
+      "values": [
+        "leading",
+        "trailing"
+      ]
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "lg",
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 18,
+    "propsDescribed": 16,
+    "describedPct": 89,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

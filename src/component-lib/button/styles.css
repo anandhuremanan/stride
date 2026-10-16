@@ -1,0 +1,232 @@
+/*
+ * Button styles.
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (set them on :root to theme every component at once) and fall back to the
+ * same default palette otherwise. Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.bt-root {
+  --bt-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --bt-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --bt-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --bt-hover: var(--gbs-hover, var(--dg-hover, light-dark(#f4f4f5, #1f1f23)));
+  --bt-subtle: var(--gbs-subtle, light-dark(#f4f4f5, #1c1c20));
+  --bt-accent: var(--gbs-accent, var(--dg-accent, light-dark(#2563eb, #60a5fa)));
+  --bt-accent-fg: var(--gbs-accent-fg, var(--dg-accent-fg, light-dark(#ffffff, #0b1220)));
+  --bt-danger: var(--gbs-danger, var(--dg-danger, light-dark(#dc2626, #f87171)));
+  --bt-danger-fg: var(--gbs-danger-fg, light-dark(#ffffff, #1c0606));
+  --bt-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --bt-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --bt-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --bt-height: 36px;
+  --bt-px: 14px;
+  --bt-gap: 8px;
+
+  /* Per variant. */
+  --bt-fill: var(--bt-accent);
+  --bt-fill-hover: color-mix(in oklab, var(--bt-accent), var(--bt-fg) 12%);
+  --bt-ink: var(--bt-accent-fg);
+  --bt-line: var(--bt-accent);
+
+  color-scheme: inherit;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  height: var(--bt-height);
+  padding: 0 var(--bt-px);
+  border: 1px solid var(--bt-line);
+  border-radius: var(--bt-radius);
+  background: var(--bt-fill);
+  color: var(--bt-ink);
+  font: inherit;
+  font-size: var(--bt-font-size);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease,
+    scale 120ms ease;
+}
+
+:where(.dark, [data-theme="dark"]) .bt-root {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .bt-root {
+  color-scheme: light;
+}
+
+:where(.bt-root) *,
+:where(.bt-root) *::before,
+:where(.bt-root) *::after {
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------ variants */
+
+.bt-root:where([data-variant="secondary"]) {
+  --bt-fill: var(--bt-subtle);
+  --bt-fill-hover: color-mix(in oklab, var(--bt-subtle), var(--bt-fg) 8%);
+  --bt-ink: var(--bt-fg);
+  --bt-line: transparent;
+}
+.bt-root:where([data-variant="outline"]) {
+  --bt-fill: var(--bt-bg);
+  --bt-fill-hover: var(--bt-hover);
+  --bt-ink: var(--bt-fg);
+  --bt-line: var(--bt-border);
+}
+.bt-root:where([data-variant="ghost"]) {
+  --bt-fill: transparent;
+  --bt-fill-hover: var(--bt-hover);
+  --bt-ink: var(--bt-fg);
+  --bt-line: transparent;
+}
+.bt-root:where([data-variant="danger"]) {
+  --bt-fill: var(--bt-danger);
+  --bt-fill-hover: color-mix(in oklab, var(--bt-danger), var(--bt-fg) 12%);
+  --bt-ink: var(--bt-danger-fg);
+  --bt-line: var(--bt-danger);
+}
+.bt-root:where([data-variant="link"]) {
+  --bt-fill: transparent;
+  --bt-fill-hover: transparent;
+  --bt-ink: var(--bt-accent);
+  --bt-line: transparent;
+  --bt-px: 0px;
+  height: auto;
+  text-underline-offset: 3px;
+}
+.bt-root:where([data-variant="link"]):hover:not([aria-disabled="true"], :disabled) {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------- sizes */
+
+.bt-root:where([data-size="sm"]) {
+  --bt-height: 30px;
+  --bt-px: 10px;
+  --bt-gap: 6px;
+  --bt-font-size: 12px;
+}
+.bt-root:where([data-size="lg"]) {
+  --bt-height: 44px;
+  --bt-px: 18px;
+  --bt-gap: 10px;
+  --bt-font-size: 14px;
+}
+
+/* -------------------------------------------------------------- states */
+
+.bt-root:hover:not([aria-disabled="true"], :disabled) {
+  background: var(--bt-fill-hover);
+}
+.bt-root:active:not([aria-disabled="true"], :disabled) {
+  scale: 0.98;
+}
+.bt-root:focus-visible {
+  outline: 2px solid var(--bt-focus);
+  outline-offset: 2px;
+}
+.bt-root:disabled,
+.bt-root[aria-disabled="true"]:not([data-busy]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.bt-root[data-busy] {
+  cursor: progress;
+}
+
+.bt-root:where([data-icon-only]) {
+  width: var(--bt-height);
+  padding: 0;
+}
+.bt-root:where([data-full-width]) {
+  width: 100%;
+}
+
+/* ------------------------------------------------------------- content */
+
+.bt-content,
+.bt-spinner {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bt-gap);
+  min-width: 0;
+}
+/* The label keeps its space while the spinner sits on top… */
+.bt-content[data-hidden] {
+  visibility: hidden;
+}
+/* …unless loading text replaces it. */
+.bt-root[data-loading-text] .bt-content {
+  display: none;
+}
+
+.bt-icon {
+  display: inline-flex;
+  flex: none;
+}
+.bt-icon > svg {
+  width: 1.15em;
+  height: 1.15em;
+}
+
+.bt-spinner-ring {
+  width: 1.15em;
+  height: 1.15em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 30 100;
+  animation: bt-rotate 0.8s linear infinite;
+}
+@keyframes bt-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bt-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bt-root {
+    transition: none;
+  }
+  .bt-root:active:not([aria-disabled="true"], :disabled) {
+    scale: none;
+  }
+  .bt-spinner-ring {
+    animation-duration: 2.4s;
+  }
+}
+
+@media (forced-colors: active) {
+  .bt-root {
+    border-color: ButtonText;
+  }
+}

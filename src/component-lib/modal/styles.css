@@ -1,0 +1,241 @@
+/*
+ * Modal styles.
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (set them on :root to theme every component at once) and fall back to the
+ * same default palette otherwise. Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.md-root {
+  --md-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --md-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --md-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --md-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --md-hover: var(--gbs-hover, var(--dg-hover, light-dark(#f4f4f5, #1f1f23)));
+  --md-footer-bg: var(--gbs-header-bg, var(--dg-header-bg, light-dark(#fafafa, #111114)));
+  --md-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --md-shadow: 0 24px 64px -16px light-dark(rgb(0 0 0 / 0.3), rgb(0 0 0 / 0.8));
+  --md-backdrop: var(--gbs-backdrop, light-dark(rgb(9 9 11 / 0.45), rgb(0 0 0 / 0.65)));
+  --md-radius: var(--gbs-radius, var(--dg-radius, 12px));
+  --md-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --md-width: 520px;
+  --md-gutter: 16px;
+  --md-px: 20px;
+  --md-duration: 200ms;
+  --md-enter: 0 8px;
+
+  color-scheme: inherit;
+  box-sizing: border-box;
+  width: min(var(--md-width), 100vw - 2 * var(--md-gutter));
+  max-width: none;
+  max-height: calc(100dvh - 2 * var(--md-gutter));
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--md-border);
+  border-radius: var(--md-radius);
+  background: var(--md-bg);
+  color: var(--md-fg);
+  box-shadow: var(--md-shadow);
+  font-size: var(--md-font-size);
+  line-height: 1.5;
+  opacity: 0;
+  translate: var(--md-enter);
+  transition:
+    opacity var(--md-duration) ease,
+    translate var(--md-duration) ease,
+    overlay var(--md-duration) allow-discrete,
+    display var(--md-duration) allow-discrete;
+}
+.md-root[open] {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  translate: 0 0;
+}
+@starting-style {
+  .md-root[open] {
+    opacity: 0;
+    translate: var(--md-enter);
+  }
+}
+
+.md-root::backdrop {
+  background: var(--md-backdrop, rgb(9 9 11 / 0.45));
+  opacity: 0;
+  transition:
+    opacity var(--md-duration) ease,
+    overlay var(--md-duration) allow-discrete,
+    display var(--md-duration) allow-discrete;
+}
+.md-root[open]::backdrop {
+  opacity: 1;
+}
+@starting-style {
+  .md-root[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+:where(.dark, [data-theme="dark"]) .md-root {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .md-root {
+  color-scheme: light;
+}
+
+:where(.md-root) *,
+:where(.md-root) *::before,
+:where(.md-root) *::after {
+  box-sizing: border-box;
+}
+
+/* The page behind an open modal doesn't scroll. */
+:root:has(.md-root[open]) {
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------- sizes */
+
+.md-root:where([data-size="sm"]) {
+  --md-width: 400px;
+}
+.md-root:where([data-size="lg"]) {
+  --md-width: 720px;
+}
+.md-root:where([data-size="xl"]) {
+  --md-width: 960px;
+}
+.md-root:where([data-size="full"]) {
+  --md-width: 100vw;
+  --md-gutter: 0px;
+  height: 100dvh;
+  max-height: 100dvh;
+  border: 0;
+  border-radius: 0;
+}
+
+/* ----------------------------------------------------------- placement */
+
+.md-root:where([data-placement="top"]) {
+  margin-top: min(10vh, 80px);
+}
+
+.md-root:is(:where([data-placement="left"]), :where([data-placement="right"])) {
+  --md-gutter: 0px;
+  height: 100dvh;
+  max-height: 100dvh;
+  border-block: 0;
+  border-radius: 0;
+}
+.md-root:where([data-placement="left"]) {
+  --md-enter: -100% 0;
+  margin: 0 auto 0 0;
+  border-inline-start: 0;
+}
+.md-root:where([data-placement="right"]) {
+  --md-enter: 100% 0;
+  margin: 0 0 0 auto;
+  border-inline-end: 0;
+}
+.md-root:where([data-placement="bottom"]) {
+  --md-enter: 0 100%;
+  width: 100vw;
+  max-height: min(var(--md-width), 90dvh);
+  margin: auto 0 0;
+  border-bottom: 0;
+  border-radius: var(--md-radius) var(--md-radius) 0 0;
+}
+
+/* -------------------------------------------------------------- layout */
+
+.md-header {
+  display: flex;
+  flex: none;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 12px 12px var(--md-px);
+}
+.md-heading {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.md-title {
+  margin: 0;
+  font-size: 1.15em;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.md-description {
+  margin: 4px 0 0;
+  color: var(--md-muted);
+}
+.md-close {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-top: -4px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--md-muted);
+  cursor: pointer;
+}
+.md-close:hover {
+  background: var(--md-hover);
+  color: var(--md-fg);
+}
+.md-close:focus-visible {
+  outline: 2px solid var(--md-focus);
+  outline-offset: 1px;
+}
+
+.md-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 0 var(--md-px) 20px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: var(--gbs-scrollbar-width, thin);
+  scrollbar-color: var(--gbs-scrollbar-thumb, light-dark(#c4c4ca, #3f3f46))
+    var(--gbs-scrollbar-track, transparent);
+}
+.md-body:first-child {
+  padding-top: 20px;
+}
+.md-body:focus-visible {
+  outline: 2px solid var(--md-focus);
+  outline-offset: -2px;
+}
+
+.md-footer {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px var(--md-px);
+  border-top: 1px solid var(--md-border);
+  background: var(--md-footer-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-root,
+  .md-root::backdrop {
+    --md-enter: 0 0;
+    transition-duration: 0s;
+  }
+}
+
+@media (forced-colors: active) {
+  .md-root {
+    border: 1px solid CanvasText;
+  }
+}

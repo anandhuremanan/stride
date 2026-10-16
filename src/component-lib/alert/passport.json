@@ -1,0 +1,250 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Alert",
+    "folder": "alert",
+    "exports": [
+      "Alert"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/index.ts",
+      "core/live.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Alert.tsx",
+      "react/icons.tsx",
+      "react/locale.ts",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:1d3329cee22213d4fb81062f401b481902600b2a2b3a81edf12c6738934f6923"
+  },
+  "props": [
+    {
+      "name": "actions",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Buttons under the message: \"Try again\", \"Go to billing\".",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "children",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<AlertSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "description",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "The message. `children` works too, and is the better place for links.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "icon",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Replace the variant's glyph, or pass `false` for none.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<AlertLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "onDismiss",
+      "type": "function",
+      "signature": "(() => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Show a close button. The alert does not hide itself; remove it in the handler.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<HTMLDivElement> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "md",
+        "sm"
+      ],
+      "typeText": "AlertSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md`. `sm` drops the title to one line of text.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "title",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "variant",
+      "type": "enum",
+      "values": [
+        "danger",
+        "info",
+        "neutral",
+        "success",
+        "warning"
+      ],
+      "typeText": "AlertVariant | undefined",
+      "required": false,
+      "default": "info",
+      "origin": "derived",
+      "description": "Default `info`.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "HTMLAttributes<HTMLDivElement>",
+      "omitted": [
+        "role",
+        "title"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onDismiss",
+      "signature": "(() => void) | undefined"
+    }
+  ],
+  "slots": [
+    "root",
+    "icon",
+    "content",
+    "title",
+    "description",
+    "actions",
+    "dismiss"
+  ],
+  "states": [
+    {
+      "attr": "data-size",
+      "values": [
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-variant",
+      "values": [
+        "danger",
+        "neutral",
+        "success",
+        "warning"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 8,
+    "propsDescribed": 6,
+    "describedPct": 75,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

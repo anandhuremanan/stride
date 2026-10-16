@@ -1,0 +1,345 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Card",
+    "folder": "card",
+    "exports": [
+      "Card",
+      "CardBody",
+      "CardFooter",
+      "CardHeader",
+      "Stat"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/index.ts",
+      "core/trend.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Card.tsx",
+      "react/Stat.tsx",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:5b40d5a873d8c4bd0ea3423f5a9b0ca06f2515aa1ea45149d36be3b2b4aa63e1"
+  },
+  "props": [
+    {
+      "name": "actions",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Buttons or a menu, aligned to the end of the header.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "children",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<CardSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "description",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "A line under the heading, for context the title cannot carry.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "help",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "A note under the figure.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "href",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Makes the whole card a link. The card becomes an `<a>`, so keep any other\ninteractive content out of it — nested links and buttons are not valid.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "icon",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "An icon beside the figure, to identify the metric at a glance.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Lifts the card on hover, for a card that is clickable by other means.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "label",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": true,
+      "origin": "derived",
+      "description": "What the figure is. Always visible — a number alone means nothing.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Shows placeholder bars instead of the figure.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "padding",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "none",
+        "sm"
+      ],
+      "typeText": "CardPadding | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Padding applied to the header, body and footer. Default `md`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<HTMLElement> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "rel",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Passed through when `href` is set. Worth setting to\n`noopener noreferrer` on any card linking off-site.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "role",
+      "type": "other",
+      "typeText": "AriaRole | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "target",
+      "type": "other",
+      "typeText": "import(\"react\").HTMLAttributeAnchorTarget | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Passed through when `href` is set.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "title",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "The heading. Wrap it in your own `h2`/`h3` to set the level.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "trend",
+      "type": "other",
+      "typeText": "StatTrend | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The change beside the figure: direction, a formatted label, and\nwhether down is the good outcome. Left out, no arrow is shown.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "value",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": true,
+      "origin": "derived"
+    },
+    {
+      "name": "variant",
+      "type": "enum",
+      "values": [
+        "elevated",
+        "outlined",
+        "plain"
+      ],
+      "typeText": "CardVariant | undefined",
+      "required": false,
+      "default": "outlined",
+      "origin": "derived",
+      "description": "Default `outlined`.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "HTMLAttributes<HTMLElement>",
+      "omitted": [
+        "title"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [],
+  "slots": [
+    "root",
+    "header",
+    "title",
+    "description",
+    "actions",
+    "body",
+    "footer",
+    "label",
+    "value",
+    "trend",
+    "help",
+    "icon"
+  ],
+  "states": [
+    {
+      "attr": "data-direction"
+    },
+    {
+      "attr": "data-interactive"
+    },
+    {
+      "attr": "data-loading"
+    },
+    {
+      "attr": "data-padding",
+      "values": [
+        "lg",
+        "none",
+        "padding",
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-positive",
+      "values": [
+        "false",
+        "true"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-variant",
+      "values": [
+        "elevated",
+        "outlined",
+        "plain",
+        "variant"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 16,
+    "propsDescribed": 14,
+    "describedPct": 88,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

@@ -1,0 +1,158 @@
+/*
+ * Textarea styles.
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (set them on :root to theme every component at once) and fall back to the
+ * same default palette otherwise. Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.ta-root {
+  --ta-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --ta-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --ta-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --ta-input-bg: var(--gbs-input-bg, var(--dg-input-bg, light-dark(#ffffff, #121216)));
+  --ta-readonly-bg: var(--gbs-readonly-bg, light-dark(#fafafa, #0e0e12));
+  --ta-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --ta-danger: var(--gbs-danger, var(--dg-danger, light-dark(#dc2626, #f87171)));
+  --ta-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --ta-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --ta-px: 10px;
+  --ta-py: 8px;
+
+  color-scheme: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+  font-size: var(--ta-font-size);
+  line-height: 1.4;
+  color: var(--ta-fg);
+}
+
+:where(.dark, [data-theme="dark"]) .ta-root {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .ta-root {
+  color-scheme: light;
+}
+
+:where(.ta-root) *,
+:where(.ta-root) *::before,
+:where(.ta-root) *::after {
+  box-sizing: border-box;
+}
+
+.ta-root:where([data-size="sm"]) {
+  --ta-font-size: 12px;
+  --ta-px: 8px;
+  --ta-py: 6px;
+}
+.ta-root:where([data-size="lg"]) {
+  --ta-font-size: 14px;
+  --ta-px: 12px;
+  --ta-py: 10px;
+}
+
+.ta-label {
+  font-weight: 500;
+}
+.ta-label[data-required]::after {
+  content: " *";
+  color: var(--ta-danger);
+}
+
+.ta-input {
+  display: block;
+  width: 100%;
+  min-height: calc(1lh + 2 * var(--ta-py) + 2px);
+  margin: 0;
+  padding: var(--ta-py) var(--ta-px);
+  border: 1px solid var(--ta-border);
+  border-radius: var(--ta-radius);
+  background: var(--ta-input-bg);
+  color: inherit;
+  font: inherit;
+  line-height: 1.5;
+}
+.ta-input::placeholder {
+  color: var(--ta-muted);
+}
+.ta-input:hover:not(:disabled) {
+  border-color: color-mix(in oklab, var(--ta-border), var(--ta-fg) 25%);
+}
+.ta-input:focus-visible {
+  outline: 2px solid var(--ta-focus);
+  outline-offset: -1px;
+}
+.ta-input[data-invalid] {
+  border-color: var(--ta-danger);
+  outline-color: var(--ta-danger);
+}
+.ta-input:read-only {
+  background: var(--ta-readonly-bg);
+}
+.ta-input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ta-input:where([data-resize="none"]) {
+  resize: none;
+}
+.ta-input:where([data-resize="vertical"]) {
+  resize: vertical;
+}
+.ta-input:where([data-resize="horizontal"]) {
+  resize: horizontal;
+}
+.ta-input:where([data-resize="both"]) {
+  resize: both;
+}
+
+/*
+ * Auto-resize in CSS where supported. The row limits come from the
+ * component; `--ta-max-rows: none` makes max-height invalid, which means no limit.
+ */
+@supports (field-sizing: content) {
+  .ta-input:where([data-autoresize]) {
+    field-sizing: content;
+    min-height: calc(var(--ta-min-rows, 3) * 1lh + 2 * var(--ta-py) + 2px);
+    max-height: calc(var(--ta-max-rows) * 1lh + 2 * var(--ta-py) + 2px);
+  }
+}
+
+.ta-footer {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.ta-description {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--ta-muted);
+  font-size: 0.92em;
+}
+.ta-count {
+  flex: none;
+  margin-inline-start: auto;
+  color: var(--ta-muted);
+  font-size: 0.92em;
+  font-variant-numeric: tabular-nums;
+}
+.ta-count[data-over] {
+  color: var(--ta-danger);
+}
+.ta-error {
+  color: var(--ta-danger);
+  font-size: 0.92em;
+}
+
+@media (forced-colors: active) {
+  .ta-input:focus-visible {
+    outline-color: Highlight;
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Button",
+    "folder": "button",
+    "exports": [
+      "Button"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/index.ts",
+      "core/state.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Button.tsx",
+      "react/locale.ts",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:8d6f65f9bdb461e0ce0c6e7fc4850141ca641f9c01e81be60fe826a62ee24669"
+  },
+  "purpose": "Trigger an action. Not for navigation unless `render` supplies a link element.",
+  "props": [
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "autoFocus",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<ButtonSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "form",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "fullWidth",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Fill the width of the container, for forms and narrow screens.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "icon",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "An icon-only button. Give it an `aria-label`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "leading",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Icon before the label.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Show a spinner and ignore clicks, while keeping focus and the button's width.",
+      "descriptionOrigin": "jsdoc",
+      "note": "Managed automatically when `onClick` returns a promise. Setting it manually opts out of that."
+    },
+    {
+      "name": "loadingText",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Text shown next to the spinner while busy, instead of keeping the label.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<ButtonLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "onClick",
+      "type": "function",
+      "signature": "((event: MouseEvent<HTMLElement>) => unknown) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Return a promise to show the loading state until it settles.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<HTMLButtonElement> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "render",
+      "type": "function",
+      "signature": "((props: ButtonRenderProps) => ReactElement) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Render another element with the button's look and behavior, e.g. a router\nlink: `render={(props) => <Link href=\"/billing\" {...props} />}`.",
+      "descriptionOrigin": "jsdoc",
+      "note": "Escape hatch for router links. Changes the rendered element, so composition rules apply to whatever it returns."
+    },
+    {
+      "name": "role",
+      "type": "other",
+      "typeText": "AriaRole | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "sm"
+      ],
+      "typeText": "ButtonSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "trailing",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Icon after the label.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "type",
+      "type": "enum",
+      "values": [
+        "button",
+        "reset",
+        "submit"
+      ],
+      "typeText": "'button' | 'submit' | 'reset' | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "value",
+      "type": "other",
+      "typeText": "string | number | readonly string[] | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "variant",
+      "type": "enum",
+      "values": [
+        "danger",
+        "ghost",
+        "link",
+        "outline",
+        "primary",
+        "secondary"
+      ],
+      "typeText": "ButtonVariant | undefined",
+      "required": false,
+      "default": "primary",
+      "origin": "derived",
+      "description": "Default `primary`.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "ButtonHTMLAttributes<HTMLButtonElement>",
+      "omitted": [
+        "onClick"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onClick",
+      "signature": "((event: MouseEvent<HTMLElement>) => unknown) | undefined"
+    }
+  ],
+  "slots": [
+    "root",
+    "content",
+    "spinner",
+    "icon"
+  ],
+  "states": [
+    {
+      "attr": "data-busy",
+      "values": [
+        "state"
+      ]
+    },
+    {
+      "attr": "data-full-width",
+      "values": [
+        "full"
+      ]
+    },
+    {
+      "attr": "data-hidden"
+    },
+    {
+      "attr": "data-icon-only",
+      "values": [
+        "icon"
+      ]
+    },
+    {
+      "attr": "data-loading-text",
+      "values": [
+        "state"
+      ]
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "lg",
+        "size",
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-variant",
+      "values": [
+        "danger",
+        "ghost",
+        "link",
+        "outline",
+        "secondary",
+        "variant"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [
+      "native <button> semantics, including Enter and Space activation",
+      "disabled state via the native attribute",
+      "focus-visible ring",
+      "the spinner is aria-hidden; loadingText is announced"
+    ],
+    "required": [
+      "aria-label when the button is icon-only (`icon` with no children)",
+      "type=\"submit\" on the button that submits a form; the default is \"button\""
+    ]
+  },
+  "composition": {
+    "mustNotContain": [
+      "Button",
+      "a"
+    ],
+    "notes": "Nesting interactive elements is invalid HTML and traps keyboard focus. Use `render` to change the element instead of wrapping it."
+  },
+  "operations": {},
+  "intentDomains": [
+    "ActionIntent"
+  ],
+  "safeMutations": {
+    "allowed": [
+      "variant",
+      "size",
+      "fullWidth",
+      "leading",
+      "trailing",
+      "icon",
+      "loadingText"
+    ],
+    "forbidden": [
+      "type",
+      "onClick",
+      "render",
+      "loading",
+      "disabled"
+    ],
+    "rationale": "Appearance is safe for an agent to change. `type` and `onClick` change behaviour; `loading` and `disabled` are owned by the component's own async handling."
+  },
+  "examples": [],
+  "coverage": {
+    "propsTotal": 10,
+    "propsDescribed": 10,
+    "describedPct": 100,
+    "authoredSections": [
+      "accessibility",
+      "composition",
+      "intentDomains",
+      "purpose",
+      "safeMutations"
+    ]
+  }
+}

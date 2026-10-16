@@ -1,0 +1,3 @@
+[mcp_servers.grampro]
+command = "npx"
+args = ["-y", "@grampro/kit", "mcp"]

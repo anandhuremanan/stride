@@ -1,0 +1,245 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Breadcrumb",
+    "folder": "breadcrumb",
+    "exports": [
+      "Breadcrumb"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/index.ts",
+      "core/trail.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Breadcrumb.tsx",
+      "react/locale.ts",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:3b7fef8f48d1a1290c25a263d2e92ef5dcb706b1a06899ffe5a4df1cdab663e1"
+  },
+  "props": [
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<BreadcrumbSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "items",
+      "type": "other",
+      "typeText": "readonly BreadcrumbItem[]",
+      "required": true,
+      "origin": "derived",
+      "description": "From the top level to the current page. The last item is the current page.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "itemsAfterCollapse",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 1,
+      "origin": "derived",
+      "description": "Crumbs kept after the collapsed part. Default 1.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "itemsBeforeCollapse",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 1,
+      "origin": "derived",
+      "description": "Crumbs kept before the collapsed part. Default 1.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<BreadcrumbLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "maxItems",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Collapse the middle of the trail when it has more crumbs than this.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "renderLink",
+      "type": "function",
+      "signature": "((props: BreadcrumbLinkProps) => ReactElement) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Draw links with your router, e.g. `(props) => <Link {...props} />`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "role",
+      "type": "other",
+      "typeText": "AriaRole | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "separator",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Between crumbs. Default a chevron.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "sm"
+      ],
+      "typeText": "'sm' | 'md' | 'lg' | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "structuredData",
+      "type": "other",
+      "typeText": "boolean | { baseUrl: string; } | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Add schema.org `BreadcrumbList` JSON-LD for search engines. Pass\n`{ baseUrl }` so relative links become absolute, as search engines require.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "HTMLAttributes<HTMLElement>",
+      "omitted": [
+        "children"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [],
+  "slots": [
+    "item",
+    "ellipsis",
+    "root",
+    "list",
+    "link",
+    "current",
+    "separator"
+  ],
+  "states": [
+    {
+      "attr": "data-index"
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "lg",
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 8,
+    "propsDescribed": 8,
+    "describedPct": 100,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

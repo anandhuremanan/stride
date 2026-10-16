@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../schema/passport-v1.schema.json",
+  "component": "Button",
+  "purpose": "Trigger an action. Not for navigation unless `render` supplies a link element.",
+  "intentDomains": ["ActionIntent"],
+  "accessibility": {
+    "supplied": [
+      "native <button> semantics, including Enter and Space activation",
+      "disabled state via the native attribute",
+      "focus-visible ring",
+      "the spinner is aria-hidden; loadingText is announced"
+    ],
+    "required": [
+      "aria-label when the button is icon-only (`icon` with no children)",
+      "type=\"submit\" on the button that submits a form; the default is \"button\""
+    ]
+  },
+  "composition": {
+    "mustNotContain": ["Button", "a"],
+    "notes": "Nesting interactive elements is invalid HTML and traps keyboard focus. Use `render` to change the element instead of wrapping it."
+  },
+  "safeMutations": {
+    "allowed": ["variant", "size", "fullWidth", "leading", "trailing", "icon", "loadingText"],
+    "forbidden": ["type", "onClick", "render", "loading", "disabled"],
+    "rationale": "Appearance is safe for an agent to change. `type` and `onClick` change behaviour; `loading` and `disabled` are owned by the component's own async handling."
+  },
+  "propNotes": {
+    "render": "Escape hatch for router links. Changes the rendered element, so composition rules apply to whatever it returns.",
+    "loading": "Managed automatically when `onClick` returns a promise. Setting it manually opts out of that."
+  }
+}

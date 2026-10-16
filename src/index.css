@@ -1,0 +1,83 @@
+@import "./component-lib/gbs.css";
+@import "./styles/app.css";
+@import "./styles/pages.css";
+
+/*
+ * Theme. The six --gbs-* values come from design/index.json. Every other
+ * colour in the app is mixed from them, so changing these re-themes it all.
+ */
+:root {
+  --gbs-accent: #15796f;
+  --gbs-fg: #000000;
+  --gbs-bg: #ffffff;
+  --gbs-muted: #71717a;
+  --gbs-font-size: 12px;
+  /*
+   * index.json reports 999px because badges and avatars are the most common
+   * rounded shapes, but the kit reads --gbs-radius for Card and Button, and
+   * the design draws both at 8px. Badges and avatars are round regardless.
+   */
+  --gbs-radius: 8px;
+
+  /* Kit tokens the index does not set, derived from the ones it does. */
+  --gbs-accent-fg: var(--gbs-bg);
+  --gbs-border: color-mix(in oklab, var(--gbs-fg) 10%, var(--gbs-bg));
+  --gbs-hover: color-mix(in oklab, var(--gbs-accent) 10%, var(--gbs-bg));
+  --gbs-focus: var(--gbs-accent);
+
+  /* App surfaces, all tints of the accent on the background. */
+  --app-page: color-mix(in oklab, var(--gbs-accent) 3%, var(--gbs-bg));
+  --app-sidebar: color-mix(in oklab, var(--gbs-accent) 6%, var(--gbs-bg));
+  --app-divider: color-mix(in oklab, var(--gbs-accent) 12%, var(--gbs-bg));
+  --app-accent-soft: color-mix(in oklab, var(--gbs-accent) 10%, var(--gbs-bg));
+  --app-accent-strong: color-mix(
+    in oklab,
+    var(--gbs-accent) 85%,
+    var(--gbs-fg)
+  );
+  --app-heading: color-mix(in oklab, var(--gbs-accent) 25%, var(--gbs-fg));
+  --app-subtle: color-mix(in oklab, var(--gbs-accent) 20%, var(--gbs-muted));
+  --app-column: color-mix(in oklab, var(--gbs-muted) 8%, var(--gbs-bg));
+  --app-chart-ideal: color-mix(in oklab, var(--gbs-muted) 45%, var(--gbs-bg));
+  --app-chart-muted: color-mix(in oklab, var(--gbs-accent) 40%, var(--gbs-bg));
+  --app-warning-text: color-mix(
+    in oklab,
+    var(--gbs-warning, #b45309) 80%,
+    var(--gbs-fg)
+  );
+
+  color-scheme: light;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  font-size: var(--gbs-font-size);
+  line-height: 1.5;
+  color: var(--gbs-fg);
+  background: var(--app-page);
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--app-page);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}

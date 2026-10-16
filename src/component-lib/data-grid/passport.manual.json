@@ -1,0 +1,255 @@
+{
+  "$schema": "../../../schema/passport-v1.schema.json",
+  "component": "DataGrid",
+  "purpose": "Display and operate on tabular data. Virtualized; holds its own sort, filter, search, selection, column and pagination state in an external store exposed through GridApi.",
+  "intentDomains": ["Query", "ActionIntent", "Extraction"],
+
+  "$operationsNote": "Mirrors agent/operations.ts, which is what the runtime actually dispatches on. tools/eval/__tests__/corpus.test.ts fails if the two drift. `apiMethod` is present only where one GridApi method performs the operation.",
+
+  "operations": {
+    "search": {
+      "summary": "Free-text match across every searchable column.",
+      "apiMethod": "setGlobalFilter",
+      "input": { "type": "object", "required": ["text"], "properties": { "text": { "type": "string", "maxLength": 200 } } },
+      "effects": ["filters visible rows", "resets to page 0"],
+      "reversible": true
+    },
+    "filter": {
+      "summary": "Apply a typed filter to one column. Operators are constrained by the column's type.",
+      "apiMethod": "setFilter",
+      "input": {
+        "type": "object",
+        "required": ["column", "operator"],
+        "properties": {
+          "column": { "type": "string", "description": "Column id from the runtime contract." },
+          "operator": {
+            "enum": ["contains", "notContains", "equals", "notEquals", "startsWith", "endsWith",
+                     "gt", "gte", "lt", "lte", "between", "before", "after", "in", "isEmpty", "isNotEmpty"]
+          },
+          "value": {},
+          "value2": { "description": "Upper bound; only for the `between` operator." }
+        }
+      },
+      "effects": ["filters visible rows", "resets to page 0"],
+      "reversible": true
+    },
+    "clearFilters": {
+      "summary": "Remove every column filter and the search text.",
+      "apiMethod": "clearFilters",
+      "effects": ["restores every row"],
+      "reversible": true
+    },
+    "sort": {
+      "summary": "Sort by one column, replacing the current sort unless `append` is set.",
+      "apiMethod": "setSorting",
+      "input": {
+        "type": "object",
+        "required": ["column", "direction"],
+        "properties": {
+          "column": { "type": "string" },
+          "direction": { "enum": ["asc", "desc"] },
+          "append": { "type": "boolean", "default": false, "description": "Add to the existing sort instead of replacing it." }
+        }
+      },
+      "effects": ["reorders visible rows"],
+      "reversible": true
+    },
+    "clearSort": {
+      "summary": "Return to the data's original order.",
+      "apiMethod": "setSorting",
+      "effects": ["reorders visible rows"],
+      "reversible": true
+    },
+    "selectRows": {
+      "summary": "Select or deselect rows by id.",
+      "apiMethod": "toggleRowSelected",
+      "input": {
+        "type": "object",
+        "required": ["rowIds"],
+        "properties": {
+          "rowIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "value": { "type": "boolean", "default": true }
+        }
+      },
+      "effects": ["changes rowSelection"],
+      "reversible": true
+    },
+    "selectAll": {
+      "summary": "Select, or clear, every row matching the current filters.",
+      "apiMethod": "toggleAllRowsSelected",
+      "input": { "type": "object", "properties": { "value": { "type": "boolean", "default": true } } },
+      "effects": ["changes rowSelection"],
+      "reversible": true
+    },
+    "clearSelection": {
+      "summary": "Deselect every row.",
+      "apiMethod": "clearSelection",
+      "effects": ["changes rowSelection"],
+      "reversible": true
+    },
+    "setColumnVisibility": {
+      "summary": "Show or hide one column.",
+      "apiMethod": "setColumnVisibility",
+      "input": {
+        "type": "object",
+        "required": ["column", "visible"],
+        "properties": { "column": { "type": "string" }, "visible": { "type": "boolean" } }
+      },
+      "effects": ["changes columnVisibility"],
+      "reversible": true
+    },
+    "pinColumn": {
+      "summary": "Pin a column to an edge, or unpin it with a null side.",
+      "apiMethod": "pinColumn",
+      "input": {
+        "type": "object",
+        "required": ["column", "side"],
+        "properties": { "column": { "type": "string" }, "side": { "enum": ["left", "right", null] } }
+      },
+      "effects": ["changes columnPinning"],
+      "reversible": true
+    },
+    "moveColumn": {
+      "summary": "Move a column before or after another one.",
+      "apiMethod": "moveColumn",
+      "input": {
+        "type": "object",
+        "required": ["column", "target", "placement"],
+        "properties": {
+          "column": { "type": "string" },
+          "target": { "type": "string" },
+          "placement": { "enum": ["before", "after"] }
+        }
+      },
+      "effects": ["changes columnOrder"],
+      "reversible": true
+    },
+    "setColumnWidth": {
+      "summary": "Set a column's width in pixels, or null to restore its default.",
+      "apiMethod": "setColumnWidth",
+      "input": {
+        "type": "object",
+        "required": ["column", "width"],
+        "properties": { "column": { "type": "string" }, "width": { "type": ["integer", "null"], "minimum": 1 } }
+      },
+      "effects": ["changes columnSizing"],
+      "reversible": true
+    },
+    "resetColumns": {
+      "summary": "Restore column order, width, visibility and pinning to their defaults.",
+      "apiMethod": "resetColumns",
+      "effects": ["changes columnOrder", "changes columnVisibility", "changes columnSizing", "changes columnPinning"],
+      "reversible": true
+    },
+    "setPage": {
+      "summary": "Jump to a page, counting from zero.",
+      "apiMethod": "setPageIndex",
+      "input": { "type": "object", "required": ["index"], "properties": { "index": { "type": "integer", "minimum": 0 } } },
+      "effects": ["changes the visible page"],
+      "reversible": true
+    },
+    "setPageSize": {
+      "summary": "Change how many rows a page holds.",
+      "apiMethod": "setPageSize",
+      "input": { "type": "object", "required": ["size"], "properties": { "size": { "type": "integer", "minimum": 1 } } },
+      "effects": ["changes the visible page"],
+      "reversible": true
+    },
+    "setDensity": {
+      "summary": "Change row height.",
+      "apiMethod": "setDensity",
+      "input": {
+        "type": "object",
+        "required": ["density"],
+        "properties": { "density": { "enum": ["compact", "standard", "comfortable"] } }
+      },
+      "effects": ["changes row height"],
+      "reversible": true
+    },
+    "export": {
+      "summary": "Download the chosen rows as a file.",
+      "input": {
+        "type": "object",
+        "required": ["format"],
+        "properties": {
+          "format": { "enum": ["csv", "excel", "pdf"] },
+          "scope": { "enum": ["filtered", "all", "selected", "page"], "default": "filtered" },
+          "fileName": { "type": "string", "maxLength": 120 }
+        }
+      },
+      "effects": ["downloads a file"],
+      "reversible": false,
+      "requiresConfirmation": true,
+      "note": "Three formats, three GridApi methods (exportCsv, exportExcel, exportPdf), so no single apiMethod applies."
+    },
+    "print": {
+      "summary": "Open the browser's print dialog with the table laid out for paper.",
+      "apiMethod": "print",
+      "input": {
+        "type": "object",
+        "properties": {
+          "scope": { "enum": ["filtered", "all", "selected", "page"], "default": "filtered" },
+          "title": { "type": "string", "maxLength": 120 }
+        }
+      },
+      "effects": ["opens the print dialog"],
+      "reversible": false,
+      "requiresConfirmation": true
+    },
+    "copy": {
+      "summary": "Copy the selected rows to the clipboard as tab-separated text.",
+      "apiMethod": "copyToClipboard",
+      "effects": ["writes to the clipboard"],
+      "reversible": false,
+      "requiresConfirmation": true
+    },
+    "undo": {
+      "summary": "Restore the state from before the last operation.",
+      "effects": ["restores a previous state"],
+      "reversible": false,
+      "note": "Performed by the agent runtime's snapshot history, not by GridApi."
+    },
+    "redo": {
+      "summary": "Re-apply the operation that was last undone.",
+      "effects": ["restores a later state"],
+      "reversible": false,
+      "note": "Performed by the agent runtime's snapshot history, not by GridApi."
+    }
+  },
+
+  "accessibility": {
+    "supplied": [
+      "WAI-ARIA grid pattern: role=row/rowgroup, aria-colindex, aria-rowindex",
+      "aria-sort on sortable header cells",
+      "aria-multiselectable when row selection is enabled",
+      "full cell keyboard navigation, including the header row"
+    ],
+    "required": [
+      "aria-label on the grid when its purpose is not obvious from the page",
+      "a visible heading or caption nearby for screen-reader context"
+    ]
+  },
+
+  "composition": {
+    "notes": "Self-contained. Columns are configuration, not children. Keep `data`, `columns` and `getRowId` referentially stable — the grid memoizes on their identity."
+  },
+
+  "safeMutations": {
+    "allowed": ["height", "autoHeight", "rowHeight", "headerHeight", "toolbar", "pageSizeOptions", "emptyState", "locale", "localeText", "aria-label"],
+    "forbidden": ["data", "columns", "getRowId", "mode", "state", "onStateChange", "onQueryChange"],
+    "rationale": "Presentation is safe to change. `data`/`columns`/`getRowId` are memoization keys — replacing them re-creates the grid model. `mode` and the state callbacks define the client/server contract."
+  },
+
+  "propNotes": {
+    "mode": "`client` lets the grid sort, filter and paginate. `server` means `data` is already the current page and the host answers `onQueryChange`.",
+    "state": "Makes the grid controlled. Prefer `initialState` unless the host genuinely owns the state."
+  },
+
+  "notImplemented": [
+    "grouping — no API, no state field, no operation",
+    "aggregation — no API, no state field, no operation",
+    "row-level mutation — no add, delete or set-cell API; editing is a UI affordance only",
+    "notIn — a column with fixed options filters by membership only; an exclusion must list the complement",
+    "multi-value filter on a plain string column — one column holds one filter"
+  ]
+}

@@ -1,0 +1,230 @@
+/*
+ * Card and Stat styles.
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (set them on :root to theme every component at once) and fall back to the
+ * same default palette otherwise. Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.cd-root,
+.st-root {
+  --cd-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --cd-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --cd-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --cd-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --cd-hover: var(--gbs-hover, var(--dg-hover, light-dark(#f4f4f5, #1f1f23)));
+  --cd-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --cd-success: var(--gbs-success, light-dark(#15803d, #4ade80));
+  --cd-danger: var(--gbs-danger, var(--dg-danger, light-dark(#dc2626, #f87171)));
+  --cd-shadow: var(--gbs-shadow, var(--dg-shadow, 0 10px 30px -8px light-dark(rgb(0 0 0 / 0.18), rgb(0 0 0 / 0.6))));
+  --cd-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --cd-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --cd-px: 16px;
+
+  color-scheme: inherit;
+  font-size: var(--cd-font-size);
+  line-height: 1.5;
+  color: var(--cd-fg);
+}
+
+:where(.dark, [data-theme="dark"]) :is(.cd-root, .st-root) {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) :is(.cd-root, .st-root) {
+  color-scheme: light;
+}
+
+:where(.cd-root, .st-root) *,
+:where(.cd-root, .st-root) *::before,
+:where(.cd-root, .st-root) *::after {
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------- card */
+
+.cd-root {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: var(--cd-radius);
+  background: var(--cd-bg);
+  text-decoration: none;
+}
+.cd-root:where([data-variant="outlined"]) {
+  border: 1px solid var(--cd-border);
+}
+.cd-root:where([data-variant="elevated"]) {
+  border: 1px solid transparent;
+  box-shadow: var(--cd-shadow);
+}
+.cd-root:where([data-variant="plain"]) {
+  background: transparent;
+}
+
+.cd-root:where([data-padding="none"]) {
+  --cd-px: 0px;
+}
+.cd-root:where([data-padding="sm"]) {
+  --cd-px: 12px;
+}
+.cd-root:where([data-padding="lg"]) {
+  --cd-px: 24px;
+}
+
+.cd-root[data-interactive] {
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    box-shadow 120ms ease,
+    translate 120ms ease;
+}
+.cd-root[data-interactive]:hover {
+  background: var(--cd-hover);
+}
+.cd-root:where([data-variant="elevated"])[data-interactive]:hover {
+  translate: 0 -1px;
+}
+.cd-root[data-interactive]:focus-visible {
+  outline: 2px solid var(--cd-focus);
+  outline-offset: 2px;
+}
+
+.cd-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: var(--cd-px) var(--cd-px) 0;
+}
+.cd-heading {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.cd-title {
+  font-size: 1.05em;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.cd-description {
+  margin-top: 2px;
+  color: var(--cd-muted);
+}
+.cd-actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 4px;
+}
+
+.cd-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: var(--cd-px);
+}
+/* The header already spaces the top, so the body should not double it. */
+.cd-header + .cd-body {
+  padding-top: 12px;
+}
+
+.cd-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 12px var(--cd-px);
+  border-top: 1px solid var(--cd-border);
+}
+
+/* ---------------------------------------------------------------- stat */
+
+.st-root {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.st-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.st-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--cd-muted);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.st-icon {
+  display: inline-flex;
+  flex: none;
+  color: var(--cd-muted);
+}
+.st-value {
+  font-size: 1.9em;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.st-trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--cd-muted);
+}
+/* Colour is a second signal: the arrow and the visually hidden word carry
+   the direction on their own. */
+.st-trend[data-positive="true"] {
+  color: var(--cd-success);
+}
+.st-trend[data-positive="false"] {
+  color: var(--cd-danger);
+}
+.st-trend-label {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+.st-trend-description {
+  color: var(--cd-muted);
+}
+
+.st-help {
+  color: var(--cd-muted);
+}
+
+.st-placeholder {
+  border-radius: 4px;
+  background: var(--cd-hover);
+}
+.st-placeholder-value {
+  width: 5ch;
+  height: 1.9em;
+}
+.st-placeholder-help {
+  width: 10ch;
+  height: 1em;
+}
+
+.st-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (forced-colors: active) {
+  .cd-root:where([data-variant="elevated"]) {
+    border-color: CanvasText;
+  }
+}

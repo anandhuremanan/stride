@@ -1,0 +1,32 @@
+{
+  "version": "2.6.1",
+  "installedAt": "2026-10-16T08:35:59.673Z",
+  "targets": [
+    "claude",
+    "codex",
+    "antigravity"
+  ],
+  "files": {
+    ".gbs/skills/gbs-components/references/accessibility.md": "ee1e6034f28fecbbc5bd910b5845a87d27830e6f5eb1d25ebb511823d5cde170",
+    ".gbs/skills/gbs-components/references/data-display.md": "e140663ef83eb925745f158a58f64f6d8474d349280a1725b07e1c99486961be",
+    ".gbs/skills/gbs-components/references/data-grid.md": "7c24a87d6218fce54d27a1ed5e4486a2130e57471d94da1e1159bfde13d7749e",
+    ".gbs/skills/gbs-components/references/forms.md": "b59969a08c2d1a4ff5333712682ef35c2455aa3f1a84ae0550af6d7bc928603c",
+    ".gbs/skills/gbs-components/references/install.md": "fef472c425ec5e7ea98a0b254ea669e20156f54f6b62de5cd1f0aa2fe1bcde91",
+    ".gbs/skills/gbs-components/references/overlays.md": "263316af789dbbc155bd95527fd97fec6c763544b13729a1b18053da35816355",
+    ".gbs/skills/gbs-components/references/pickers.md": "9490105f259b4b6d0906c99d1e8e9d6eb5a942f86f0ecec9f9c8b9855f0cca4d",
+    ".gbs/skills/gbs-components/references/styling.md": "fded437fc0cab0120f225175ec34b262dcf148798d73de3f79d7cb869e7121c4",
+    ".gbs/skills/gbs-components/references/toaster.md": "a87e99dfa3aa3516ef44ecc7def15400a9d9fc84ea883060138cee877c86f7e1",
+    ".gbs/skills/gbs-components/SKILL.md": "edd989c02309defe39780811374e166c89f3174c9c8c24c4cf6544a12f00be29",
+    ".claude/skills/gbs-components/references/accessibility.md": "ee1e6034f28fecbbc5bd910b5845a87d27830e6f5eb1d25ebb511823d5cde170",
+    ".claude/skills/gbs-components/references/data-display.md": "e140663ef83eb925745f158a58f64f6d8474d349280a1725b07e1c99486961be",
+    ".claude/skills/gbs-components/references/data-grid.md": "7c24a87d6218fce54d27a1ed5e4486a2130e57471d94da1e1159bfde13d7749e",
+    ".claude/skills/gbs-components/references/forms.md": "b59969a08c2d1a4ff5333712682ef35c2455aa3f1a84ae0550af6d7bc928603c",
+    ".claude/skills/gbs-components/references/install.md": "fef472c425ec5e7ea98a0b254ea669e20156f54f6b62de5cd1f0aa2fe1bcde91",
+    ".claude/skills/gbs-components/references/overlays.md": "263316af789dbbc155bd95527fd97fec6c763544b13729a1b18053da35816355",
+    ".claude/skills/gbs-components/references/pickers.md": "9490105f259b4b6d0906c99d1e8e9d6eb5a942f86f0ecec9f9c8b9855f0cca4d",
+    ".claude/skills/gbs-components/references/styling.md": "fded437fc0cab0120f225175ec34b262dcf148798d73de3f79d7cb869e7121c4",
+    ".claude/skills/gbs-components/references/toaster.md": "a87e99dfa3aa3516ef44ecc7def15400a9d9fc84ea883060138cee877c86f7e1",
+    ".claude/skills/gbs-components/SKILL.md": "a83b2764befca1af02432bd5ad98dc4b419b1b9eccb692ba619662179bbd15bb",
+    ".agents/rules/gbs-components.md": "6cb8ec1b6f146cec031a84c606017c278d0f9d6aa0384053ae308b24becfd912"
+  }
+}

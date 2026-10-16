@@ -1,0 +1,253 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Skeleton",
+    "folder": "skeleton",
+    "exports": [
+      "Empty",
+      "Skeleton"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/index.ts",
+      "core/lines.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Empty.tsx",
+      "react/Skeleton.tsx",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:c43f854a600cef0e2704513508c60910dbe3938df4b33ec6f2f614b8743055b3"
+  },
+  "props": [
+    {
+      "name": "actions",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "The way out — usually one button, occasionally two.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "animation",
+      "type": "enum",
+      "values": [
+        "none",
+        "pulse",
+        "wave"
+      ],
+      "typeText": "SkeletonAnimation | undefined",
+      "required": false,
+      "default": "pulse",
+      "origin": "derived",
+      "description": "Default `pulse`. Reduced-motion settings turn any of them off.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<SkeletonSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "description",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Why it is empty, and what to do about it.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "height",
+      "type": "other",
+      "typeText": "string | number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "A number is pixels; a string is used as given. Left out, each variant\nuses its own height, which is what keeps a skeleton the size of the\nthing it stands in for.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "icon",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Decorative: an illustration or icon above the title.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Announced while the placeholder is up. Leave it out inside a region that\nalready says it is busy — two announcements are worse than one.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "lastLineWidth",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 60,
+      "origin": "derived",
+      "description": "Width of the last line as a percentage, for `text`. Default 60.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "lines",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 1,
+      "origin": "derived",
+      "description": "Number of bars, for `text`. Default 1.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "radius",
+      "type": "other",
+      "typeText": "string | number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Corner radius for `rect`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<HTMLDivElement> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "sm"
+      ],
+      "typeText": "'sm' | 'md' | 'lg' | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md`. `sm` suits an empty panel inside a page.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "title",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": true,
+      "origin": "derived",
+      "description": "What is missing, in a few words.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "variant",
+      "type": "enum",
+      "values": [
+        "circle",
+        "rect",
+        "text"
+      ],
+      "typeText": "SkeletonVariant | undefined",
+      "required": false,
+      "default": "text",
+      "origin": "derived",
+      "description": "Default `text`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "width",
+      "type": "other",
+      "typeText": "string | number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "A number is pixels; a string is used as given.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "events": [],
+  "slots": [
+    "root",
+    "line",
+    "icon",
+    "title",
+    "description",
+    "actions"
+  ],
+  "states": [
+    {
+      "attr": "data-animation",
+      "values": [
+        "animation",
+        "pulse",
+        "wave"
+      ]
+    },
+    {
+      "attr": "data-lines"
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "lg",
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-variant",
+      "values": [
+        "circle",
+        "rect",
+        "text",
+        "variant"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 13,
+    "propsDescribed": 13,
+    "describedPct": 100,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

@@ -1,0 +1,1103 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "DataGrid",
+    "folder": "data-grid",
+    "exports": [
+      "AskGrid",
+      "COLUMN_REQUIREMENT",
+      "DataGrid",
+      "GRID_CONTRACT_VERSION",
+      "GRID_OPERATIONS",
+      "GRID_OPERATION_NAMES",
+      "GRID_TOOL_NAME"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "agent/coerce.ts",
+      "agent/contract.ts",
+      "agent/dataset.ts",
+      "agent/engine.ts",
+      "agent/executors.ts",
+      "agent/index.ts",
+      "agent/intent.ts",
+      "agent/operations.ts",
+      "agent/validate.ts",
+      "agent/webmcp.ts",
+      "core/columnHelper.ts",
+      "core/columns.ts",
+      "core/filtering.ts",
+      "core/grid.ts",
+      "core/index.ts",
+      "core/rows.ts",
+      "core/sorting.ts",
+      "core/state.ts",
+      "core/store.ts",
+      "core/types.ts",
+      "core/values.ts",
+      "core/virtual.ts",
+      "export/csv.ts",
+      "export/download.ts",
+      "export/pdf-font.ts",
+      "export/pdf-writer.ts",
+      "export/pdf.ts",
+      "export/table.ts",
+      "export/xlsx.ts",
+      "export/zip.ts",
+      "index.ts",
+      "react/AskGrid.tsx",
+      "react/Cell.tsx",
+      "react/ColumnMenu.tsx",
+      "react/DataGrid.tsx",
+      "react/FilterForm.tsx",
+      "react/HeaderRow.tsx",
+      "react/Pagination.tsx",
+      "react/Popover.tsx",
+      "react/Row.tsx",
+      "react/Toolbar.tsx",
+      "react/Viewport.tsx",
+      "react/context.ts",
+      "react/hooks.ts",
+      "react/icons.tsx",
+      "react/keyboard.ts",
+      "react/locale.ts"
+    ],
+    "sourceHash": "sha256:b3fa605b7c7ae2fbb4d9ccd3900b69472665508c0c92b5a218767d4c387d20a3"
+  },
+  "purpose": "Display and operate on tabular data. Virtualized; holds its own sort, filter, search, selection, column and pagination state in an external store exposed through GridApi.",
+  "props": [
+    {
+      "name": "agent",
+      "type": "other",
+      "typeText": "GridAgent<T> | null",
+      "required": true,
+      "origin": "derived",
+      "description": "The agent that turns a sentence into grid operations, from\n`useGridAgent`. `null` while none is in scope, and the box renders\nnothing rather than offering something that cannot answer.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "agentPolicy",
+      "type": "other",
+      "typeText": "GridAgentPolicy | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Columns and operations withheld from whatever is driving the grid.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ai",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Render a natural-language box above the grid.\r\n\r\nNeeds a `<GramproAIProvider>` above it supplying an adapter; without one\r\nthis renders nothing and the grid is unchanged. No model is bundled or\r\ndownloaded — the application brings its own.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "autoHeight",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Grow to fit all rows instead of scrolling (use with pagination or small data).",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<GridSlot, string>> | undefined",
+      "required": false,
+      "default": "EMPTY_CLASSNAMES",
+      "origin": "derived"
+    },
+    {
+      "name": "columns",
+      "type": "other",
+      "typeText": "readonly ColumnDef<T, unknown>[]",
+      "required": true,
+      "origin": "derived",
+      "description": "One definition per column, and the order here is the initial column order.\nA definition says where a column's value comes from and how to render it;\neverything else about the grid is driven from these.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "data",
+      "type": "other",
+      "typeText": "readonly T[]",
+      "required": true,
+      "origin": "derived",
+      "description": "The rows to show. One object per row, in whatever shape your data already\nhas — columns reach into it rather than the other way round. In `server`\nmode this is the current page, not the whole set.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "emptyState",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Shown in place of rows when there are none. Worth distinguishing \"nothing\r\nhere yet\" from \"nothing matched your filters\", which the default does not.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "enableColumnHiding",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Let columns be shown and hidden from the toolbar. Default `true`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "enableColumnPinning",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Let a column be pinned to the left or right edge. Default `true`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "enableColumnReordering",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Let a header be dragged to move the column. Default `true`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "enableColumnResizing",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Let a header edge be dragged to resize. Default `true`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "enableFiltering",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Per-column filters and the toolbar's search box. Default `true`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "enableMultiSort",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Let a shift-click add a column to the sort rather than replacing it.\nDefault `true`, and inert while `enableSorting` is off.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "enablePagination",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Page the rows instead of scrolling the whole set. Default `true`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "enableRowSelection",
+      "type": "other",
+      "typeText": "boolean | ((row: T) => boolean) | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Add the selection column. Default `false`. A function selects per row —\nreturn `false` and that row's checkbox is disabled, which is how to stop\nsomeone picking a record their role does not cover.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "enableSorting",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Let a header click sort the column. Default `true`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "exportFileName",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Base name for an exported file, without the extension.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "getRowClassName",
+      "type": "function",
+      "signature": "((row: T, rowIndex: number) => string | undefined) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "A class per row, for status colouring. Return undefined for no class.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "getRowId",
+      "type": "other",
+      "typeText": "Extract<keyof T, string> | ((row: T, index: number) => RowId) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Stable row id: a property name (recommended) or a function.\nDefaults to `row.id`, falling back to the array index.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "headerHeight",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Fixed header height in px. Defaults to the density's row height.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "height",
+      "type": "other",
+      "typeText": "string | number | undefined",
+      "required": false,
+      "default": 520,
+      "origin": "derived",
+      "description": "Height of the scrolling area. Ignored with `autoHeight`. Default 520.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "initialState",
+      "type": "other",
+      "typeText": "Partial<GridState> | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Where the grid starts — a default sort, a page size, hidden columns. Read\nonce on mount and then owned by the grid, so later changes are ignored.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Show the loading treatment over the grid. The existing rows stay in place\r\nunderneath, so a refresh does not empty the screen.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "locale",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "BCP 47 locale for number and date formatting.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<LocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "mode",
+      "type": "enum",
+      "values": [
+        "client",
+        "server"
+      ],
+      "typeText": "'client' | 'server' | undefined",
+      "required": false,
+      "default": "client",
+      "origin": "derived",
+      "description": "`client`: the grid sorts, filters and paginates. `server`: `data` is the current page.",
+      "descriptionOrigin": "jsdoc",
+      "note": "`client` lets the grid sort, filter and paginate. `server` means `data` is already the current page and the host answers `onQueryChange`."
+    },
+    {
+      "name": "onCellEdit",
+      "type": "function",
+      "signature": "((event: CellEditEvent<T>) => void | Promise<void>) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "A cell was edited. Fires only when the value actually changed.\n\nReturn a promise to make the edit optimistic: the new value shows while\nit is in flight, and if the promise rejects the cell reverts to the\nunderlying data and shows the rejection's message as the cell's error.\nSo reject with the reason you want the user to read.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onQueryChange",
+      "type": "function",
+      "signature": "((query: GridQuery) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Fires when sorting, filters, search or pagination change.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onRowClick",
+      "type": "function",
+      "signature": "((row: T, event: MouseEvent<HTMLElement>) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Not fired for clicks on interactive content (buttons, inputs, links, checkboxes).",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onRowDoubleClick",
+      "type": "function",
+      "signature": "((row: T, event: MouseEvent<HTMLElement>) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Same exclusions as `onRowClick`: interactive content does not reach it.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onStateChange",
+      "type": "function",
+      "signature": "((next: GridState, prev: GridState) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Every change to sorting, filters, search, pagination, selection, column\nlayout or density, with the state before it for comparison. This is the\nhook for persisting a user's view.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "pageSizeOptions",
+      "type": "other",
+      "typeText": "number[] | undefined",
+      "required": false,
+      "default": "DEFAULT_PAGE_SIZES",
+      "origin": "derived",
+      "description": "Page sizes offered in the pager. Default `[25, 50, 100, 250]`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<GridApi<T>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "rowCount",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Total rows on the server (server mode).",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "rowHeight",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Fixed row height in px. Defaults to the density's height.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "selectionMode",
+      "type": "enum",
+      "values": [
+        "multiple",
+        "single"
+      ],
+      "typeText": "'multiple' | 'single' | undefined",
+      "required": false,
+      "default": "multiple",
+      "origin": "derived",
+      "description": "`single` leaves one row selected at a time. Default `multiple`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "semantics",
+      "type": "other",
+      "typeText": "Readonly<Record<string, GridColumnSemantics>> | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "What a machine cannot read off a column definition: units, synonyms, PII.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "state",
+      "type": "other",
+      "typeText": "Partial<GridState> | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Drive the grid from outside. Whatever you pass here the grid obeys rather\nthan deciding for itself, so pair it with `onStateChange` or the grid\nstops responding. Pass only the slices you want to own; the rest stay\ninternal. For a starting point you do not intend to control, use\n`initialState`.",
+      "descriptionOrigin": "jsdoc",
+      "note": "Makes the grid controlled. Prefer `initialState` unless the host genuinely owns the state."
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "suggestions",
+      "type": "other",
+      "typeText": "readonly string[] | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Example questions offered before anyone types. Worth setting to the\nphrasings this data actually supports — they teach the shape of a good\nquestion faster than placeholder text does.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "toolbar",
+      "type": "other",
+      "typeText": "boolean | ToolbarOptions | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "The toolbar above the grid. `true` for all of it, `false` for none, or an\r\nobject to choose parts — `{ search: true, export: false }` — and to put\r\nyour own controls at its `start` or `end`.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "events": [
+    {
+      "name": "onCellEdit",
+      "signature": "((event: CellEditEvent<T>) => void | Promise<void>) | undefined"
+    },
+    {
+      "name": "onQueryChange",
+      "signature": "((query: GridQuery) => void) | undefined"
+    },
+    {
+      "name": "onRowClick",
+      "signature": "((row: T, event: MouseEvent<HTMLElement>) => void) | undefined"
+    },
+    {
+      "name": "onRowDoubleClick",
+      "signature": "((row: T, event: MouseEvent<HTMLElement>) => void) | undefined"
+    },
+    {
+      "name": "onStateChange",
+      "signature": "((next: GridState, prev: GridState) => void) | undefined"
+    }
+  ],
+  "slots": [
+    "root",
+    "toolbar",
+    "viewport",
+    "header",
+    "headerCell",
+    "row",
+    "cell",
+    "pagination"
+  ],
+  "states": [
+    {
+      "attr": "data-active"
+    },
+    {
+      "attr": "data-align",
+      "values": [
+        "center",
+        "end"
+      ]
+    },
+    {
+      "attr": "data-col-index"
+    },
+    {
+      "attr": "data-density"
+    },
+    {
+      "attr": "data-drop",
+      "values": [
+        "after",
+        "before"
+      ]
+    },
+    {
+      "attr": "data-editable"
+    },
+    {
+      "attr": "data-editing"
+    },
+    {
+      "attr": "data-invalid"
+    },
+    {
+      "attr": "data-odd"
+    },
+    {
+      "attr": "data-pending"
+    },
+    {
+      "attr": "data-pin-edge"
+    },
+    {
+      "attr": "data-pinned",
+      "values": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "attr": "data-resizing"
+    },
+    {
+      "attr": "data-row-index"
+    },
+    {
+      "attr": "data-selected"
+    },
+    {
+      "attr": "data-sortable"
+    },
+    {
+      "attr": "data-stale"
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-variant",
+      "values": [
+        "primary"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [
+      "WAI-ARIA grid pattern: role=row/rowgroup, aria-colindex, aria-rowindex",
+      "aria-sort on sortable header cells",
+      "aria-multiselectable when row selection is enabled",
+      "full cell keyboard navigation, including the header row"
+    ],
+    "required": [
+      "aria-label on the grid when its purpose is not obvious from the page",
+      "a visible heading or caption nearby for screen-reader context"
+    ]
+  },
+  "composition": {
+    "notes": "Self-contained. Columns are configuration, not children. Keep `data`, `columns` and `getRowId` referentially stable — the grid memoizes on their identity."
+  },
+  "operations": {
+    "search": {
+      "summary": "Free-text match across every searchable column.",
+      "apiMethod": "setGlobalFilter",
+      "input": {
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 200
+          }
+        }
+      },
+      "effects": [
+        "filters visible rows",
+        "resets to page 0"
+      ],
+      "reversible": true
+    },
+    "filter": {
+      "summary": "Apply a typed filter to one column. Operators are constrained by the column's type.",
+      "apiMethod": "setFilter",
+      "input": {
+        "type": "object",
+        "required": [
+          "column",
+          "operator"
+        ],
+        "properties": {
+          "column": {
+            "type": "string",
+            "description": "Column id from the runtime contract."
+          },
+          "operator": {
+            "enum": [
+              "contains",
+              "notContains",
+              "equals",
+              "notEquals",
+              "startsWith",
+              "endsWith",
+              "gt",
+              "gte",
+              "lt",
+              "lte",
+              "between",
+              "before",
+              "after",
+              "in",
+              "isEmpty",
+              "isNotEmpty"
+            ]
+          },
+          "value": {},
+          "value2": {
+            "description": "Upper bound; only for the `between` operator."
+          }
+        }
+      },
+      "effects": [
+        "filters visible rows",
+        "resets to page 0"
+      ],
+      "reversible": true
+    },
+    "clearFilters": {
+      "summary": "Remove every column filter and the search text.",
+      "apiMethod": "clearFilters",
+      "effects": [
+        "restores every row"
+      ],
+      "reversible": true
+    },
+    "sort": {
+      "summary": "Sort by one column, replacing the current sort unless `append` is set.",
+      "apiMethod": "setSorting",
+      "input": {
+        "type": "object",
+        "required": [
+          "column",
+          "direction"
+        ],
+        "properties": {
+          "column": {
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          "append": {
+            "type": "boolean",
+            "default": false,
+            "description": "Add to the existing sort instead of replacing it."
+          }
+        }
+      },
+      "effects": [
+        "reorders visible rows"
+      ],
+      "reversible": true
+    },
+    "clearSort": {
+      "summary": "Return to the data's original order.",
+      "apiMethod": "setSorting",
+      "effects": [
+        "reorders visible rows"
+      ],
+      "reversible": true
+    },
+    "selectRows": {
+      "summary": "Select or deselect rows by id.",
+      "apiMethod": "toggleRowSelected",
+      "input": {
+        "type": "object",
+        "required": [
+          "rowIds"
+        ],
+        "properties": {
+          "rowIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "value": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      },
+      "effects": [
+        "changes rowSelection"
+      ],
+      "reversible": true
+    },
+    "selectAll": {
+      "summary": "Select, or clear, every row matching the current filters.",
+      "apiMethod": "toggleAllRowsSelected",
+      "input": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      },
+      "effects": [
+        "changes rowSelection"
+      ],
+      "reversible": true
+    },
+    "clearSelection": {
+      "summary": "Deselect every row.",
+      "apiMethod": "clearSelection",
+      "effects": [
+        "changes rowSelection"
+      ],
+      "reversible": true
+    },
+    "setColumnVisibility": {
+      "summary": "Show or hide one column.",
+      "apiMethod": "setColumnVisibility",
+      "input": {
+        "type": "object",
+        "required": [
+          "column",
+          "visible"
+        ],
+        "properties": {
+          "column": {
+            "type": "string"
+          },
+          "visible": {
+            "type": "boolean"
+          }
+        }
+      },
+      "effects": [
+        "changes columnVisibility"
+      ],
+      "reversible": true
+    },
+    "pinColumn": {
+      "summary": "Pin a column to an edge, or unpin it with a null side.",
+      "apiMethod": "pinColumn",
+      "input": {
+        "type": "object",
+        "required": [
+          "column",
+          "side"
+        ],
+        "properties": {
+          "column": {
+            "type": "string"
+          },
+          "side": {
+            "enum": [
+              "left",
+              "right",
+              null
+            ]
+          }
+        }
+      },
+      "effects": [
+        "changes columnPinning"
+      ],
+      "reversible": true
+    },
+    "moveColumn": {
+      "summary": "Move a column before or after another one.",
+      "apiMethod": "moveColumn",
+      "input": {
+        "type": "object",
+        "required": [
+          "column",
+          "target",
+          "placement"
+        ],
+        "properties": {
+          "column": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "placement": {
+            "enum": [
+              "before",
+              "after"
+            ]
+          }
+        }
+      },
+      "effects": [
+        "changes columnOrder"
+      ],
+      "reversible": true
+    },
+    "setColumnWidth": {
+      "summary": "Set a column's width in pixels, or null to restore its default.",
+      "apiMethod": "setColumnWidth",
+      "input": {
+        "type": "object",
+        "required": [
+          "column",
+          "width"
+        ],
+        "properties": {
+          "column": {
+            "type": "string"
+          },
+          "width": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          }
+        }
+      },
+      "effects": [
+        "changes columnSizing"
+      ],
+      "reversible": true
+    },
+    "resetColumns": {
+      "summary": "Restore column order, width, visibility and pinning to their defaults.",
+      "apiMethod": "resetColumns",
+      "effects": [
+        "changes columnOrder",
+        "changes columnVisibility",
+        "changes columnSizing",
+        "changes columnPinning"
+      ],
+      "reversible": true
+    },
+    "setPage": {
+      "summary": "Jump to a page, counting from zero.",
+      "apiMethod": "setPageIndex",
+      "input": {
+        "type": "object",
+        "required": [
+          "index"
+        ],
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "effects": [
+        "changes the visible page"
+      ],
+      "reversible": true
+    },
+    "setPageSize": {
+      "summary": "Change how many rows a page holds.",
+      "apiMethod": "setPageSize",
+      "input": {
+        "type": "object",
+        "required": [
+          "size"
+        ],
+        "properties": {
+          "size": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      },
+      "effects": [
+        "changes the visible page"
+      ],
+      "reversible": true
+    },
+    "setDensity": {
+      "summary": "Change row height.",
+      "apiMethod": "setDensity",
+      "input": {
+        "type": "object",
+        "required": [
+          "density"
+        ],
+        "properties": {
+          "density": {
+            "enum": [
+              "compact",
+              "standard",
+              "comfortable"
+            ]
+          }
+        }
+      },
+      "effects": [
+        "changes row height"
+      ],
+      "reversible": true
+    },
+    "export": {
+      "summary": "Download the chosen rows as a file.",
+      "input": {
+        "type": "object",
+        "required": [
+          "format"
+        ],
+        "properties": {
+          "format": {
+            "enum": [
+              "csv",
+              "excel",
+              "pdf"
+            ]
+          },
+          "scope": {
+            "enum": [
+              "filtered",
+              "all",
+              "selected",
+              "page"
+            ],
+            "default": "filtered"
+          },
+          "fileName": {
+            "type": "string",
+            "maxLength": 120
+          }
+        }
+      },
+      "effects": [
+        "downloads a file"
+      ],
+      "reversible": false,
+      "requiresConfirmation": true,
+      "note": "Three formats, three GridApi methods (exportCsv, exportExcel, exportPdf), so no single apiMethod applies."
+    },
+    "print": {
+      "summary": "Open the browser's print dialog with the table laid out for paper.",
+      "apiMethod": "print",
+      "input": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "enum": [
+              "filtered",
+              "all",
+              "selected",
+              "page"
+            ],
+            "default": "filtered"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 120
+          }
+        }
+      },
+      "effects": [
+        "opens the print dialog"
+      ],
+      "reversible": false,
+      "requiresConfirmation": true
+    },
+    "copy": {
+      "summary": "Copy the selected rows to the clipboard as tab-separated text.",
+      "apiMethod": "copyToClipboard",
+      "effects": [
+        "writes to the clipboard"
+      ],
+      "reversible": false,
+      "requiresConfirmation": true
+    },
+    "undo": {
+      "summary": "Restore the state from before the last operation.",
+      "effects": [
+        "restores a previous state"
+      ],
+      "reversible": false,
+      "note": "Performed by the agent runtime's snapshot history, not by GridApi."
+    },
+    "redo": {
+      "summary": "Re-apply the operation that was last undone.",
+      "effects": [
+        "restores a later state"
+      ],
+      "reversible": false,
+      "note": "Performed by the agent runtime's snapshot history, not by GridApi."
+    }
+  },
+  "intentDomains": [
+    "Query",
+    "ActionIntent",
+    "Extraction"
+  ],
+  "safeMutations": {
+    "allowed": [
+      "height",
+      "autoHeight",
+      "rowHeight",
+      "headerHeight",
+      "toolbar",
+      "pageSizeOptions",
+      "emptyState",
+      "locale",
+      "localeText",
+      "aria-label"
+    ],
+    "forbidden": [
+      "data",
+      "columns",
+      "getRowId",
+      "mode",
+      "state",
+      "onStateChange",
+      "onQueryChange"
+    ],
+    "rationale": "Presentation is safe to change. `data`/`columns`/`getRowId` are memoization keys — replacing them re-creates the grid model. `mode` and the state callbacks define the client/server contract."
+  },
+  "examples": [],
+  "coverage": {
+    "propsTotal": 40,
+    "propsDescribed": 38,
+    "describedPct": 95,
+    "authoredSections": [
+      "accessibility",
+      "composition",
+      "intentDomains",
+      "operations",
+      "purpose",
+      "safeMutations"
+    ]
+  },
+  "notImplemented": [
+    "grouping — no API, no state field, no operation",
+    "aggregation — no API, no state field, no operation",
+    "row-level mutation — no add, delete or set-cell API; editing is a UI affordance only",
+    "notIn — a column with fixed options filters by membership only; an exclusion must list the complement",
+    "multi-value filter on a plain string column — one column holds one filter"
+  ]
+}

@@ -1,0 +1,138 @@
+/*
+ * Breadcrumb styles.
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (set them on :root to theme every component at once) and fall back to the
+ * same default palette otherwise. Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.bc-root {
+  --bc-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --bc-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --bc-hover: var(--gbs-hover, var(--dg-hover, light-dark(#f4f4f5, #1f1f23)));
+  --bc-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --bc-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  /* Long labels are cut with an ellipsis; the full text is in the tooltip. */
+  --bc-max-label: 24ch;
+
+  color-scheme: inherit;
+  font-size: var(--bc-font-size);
+  line-height: 1.4;
+  color: var(--bc-muted);
+}
+
+:where(.dark, [data-theme="dark"]) .bc-root {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .bc-root {
+  color-scheme: light;
+}
+
+:where(.bc-root) *,
+:where(.bc-root) *::before,
+:where(.bc-root) *::after {
+  box-sizing: border-box;
+}
+
+.bc-root:where([data-size="sm"]) {
+  --bc-font-size: 12px;
+}
+.bc-root:where([data-size="lg"]) {
+  --bc-font-size: 14px;
+}
+
+.bc-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bc-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.bc-link,
+.bc-current {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+.bc-link {
+  margin: -2px -4px;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.bc-link:hover {
+  color: var(--bc-fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.bc-link:focus-visible,
+.bc-ellipsis:focus-visible {
+  outline: 2px solid var(--bc-focus);
+  outline-offset: 1px;
+}
+.bc-current {
+  color: var(--bc-fg);
+  font-weight: 500;
+}
+
+.bc-text {
+  max-width: var(--bc-max-label);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.bc-icon {
+  display: inline-flex;
+  flex: none;
+}
+.bc-icon > svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.bc-separator {
+  display: inline-flex;
+  flex: none;
+  opacity: 0.7;
+}
+/* A chevron points the reading direction. */
+.bc-separator > svg:dir(rtl) {
+  transform: scaleX(-1);
+}
+
+.bc-ellipsis {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  height: 22px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.bc-ellipsis:hover {
+  background: var(--bc-hover);
+  color: var(--bc-fg);
+}

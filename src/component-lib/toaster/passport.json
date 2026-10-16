@@ -1,0 +1,223 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Toaster",
+    "folder": "toaster",
+    "exports": [
+      "DEFAULT_DURATION",
+      "DEFAULT_LIMIT",
+      "EXIT_DURATION",
+      "Toaster"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/api.ts",
+      "core/index.ts",
+      "core/store.ts",
+      "core/toast.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/ToastItem.tsx",
+      "react/Toaster.tsx",
+      "react/icons.tsx",
+      "react/locale.ts",
+      "react/props.ts",
+      "react/useToasts.ts"
+    ],
+    "sourceHash": "sha256:976553d5d606c12b441caba76badad73812eea6dde400b51eb3ee17d05db7871"
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<ToasterSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "closeButton",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Show a close button on dismissible toasts. Default true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "dir",
+      "type": "enum",
+      "values": [
+        "auto",
+        "ltr",
+        "rtl"
+      ],
+      "typeText": "'ltr' | 'rtl' | 'auto' | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Writing direction, which decides which corner `position` means.\nDefault `auto`, taken from the document.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Default auto-close delay in milliseconds. Default 5000.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "hotkey",
+      "type": "other",
+      "typeText": "readonly string[] | undefined",
+      "required": false,
+      "default": "DEFAULT_HOTKEY",
+      "origin": "derived",
+      "description": "Keys that move focus to the notifications: `KeyboardEvent` modifier names\nplus a `code`. Default `[\"altKey\", \"KeyT\"]`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "icons",
+      "type": "other",
+      "typeText": "Partial<Record<ToastType, ReactNode>> | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Replace the icon per type; `null` hides it.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "limit",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Open toasts on screen at once; the rest wait their turn. Default 3.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<ToasterLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "position",
+      "type": "enum",
+      "values": [
+        "bottom-center",
+        "bottom-left",
+        "bottom-right",
+        "top-center",
+        "top-left",
+        "top-right"
+      ],
+      "typeText": "ToastPosition | undefined",
+      "required": false,
+      "default": "top-right",
+      "origin": "derived",
+      "description": "Default `\"top-right\"`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "store",
+      "type": "other",
+      "typeText": "ToastStore | undefined",
+      "required": false,
+      "default": "toastStore",
+      "origin": "derived",
+      "description": "A store from `createToastStore()`. Defaults to the one behind `toast()`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    }
+  ],
+  "events": [],
+  "slots": [
+    "region",
+    "list",
+    "toast",
+    "icon",
+    "content",
+    "title",
+    "description",
+    "actions",
+    "action",
+    "cancel",
+    "close"
+  ],
+  "states": [
+    {
+      "attr": "data-custom"
+    },
+    {
+      "attr": "data-position"
+    },
+    {
+      "attr": "data-state",
+      "values": [
+        "closing"
+      ]
+    },
+    {
+      "attr": "data-swiping"
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-type",
+      "values": [
+        "default",
+        "error",
+        "info",
+        "loading",
+        "success",
+        "warning"
+      ]
+    },
+    {
+      "attr": "data-variant",
+      "values": [
+        "action",
+        "cancel"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 8,
+    "propsDescribed": 8,
+    "describedPct": 100,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

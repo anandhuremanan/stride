@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "grampro": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@grampro/kit",
+        "mcp"
+      ]
+    }
+  }
+}

@@ -1,0 +1,445 @@
+/*
+ * DatePicker styles (DatePicker and DateRangePicker).
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (set them on :root to theme every component at once) and fall back to the
+ * same default palette otherwise. Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.dp-root {
+  --dp-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --dp-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --dp-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --dp-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --dp-hover: var(--gbs-hover, var(--dg-hover, light-dark(#f4f4f5, #1f1f23)));
+  --dp-input-bg: var(--gbs-input-bg, var(--dg-input-bg, light-dark(#ffffff, #121216)));
+  --dp-accent: var(--gbs-accent, var(--dg-accent, light-dark(#2563eb, #60a5fa)));
+  --dp-accent-fg: var(--gbs-accent-fg, var(--dg-accent-fg, light-dark(#ffffff, #0b1220)));
+  --dp-accent-soft: var(--gbs-accent-soft, var(--dg-accent-soft, light-dark(#eff6ff, #172554)));
+  --dp-accent-strong: var(--gbs-accent-strong, var(--dg-accent-strong, light-dark(#1d4ed8, #bfdbfe)));
+  --dp-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --dp-danger: var(--gbs-danger, var(--dg-danger, light-dark(#dc2626, #f87171)));
+  --dp-shadow: var(--gbs-shadow, var(--dg-shadow, 0 10px 30px -8px light-dark(rgb(0 0 0 / 0.18), rgb(0 0 0 / 0.6))));
+  --dp-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --dp-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --dp-height: 36px;
+  --dp-px: 10px;
+  --dp-day-size: 34px;
+
+  color-scheme: inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+  font-size: var(--dp-font-size);
+  line-height: 1.4;
+  color: var(--dp-fg);
+}
+
+:where(.dark, [data-theme="dark"]) .dp-root {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .dp-root {
+  color-scheme: light;
+}
+
+:where(.dp-root, .dp-popover) *,
+:where(.dp-root, .dp-popover) *::before,
+:where(.dp-root, .dp-popover) *::after {
+  box-sizing: border-box;
+}
+
+.dp-root:where([data-size="sm"]) {
+  --dp-height: 30px;
+  --dp-font-size: 12px;
+  --dp-px: 8px;
+  --dp-day-size: 30px;
+}
+.dp-root:where([data-size="lg"]) {
+  --dp-height: 44px;
+  --dp-font-size: 14px;
+  --dp-px: 12px;
+  --dp-day-size: 38px;
+}
+
+.dp-label {
+  font-weight: 500;
+}
+.dp-label[data-required]::after {
+  content: " *";
+  color: var(--dp-danger);
+}
+.dp-description {
+  color: var(--dp-muted);
+  font-size: 0.92em;
+}
+.dp-error {
+  color: var(--dp-danger);
+  font-size: 0.92em;
+}
+
+/* --------------------------------------------------------------- field */
+
+.dp-control {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  min-height: var(--dp-height);
+  padding: 2px var(--dp-px);
+  border: 1px solid var(--dp-border);
+  border-radius: var(--dp-radius);
+  background: var(--dp-input-bg);
+}
+.dp-control:hover:not([data-disabled]) {
+  border-color: color-mix(in oklab, var(--dp-border), var(--dp-fg) 25%);
+}
+.dp-control:focus-within,
+.dp-root[data-state="open"] .dp-control {
+  outline: 2px solid var(--dp-focus);
+  outline-offset: -1px;
+}
+.dp-control[data-invalid] {
+  border-color: var(--dp-danger);
+}
+.dp-control[data-invalid]:focus-within,
+.dp-root[data-invalid][data-state="open"] .dp-control {
+  outline-color: var(--dp-danger);
+}
+.dp-control[data-disabled] {
+  opacity: 0.55;
+}
+.dp-control[data-disabled] .dp-input {
+  cursor: not-allowed;
+}
+
+.dp-input {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+.dp-input::placeholder {
+  color: var(--dp-muted);
+}
+.dp-input:read-only {
+  cursor: pointer;
+}
+.dp-separator {
+  flex: none;
+  color: var(--dp-muted);
+}
+
+.dp-actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 2px;
+  color: var(--dp-muted);
+}
+.dp-icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.dp-icon-button:hover:not(:disabled) {
+  background: var(--dp-hover);
+  color: var(--dp-fg);
+}
+.dp-icon-button:focus-visible {
+  outline: 2px solid var(--dp-focus);
+  outline-offset: 1px;
+}
+.dp-icon-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* ------------------------------------------------------------- popover */
+
+.dp-popover {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 1px solid var(--dp-border);
+  border-radius: var(--dp-radius);
+  background: var(--dp-bg);
+  color: var(--dp-fg);
+  box-shadow: var(--dp-shadow);
+  font-size: var(--dp-font-size);
+}
+.dp-panel-root {
+  display: flex;
+  align-items: stretch;
+}
+
+.dp-presets {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px;
+  border-inline-end: 1px solid var(--dp-border);
+}
+.dp-preset {
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.dp-preset:hover {
+  background: var(--dp-hover);
+}
+.dp-preset:focus-visible {
+  outline: 2px solid var(--dp-focus);
+  outline-offset: -2px;
+}
+
+.dp-calendar {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.dp-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  padding-bottom: 4px;
+}
+/* "Previous" points the reading-back way in both directions. */
+[dir="rtl"] .dp-nav-step svg {
+  transform: scaleX(-1);
+}
+.dp-nav-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.dp-nav-title:hover {
+  background: var(--dp-hover);
+}
+.dp-nav-title:focus-visible {
+  outline: 2px solid var(--dp-focus);
+  outline-offset: -2px;
+}
+.dp-nav-chevron {
+  color: var(--dp-muted);
+  transition: transform 120ms ease;
+}
+.dp-nav-title[aria-expanded="true"] .dp-nav-chevron {
+  transform: rotate(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .dp-nav-chevron {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------- month grid */
+
+.dp-months {
+  display: flex;
+  gap: 16px;
+}
+.dp-month-caption {
+  padding-bottom: 4px;
+  color: var(--dp-muted);
+  font-weight: 600;
+  text-align: center;
+}
+.dp-grid {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.dp-weekday,
+.dp-week-number {
+  width: var(--dp-day-size);
+  padding: 4px 0;
+  color: var(--dp-muted);
+  font-size: 0.85em;
+  font-weight: 600;
+  text-align: center;
+}
+.dp-week-number {
+  width: 28px;
+  border-inline-end: 1px solid var(--dp-border);
+  font-weight: 400;
+}
+.dp-week-number abbr {
+  text-decoration: none;
+}
+.dp-cell {
+  padding: 1px 0;
+}
+
+.dp-day {
+  display: grid;
+  place-items: center;
+  width: var(--dp-day-size);
+  height: var(--dp-day-size);
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.dp-day:hover:not(:disabled) {
+  background: var(--dp-hover);
+}
+.dp-day:focus-visible {
+  outline: 2px solid var(--dp-focus);
+  outline-offset: -2px;
+}
+.dp-day[data-outside] {
+  color: var(--dp-muted);
+  opacity: 0.6;
+}
+.dp-day[data-today] {
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px var(--dp-accent);
+}
+.dp-day[data-selected] {
+  background: var(--dp-accent);
+  color: var(--dp-accent-fg);
+  font-weight: 600;
+}
+.dp-day[data-selected]:hover {
+  background: var(--dp-accent);
+}
+.dp-day:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* The band spans the cell, so a range reads as one continuous stripe. */
+.dp-cell[data-in-range] {
+  background: var(--dp-accent-soft);
+}
+.dp-cell[data-range-start] {
+  border-start-start-radius: 6px;
+  border-end-start-radius: 6px;
+}
+.dp-cell[data-range-end] {
+  border-start-end-radius: 6px;
+  border-end-end-radius: 6px;
+}
+
+/* --------------------------------------------------- month/year panels */
+
+.dp-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px 0;
+}
+.dp-panel-item {
+  padding: 8px 6px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.dp-panel-item:hover:not(:disabled) {
+  background: var(--dp-hover);
+}
+.dp-panel-item:focus-visible {
+  outline: 2px solid var(--dp-focus);
+  outline-offset: -2px;
+}
+.dp-panel-item[data-selected] {
+  background: var(--dp-accent);
+  color: var(--dp-accent-fg);
+  font-weight: 600;
+}
+.dp-panel-item:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.dp-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid var(--dp-border);
+}
+.dp-link-button {
+  padding: 4px 6px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: var(--dp-accent);
+  font: inherit;
+  cursor: pointer;
+}
+.dp-link-button:hover {
+  background: var(--dp-hover);
+}
+.dp-link-button:focus-visible {
+  outline: 2px solid var(--dp-focus);
+  outline-offset: -2px;
+}
+
+.dp-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (forced-colors: active) {
+  .dp-day[data-selected],
+  .dp-panel-item[data-selected] {
+    background: Highlight;
+    color: HighlightText;
+  }
+  .dp-cell[data-in-range] {
+    background: Highlight;
+    forced-color-adjust: none;
+  }
+}

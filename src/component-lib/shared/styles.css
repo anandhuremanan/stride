@@ -1,0 +1,79 @@
+/*
+ * Shared defaults every component can rely on.
+ *
+ * Rules are unlayered: they beat a framework reset on specificity, and lose to
+ * anything you pass through `className`. With Tailwind v4, import this file
+ * after the framework and inside its components layer - see the README.
+ *
+ * Right now this file is scrollbars. Each component carries its own fallback
+ * values, so a component installed on its own still looks right; what lives
+ * here is the single place to theme them, and the `gbs-scroll` class for your
+ * own scrolling areas.
+ */
+
+/*
+ * Thin scrollbars, themed with the rest of the kit.
+ *
+ * `scrollbar-width` and `scrollbar-color` are the standard properties -
+ * Baseline since December 2024 - rather than the `::-webkit-scrollbar`
+ * pseudo-elements. Two reasons: the standard ones are what the other browsers
+ * implement, and mixing the two is a known way to get a scrollbar that is thin
+ * in one engine and default in another. `scrollbar-width` takes no length,
+ * only `auto | thin | none`, so `thin` is the whole control surface.
+ *
+ * Override any of these on `:root` to restyle every scrollbar at once, or on
+ * one element to restyle that one:
+ *
+ *   :root {
+ *     --gbs-scrollbar-width: auto;              bring the chunky ones back
+ *     --gbs-scrollbar-thumb: var(--gbs-accent); tint them with the brand
+ *   }
+ */
+:root {
+  /* `auto | thin | none`. `thin` is the default across the kit. */
+  --gbs-scrollbar-width: thin;
+
+  /*
+   * Derived from the accent so a themed kit themes its scrollbars too, and
+   * muted hard, because a scrollbar is furniture rather than content. The
+   * fallbacks are the same neutral the components use when untouched.
+   */
+  --gbs-scrollbar-thumb: color-mix(
+    in oklab,
+    var(--gbs-accent, light-dark(#2563eb, #60a5fa)) 28%,
+    light-dark(#a1a1aa, #52525b)
+  );
+  --gbs-scrollbar-thumb-hover: color-mix(
+    in oklab,
+    var(--gbs-accent, light-dark(#2563eb, #60a5fa)) 55%,
+    light-dark(#71717a, #71717a)
+  );
+  /* Transparent by default: a track that is a visible stripe reads as heavier
+     than the scrollbar it holds. */
+  --gbs-scrollbar-track: transparent;
+}
+
+/*
+ * Apply to your own scrolling areas to match the components:
+ *
+ *   <div class="gbs-scroll">…</div>
+ *
+ * `:where()` keeps the specificity at zero, so a single utility class of your
+ * own still wins without `!important`.
+ */
+:where(.gbs-scroll) {
+  scrollbar-width: var(--gbs-scrollbar-width, thin);
+  scrollbar-color: var(--gbs-scrollbar-thumb, light-dark(#c4c4ca, #3f3f46))
+    var(--gbs-scrollbar-track, transparent);
+}
+
+/*
+ * The hover brightening is a progressive enhancement: `scrollbar-color` does
+ * not transition, and a pointer-coarse device has no hover to speak of.
+ */
+@media (hover: hover) {
+  :where(.gbs-scroll):hover {
+    scrollbar-color: var(--gbs-scrollbar-thumb-hover, light-dark(#a1a1aa, #52525b))
+      var(--gbs-scrollbar-track, transparent);
+  }
+}

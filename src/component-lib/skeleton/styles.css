@@ -1,0 +1,185 @@
+/*
+ * Skeleton and Empty styles.
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (set them on :root to theme every component at once) and fall back to the
+ * same default palette otherwise. Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.sk-root,
+.em-root {
+  --sk-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --sk-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --sk-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --sk-base: var(--gbs-skeleton, var(--gbs-hover, var(--dg-hover, light-dark(#ececee, #232329))));
+  --sk-sheen: light-dark(rgb(255 255 255 / 0.65), rgb(255 255 255 / 0.06));
+  --sk-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --sk-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --sk-duration: 1.4s;
+
+  color-scheme: inherit;
+  font-size: var(--sk-font-size);
+  line-height: 1.5;
+}
+
+:where(.dark, [data-theme="dark"]) :is(.sk-root, .em-root) {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) :is(.sk-root, .em-root) {
+  color-scheme: light;
+}
+
+:where(.sk-root, .em-root) *,
+:where(.sk-root, .em-root) *::before,
+:where(.sk-root, .em-root) *::after {
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------ skeleton */
+
+.sk-root {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: var(--sk-width, 100%);
+  height: var(--sk-height);
+}
+
+.sk-line {
+  flex: none;
+  height: 100%;
+  border-radius: var(--sk-radius);
+  background: var(--sk-base);
+}
+
+/* Text bars are sized from the font, so a paragraph placeholder takes the
+   space the paragraph will. */
+.sk-root:where([data-variant="text"]) {
+  height: var(--sk-height);
+}
+.sk-root:where([data-variant="text"]) .sk-line {
+  height: var(--sk-height, 0.85em);
+  border-radius: 4px;
+}
+
+.sk-root:where([data-variant="circle"]) {
+  width: var(--sk-width, 40px);
+  height: var(--sk-height, var(--sk-width, 40px));
+}
+.sk-root:where([data-variant="circle"]) .sk-line {
+  border-radius: 50%;
+}
+
+.sk-root:where([data-variant="rect"]) {
+  height: var(--sk-height, 80px);
+}
+
+.sk-root:where([data-animation="pulse"]) .sk-line {
+  animation: sk-pulse var(--sk-duration) ease-in-out infinite;
+}
+@keyframes sk-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.sk-root:where([data-animation="wave"]) .sk-line {
+  position: relative;
+  overflow: hidden;
+}
+.sk-root:where([data-animation="wave"]) .sk-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--sk-sheen), transparent);
+  animation: sk-wave var(--sk-duration) linear infinite;
+}
+@keyframes sk-wave {
+  from {
+    translate: -100% 0;
+  }
+  to {
+    translate: 100% 0;
+  }
+}
+
+.sk-sr-only,
+.em-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- empty */
+
+.em-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 40px 24px;
+  color: var(--sk-fg);
+  text-align: center;
+  text-wrap: pretty;
+}
+.em-root:where([data-size="sm"]) {
+  padding: 24px 16px;
+}
+.em-root:where([data-size="lg"]) {
+  padding: 64px 24px;
+}
+
+.em-icon {
+  display: inline-flex;
+  margin-bottom: 4px;
+  color: var(--sk-muted);
+}
+.em-root:where([data-size="sm"]) .em-icon {
+  margin-bottom: 0;
+}
+
+.em-title {
+  margin: 0;
+  font-size: 1.05em;
+  font-weight: 600;
+}
+.em-root:where([data-size="lg"]) .em-title {
+  font-size: 1.2em;
+}
+
+.em-description {
+  max-width: 46ch;
+  margin: 0;
+  color: var(--sk-muted);
+}
+
+.em-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Movement that repeats forever is the kind reduced-motion means. */
+@media (prefers-reduced-motion: reduce) {
+  .sk-root .sk-line,
+  .sk-root .sk-line::after {
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .sk-line {
+    border: 1px solid CanvasText;
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Badge",
+    "folder": "badge",
+    "exports": [
+      "Badge",
+      "Tag"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/count.ts",
+      "core/index.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Badge.tsx",
+      "react/Tag.tsx",
+      "react/locale.ts",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:16f626a94da3bac9b1a105718010edd7e1ce5a6118823ed8a53c97d658d89a3e"
+  },
+  "props": [
+    {
+      "name": "appearance",
+      "type": "enum",
+      "values": [
+        "outline",
+        "soft",
+        "solid"
+      ],
+      "typeText": "BadgeAppearance | undefined",
+      "required": false,
+      "default": "soft",
+      "origin": "derived",
+      "description": "Default `soft`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "children",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<BadgeSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "A number instead of children. Above `max` it reads \"99+\".",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived"
+    },
+    {
+      "name": "dot",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "A small filled circle before the label, for a status.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "formatValue",
+      "type": "function",
+      "signature": "((value: number) => string) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Format the number, e.g. with `Intl.NumberFormat`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "icon",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "An icon before the label, in place of `dot`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Names the remove button when the tag's own text is not a plain string.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<BadgeLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 99,
+      "origin": "derived",
+      "description": "Where the count stops. Default 99.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onRemove",
+      "type": "function",
+      "signature": "(() => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Show a remove button. Without it a Tag is a Badge with a bit more padding.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<HTMLSpanElement> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "role",
+      "type": "other",
+      "typeText": "AriaRole | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "showZero",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Show a count of zero. Default false: an empty counter is noise.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "md",
+        "sm"
+      ],
+      "typeText": "BadgeSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "variant",
+      "type": "enum",
+      "values": [
+        "accent",
+        "danger",
+        "info",
+        "neutral",
+        "success",
+        "warning"
+      ],
+      "typeText": "BadgeVariant | undefined",
+      "required": false,
+      "default": "neutral",
+      "origin": "derived",
+      "description": "Default `neutral`.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "HTMLAttributes<HTMLSpanElement>",
+      "omitted": [
+        "onRemove"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onRemove",
+      "signature": "(() => void) | undefined"
+    }
+  ],
+  "slots": [
+    "root",
+    "dot",
+    "icon",
+    "label",
+    "remove"
+  ],
+  "states": [
+    {
+      "attr": "data-appearance",
+      "values": [
+        "outline",
+        "soft",
+        "solid"
+      ]
+    },
+    {
+      "attr": "data-count"
+    },
+    {
+      "attr": "data-disabled"
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-variant",
+      "values": [
+        "accent",
+        "danger",
+        "info",
+        "neutral",
+        "success",
+        "warning"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 13,
+    "propsDescribed": 11,
+    "describedPct": 85,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

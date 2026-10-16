@@ -1,0 +1,245 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Spinner",
+    "folder": "spinner",
+    "exports": [
+      "Spinner"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/index.ts",
+      "core/types.ts",
+      "core/visibility.ts",
+      "index.ts",
+      "react/Spinner.tsx",
+      "react/locale.ts",
+      "react/props.ts",
+      "react/useDelayedLoading.ts"
+    ],
+    "sourceHash": "sha256:35c2de8415540772f688151782dff3c84c49b7a3d03fd7e575b3d4d4d4e93d85"
+  },
+  "props": [
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "children",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Content to cover while loading. It becomes inert, so it can't be clicked or focused.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<SpinnerSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 0,
+      "origin": "derived",
+      "description": "Milliseconds to wait before showing, so fast work doesn't flash. Default 0.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "What screen readers announce. Default \"Loading\".",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": true,
+      "origin": "derived",
+      "description": "Default true. With `children`, the spinner covers them while this is true.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<SpinnerLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "minDuration",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 0,
+      "origin": "derived",
+      "description": "Once shown, stay at least this many milliseconds. Default 0.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "role",
+      "type": "other",
+      "typeText": "AriaRole | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "showLabel",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Show the label next to the spinner.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "size",
+      "type": "other",
+      "typeText": "number | SpinnerSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md` (24 px); a number is pixels.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "variant",
+      "type": "enum",
+      "values": [
+        "dots",
+        "ring"
+      ],
+      "typeText": "SpinnerVariant | undefined",
+      "required": false,
+      "default": "ring",
+      "origin": "derived",
+      "description": "Default `ring`.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "HTMLAttributes<HTMLElement>",
+      "omitted": [
+        "children"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [],
+  "slots": [
+    "root",
+    "status",
+    "indicator",
+    "label",
+    "content",
+    "overlay"
+  ],
+  "states": [
+    {
+      "attr": "data-loading"
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-variant",
+      "values": [
+        "dots"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 8,
+    "propsDescribed": 8,
+    "describedPct": 100,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Progress",
+    "folder": "progress",
+    "exports": [
+      "CircularProgress",
+      "Progress"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/index.ts",
+      "core/progress.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/CircularProgress.tsx",
+      "react/Progress.tsx",
+      "react/locale.ts",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:8c989dc440492a833963b37e6c28fd90a99e54435c545a4f053b77c83d745eaf"
+  },
+  "props": [
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "children",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<ProgressSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "label",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Names the bar. Shown above it, and used as the accessible name.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<ProgressLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 100,
+      "origin": "derived",
+      "description": "What `value` is measured against. Default 100.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<HTMLDivElement> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "showValue",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Show the percentage beside the label.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "sm"
+      ],
+      "typeText": "ProgressSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "thickness",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 4,
+      "origin": "derived",
+      "description": "Ring thickness in pixels. Default 4.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "typeText": "number | null | undefined",
+      "required": false,
+      "default": null,
+      "origin": "derived",
+      "description": "How far along. `null` means the length is not known yet.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "valueText",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "Replace what is shown and read, e.g. \"3.2 MB of 8 MB\".",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "variant",
+      "type": "enum",
+      "values": [
+        "accent",
+        "danger",
+        "success",
+        "warning"
+      ],
+      "typeText": "ProgressVariant | undefined",
+      "required": false,
+      "default": "accent",
+      "origin": "derived",
+      "description": "Default `accent`.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "HTMLAttributes<HTMLDivElement>",
+      "omitted": [
+        "role"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [],
+  "slots": [
+    "root",
+    "header",
+    "label",
+    "value",
+    "track",
+    "bar",
+    "svg"
+  ],
+  "states": [
+    {
+      "attr": "data-indeterminate"
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "lg",
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-variant",
+      "values": [
+        "danger",
+        "success",
+        "warning"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 9,
+    "propsDescribed": 8,
+    "describedPct": 89,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

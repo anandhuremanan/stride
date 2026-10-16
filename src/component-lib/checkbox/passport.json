@@ -1,0 +1,474 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Checkbox",
+    "folder": "checkbox",
+    "exports": [
+      "Checkbox",
+      "CheckboxGroup",
+      "CheckboxGroupContext"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/group.ts",
+      "core/index.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Checkbox.tsx",
+      "react/CheckboxGroup.tsx",
+      "react/context.ts",
+      "react/locale.ts",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:ddf0907b2b6377c5d134ed140d8a4f47b0dc5ef39ec984c21ec33370c6d9815f"
+  },
+  "props": [
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "autoComplete",
+      "type": "other",
+      "typeText": "HTMLInputAutoCompleteAttribute | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "autoFocus",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "checked",
+      "type": "other",
+      "typeText": "CheckedState | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "`true`, `false` or `\"indeterminate\"` (controlled).",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "children",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<CheckboxSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "defaultChecked",
+      "type": "other",
+      "typeText": "CheckedState | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "The starting state when you are not controlling `checked`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "defaultValue",
+      "type": "other",
+      "typeText": "string[] | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The values checked to begin with, when you are not controlling `value`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "description",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "A hint under the label, linked as the box's description.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived"
+    },
+    {
+      "name": "error",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "The validation message. Setting it is enough on its own: the box reads as\r\ninvalid to assistive technology and the message is announced, so no extra\r\n`aria-invalid` is needed.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "form",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "inputMode",
+      "type": "enum",
+      "values": [
+        "decimal",
+        "email",
+        "none",
+        "numeric",
+        "search",
+        "tel",
+        "text",
+        "url"
+      ],
+      "typeText": "'none' | 'search' | 'email' | 'tel' | 'text' | 'url' | 'numeric' | 'decimal' | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "label",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "The text beside the box. Clicking it toggles the box.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<CheckboxLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "max",
+      "type": "other",
+      "typeText": "string | number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "maxLength",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "min",
+      "type": "other",
+      "typeText": "string | number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "minLength",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Form field name for every checkbox in the group.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onChange",
+      "type": "function",
+      "signature": "ChangeEventHandler<HTMLInputElement> | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The underlying DOM event, for form libraries that want the native\r\nhandler. For reading the new state, `onCheckedChange` is simpler.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onCheckedChange",
+      "type": "function",
+      "signature": "((checked: boolean) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The state after a change, as a plain boolean — the handler to reach for.\r\nNever fires with `\"indeterminate\"`: clicking a mixed box resolves it.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "onValueChange",
+      "type": "function",
+      "signature": "((values: string[]) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The checked values after a change. They accumulate in the order they were\nchecked, not the order the options are declared, so sort before comparing\ntwo selections for equality.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "options",
+      "type": "other",
+      "typeText": "readonly CheckboxOption[] | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Render these options, or pass `<Checkbox value=\"…\">` children.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "orientation",
+      "type": "enum",
+      "values": [
+        "horizontal",
+        "vertical"
+      ],
+      "typeText": "'vertical' | 'horizontal' | undefined",
+      "required": false,
+      "default": "vertical",
+      "origin": "derived",
+      "description": "Default `vertical`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "pattern",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<HTMLInputElement> | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The `<input>` element.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived"
+    },
+    {
+      "name": "role",
+      "type": "other",
+      "typeText": "AriaRole | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "selectAll",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "With `options`, a parent box that checks or clears them all. `true` uses the default label.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "sm"
+      ],
+      "typeText": "CheckboxSize | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Default `md`, or the size of the CheckboxGroup it sits in.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "step",
+      "type": "other",
+      "typeText": "string | number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Posted with the form when checked. Inside a CheckboxGroup, the value this box adds.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "InputHTMLAttributes<HTMLInputElement>",
+      "omitted": [
+        "checked",
+        "defaultChecked",
+        "onChange",
+        "size",
+        "type",
+        "value"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "signature": "ChangeEventHandler<HTMLInputElement> | undefined"
+    },
+    {
+      "name": "onCheckedChange",
+      "signature": "((checked: boolean) => void) | undefined"
+    },
+    {
+      "name": "onValueChange",
+      "signature": "((values: string[]) => void) | undefined"
+    }
+  ],
+  "slots": [
+    "root",
+    "control",
+    "input",
+    "label",
+    "description",
+    "error",
+    "legend",
+    "items"
+  ],
+  "states": [
+    {
+      "attr": "data-disabled"
+    },
+    {
+      "attr": "data-invalid"
+    },
+    {
+      "attr": "data-orientation",
+      "values": [
+        "horizontal"
+      ]
+    },
+    {
+      "attr": "data-required"
+    },
+    {
+      "attr": "data-select-all"
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "lg",
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 19,
+    "propsDescribed": 15,
+    "describedPct": 79,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

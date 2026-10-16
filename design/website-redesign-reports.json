@@ -1,0 +1,3044 @@
+{
+  "frame": "Website redesign · Reports",
+  "nodes": [
+    {
+      "name": "Website redesign · Reports",
+      "type": "FRAME",
+      "layout": {
+        "direction": "row"
+      },
+      "size": [
+        1440,
+        1215
+      ],
+      "style": {
+        "fill": "#f8faf9"
+      },
+      "children": [
+        {
+          "name": "Workspace navigation",
+          "type": "FRAME",
+          "layout": {
+            "direction": "column",
+            "gap": 28,
+            "padding": [
+              28,
+              16,
+              20,
+              16
+            ]
+          },
+          "size": [
+            224,
+            1215
+          ],
+          "style": {
+            "fill": "#f1f5f3",
+            "stroke": "#e1e8e4"
+          },
+          "children": [
+            {
+              "name": "Brand",
+              "type": "FRAME",
+              "layout": {
+                "direction": "row",
+                "gap": 10,
+                "padding": [
+                  0,
+                  0,
+                  0,
+                  12
+                ],
+                "align": "CENTER"
+              },
+              "size": [
+                120,
+                30
+              ],
+              "children": [
+                {
+                  "name": "Brand mark",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "align": "CENTER",
+                    "justify": "CENTER"
+                  },
+                  "size": [
+                    30,
+                    30
+                  ],
+                  "style": {
+                    "fill": "#15796f",
+                    "radius": 9
+                  },
+                  "children": [
+                    {
+                      "name": "layers-2",
+                      "type": "FRAME",
+                      "size": [
+                        19,
+                        19
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Brand name",
+                  "type": "TEXT",
+                  "text": "stride",
+                  "style": {
+                    "fill": "#20332e",
+                    "fontSize": 25,
+                    "fontWeight": 400
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Workspace switcher",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 6,
+                "padding": [
+                  12,
+                  12,
+                  12,
+                  12
+                ]
+              },
+              "size": [
+                192,
+                64
+              ],
+              "style": {
+                "fill": "#ffffff",
+                "stroke": "#e1e8e4",
+                "radius": 8
+              },
+              "children": [
+                {
+                  "name": "Workspace",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "align": "CENTER",
+                    "justify": "SPACE_BETWEEN"
+                  },
+                  "size": [
+                    168,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "name": "Workspace name",
+                      "type": "TEXT",
+                      "text": "Acme Studio",
+                      "style": {
+                        "fill": "#000000",
+                        "fontSize": 13,
+                        "fontWeight": 600
+                      }
+                    },
+                    {
+                      "name": "chevrons-up-down",
+                      "type": "FRAME",
+                      "size": [
+                        14,
+                        14
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Plan",
+                  "type": "TEXT",
+                  "text": "Team workspace · 4 members",
+                  "style": {
+                    "fill": "#71717a",
+                    "fontSize": 12,
+                    "fontWeight": 400
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Workspace links",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 4
+              },
+              "size": [
+                192,
+                174
+              ],
+              "children": [
+                {
+                  "name": "Navigation group",
+                  "type": "TEXT",
+                  "text": "WORKSPACE",
+                  "style": {
+                    "fill": "#718079",
+                    "fontSize": 11,
+                    "fontWeight": 600
+                  }
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "layout-dashboard",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Overview",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folders",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Projects",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "circle-check",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "My tasks",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "users",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Team & settings",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Project shortcuts",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 6
+              },
+              "size": [
+                192,
+                182
+              ],
+              "children": [
+                {
+                  "name": "Navigation group",
+                  "type": "TEXT",
+                  "text": "YOUR PROJECTS",
+                  "style": {
+                    "fill": "#718079",
+                    "fontSize": 11,
+                    "fontWeight": 600
+                  }
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "fill": "#e8f4f0",
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Website redesign",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Client portal",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Brand refresh",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Help center",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sidebar spacer",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column"
+              },
+              "size": [
+                192,
+                490
+              ]
+            },
+            {
+              "name": "Account",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 16
+              },
+              "size": [
+                192,
+                87
+              ],
+              "children": [
+                {
+                  "name": "Help link",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 10,
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    175,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "name": "circle-help",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Help",
+                      "type": "TEXT",
+                      "text": "Help & getting started",
+                      "style": {
+                        "fill": "#71717a",
+                        "fontSize": 13,
+                        "fontWeight": 400
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Divider",
+                  "type": "RECTANGLE",
+                  "size": [
+                    192,
+                    1
+                  ],
+                  "style": {
+                    "fill": "#e1e8e4"
+                  }
+                },
+                {
+                  "name": "Signed-in account",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 10,
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      8
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "children": [
+                    {
+                      "name": "Person",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        24,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "name": "Avatar",
+                          "type": "INSTANCE",
+                          "component": "Avatar",
+                          "properties": {
+                            "Status dot": false,
+                            "Initials": "MC",
+                            "Content": "Initials",
+                            "Size": "sm"
+                          },
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "CENTER"
+                          },
+                          "size": [
+                            24,
+                            24
+                          ],
+                          "style": {
+                            "fill": "#e8f4f0",
+                            "radius": 999
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Account details",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 2
+                      },
+                      "size": [
+                        102,
+                        36
+                      ],
+                      "children": [
+                        {
+                          "name": "Account name",
+                          "type": "TEXT",
+                          "text": "Maya Chen",
+                          "style": {
+                            "fill": "#000000",
+                            "fontSize": 13,
+                            "fontWeight": 600
+                          }
+                        },
+                        {
+                          "name": "Role",
+                          "type": "TEXT",
+                          "text": "Workspace owner",
+                          "style": {
+                            "fill": "#71717a",
+                            "fontSize": 12,
+                            "fontWeight": 400
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "chevron-down",
+                      "type": "FRAME",
+                      "size": [
+                        14,
+                        14
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Application content",
+          "type": "FRAME",
+          "layout": {
+            "direction": "column"
+          },
+          "size": [
+            1216,
+            1215
+          ],
+          "children": [
+            {
+              "name": "App header",
+              "type": "FRAME",
+              "layout": {
+                "direction": "row",
+                "padding": [
+                  0,
+                  32,
+                  0,
+                  32
+                ],
+                "align": "CENTER",
+                "justify": "SPACE_BETWEEN"
+              },
+              "size": [
+                1216,
+                68
+              ],
+              "style": {
+                "fill": "#ffffff",
+                "stroke": "#e1e8e4"
+              },
+              "children": [
+                {
+                  "name": "Breadcrumbs",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 10,
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    328,
+                    22
+                  ],
+                  "children": [
+                    {
+                      "name": "Workspace crumb",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb item",
+                      "properties": {
+                        "Show icon": false,
+                        "Label": "Acme Studio",
+                        "Type": "Link",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 5,
+                        "padding": [
+                          2,
+                          4,
+                          2,
+                          4
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        87,
+                        22
+                      ],
+                      "style": {
+                        "radius": 4
+                      }
+                    },
+                    {
+                      "name": "Separator",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb separator",
+                      "layout": {
+                        "direction": "row",
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        14,
+                        14
+                      ]
+                    },
+                    {
+                      "name": "Current scope",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb item",
+                      "properties": {
+                        "Show icon": false,
+                        "Label": "Website redesign",
+                        "Type": "Current",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 5,
+                        "padding": [
+                          2,
+                          4,
+                          2,
+                          4
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        116,
+                        22
+                      ],
+                      "style": {
+                        "radius": 4
+                      }
+                    },
+                    {
+                      "name": "Separator",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb separator",
+                      "layout": {
+                        "direction": "row",
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        14,
+                        14
+                      ]
+                    },
+                    {
+                      "name": "Page crumb",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb item",
+                      "properties": {
+                        "Show icon": false,
+                        "Label": "Reports",
+                        "Type": "Current",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 5,
+                        "padding": [
+                          2,
+                          4,
+                          2,
+                          4
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        57,
+                        22
+                      ],
+                      "style": {
+                        "radius": 4
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Header actions",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 20,
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    173,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "name": "Current date",
+                      "type": "TEXT",
+                      "text": "Fri, 16 Oct 2026",
+                      "style": {
+                        "fill": "#71717a",
+                        "fontSize": 12,
+                        "fontWeight": 400
+                      }
+                    },
+                    {
+                      "name": "bell",
+                      "type": "FRAME",
+                      "size": [
+                        18,
+                        18
+                      ]
+                    },
+                    {
+                      "name": "Person",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        24,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "name": "Avatar",
+                          "type": "INSTANCE",
+                          "component": "Avatar",
+                          "properties": {
+                            "Status dot": false,
+                            "Initials": "MC",
+                            "Content": "Initials",
+                            "Size": "sm"
+                          },
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "CENTER"
+                          },
+                          "size": [
+                            24,
+                            24
+                          ],
+                          "style": {
+                            "fill": "#e8f4f0",
+                            "radius": 999
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Page content",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 24,
+                "padding": [
+                  32,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              "size": [
+                1216,
+                1147
+              ],
+              "children": [
+                {
+                  "name": "Project header",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "column",
+                    "gap": 22
+                  },
+                  "size": [
+                    1152,
+                    160
+                  ],
+                  "children": [
+                    {
+                      "name": "Page heading",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 24,
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        1152,
+                        100
+                      ],
+                      "children": [
+                        {
+                          "name": "Heading",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 8
+                          },
+                          "size": [
+                            1028,
+                            62
+                          ],
+                          "children": [
+                            {
+                              "name": "Page title",
+                              "type": "TEXT",
+                              "text": "Website redesign",
+                              "style": {
+                                "fill": "#20332e",
+                                "fontSize": 28,
+                                "fontWeight": 600
+                              }
+                            },
+                            {
+                              "name": "Page description",
+                              "type": "TEXT",
+                              "text": "A clearer, faster home for Acme Studio.",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 14,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Page actions",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "gap": 10
+                          },
+                          "size": [
+                            100,
+                            100
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Project navigation",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 12
+                      },
+                      "size": [
+                        1152,
+                        38
+                      ],
+                      "style": {
+                        "stroke": "#e1e8e4"
+                      },
+                      "children": [
+                        {
+                          "name": "Project tab",
+                          "type": "INSTANCE",
+                          "component": "Tab",
+                          "properties": {
+                            "Badge": "3",
+                            "Show badge": false,
+                            "Label": "Backlog",
+                            "Variant": "Line",
+                            "State": "Default"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            74,
+                            38
+                          ]
+                        },
+                        {
+                          "name": "Project tab",
+                          "type": "INSTANCE",
+                          "component": "Tab",
+                          "properties": {
+                            "Badge": "3",
+                            "Show badge": false,
+                            "Label": "Sprints",
+                            "Variant": "Line",
+                            "State": "Default"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            69,
+                            38
+                          ]
+                        },
+                        {
+                          "name": "Project tab",
+                          "type": "INSTANCE",
+                          "component": "Tab",
+                          "properties": {
+                            "Badge": "3",
+                            "Show badge": false,
+                            "Label": "Board",
+                            "Variant": "Line",
+                            "State": "Default"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            61,
+                            38
+                          ]
+                        },
+                        {
+                          "name": "Project tab",
+                          "type": "INSTANCE",
+                          "component": "Tab",
+                          "properties": {
+                            "Badge": "3",
+                            "Show badge": false,
+                            "Label": "Reports",
+                            "Variant": "Line",
+                            "State": "Selected"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            73,
+                            38
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Report context",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "align": "CENTER",
+                    "justify": "SPACE_BETWEEN"
+                  },
+                  "size": [
+                    1152,
+                    46
+                  ],
+                  "children": [
+                    {
+                      "name": "Report title",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 6
+                      },
+                      "size": [
+                        226,
+                        46
+                      ],
+                      "children": [
+                        {
+                          "name": "Title",
+                          "type": "TEXT",
+                          "text": "Sprint delivery",
+                          "style": {
+                            "fill": "#000000",
+                            "fontSize": 18,
+                            "fontWeight": 600
+                          }
+                        },
+                        {
+                          "name": "Reporting period",
+                          "type": "TEXT",
+                          "text": "12–23 Oct 2026 · Snapshot as of 16 Oct",
+                          "style": {
+                            "fill": "#71717a",
+                            "fontSize": 12,
+                            "fontWeight": 400
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Filter",
+                      "type": "INSTANCE",
+                      "component": "Select trigger",
+                      "properties": {
+                        "Label": "Sprint 04 · Active",
+                        "Type": "Single",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "column",
+                        "gap": 4
+                      },
+                      "size": [
+                        186,
+                        36
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Report metrics",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 16
+                  },
+                  "size": [
+                    1152,
+                    111
+                  ],
+                  "children": [
+                    {
+                      "name": "Metric",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        373,
+                        111
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Summary",
+                          "type": "INSTANCE",
+                          "component": "Stat",
+                          "properties": {
+                            "Change": "+12.5%",
+                            "Show help": true,
+                            "Help": "40% of committed scope",
+                            "Value": "12 / 30",
+                            "Show icon": false,
+                            "Label": "Completed points",
+                            "Trend": "None"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "gap": 4
+                          },
+                          "size": [
+                            333,
+                            71
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Metric",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        373,
+                        111
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Summary",
+                          "type": "INSTANCE",
+                          "component": "Stat",
+                          "properties": {
+                            "Change": "+12.5%",
+                            "Show help": true,
+                            "Help": "6 tasks still in motion",
+                            "Value": "18 pts",
+                            "Show icon": false,
+                            "Label": "Remaining work",
+                            "Trend": "None"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "gap": 4
+                          },
+                          "size": [
+                            333,
+                            71
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Metric",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        373,
+                        111
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Summary",
+                          "type": "INSTANCE",
+                          "component": "Stat",
+                          "properties": {
+                            "Change": "+12.5%",
+                            "Show help": true,
+                            "Help": "Working days after today",
+                            "Value": "5 days",
+                            "Show icon": false,
+                            "Label": "Time remaining",
+                            "Trend": "None"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "gap": 4
+                          },
+                          "size": [
+                            333,
+                            71
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Delivery charts",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 20
+                  },
+                  "size": [
+                    1152,
+                    410
+                  ],
+                  "children": [
+                    {
+                      "name": "Content panel",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 20,
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        722,
+                        410
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Section heading",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "SPACE_BETWEEN"
+                          },
+                          "size": [
+                            682,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "name": "Title",
+                              "type": "TEXT",
+                              "text": "Sprint burndown",
+                              "style": {
+                                "fill": "#000000",
+                                "fontSize": 18,
+                                "fontWeight": 600
+                              }
+                            },
+                            {
+                              "name": "Context",
+                              "type": "TEXT",
+                              "text": "Sprint 04",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Burndown chart",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 12
+                          },
+                          "size": [
+                            682,
+                            326
+                          ],
+                          "children": [
+                            {
+                              "name": "Chart legend",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 22,
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                347,
+                                20
+                              ],
+                              "children": [
+                                {
+                                  "name": "Remaining legend",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 6,
+                                    "align": "CENTER"
+                                  },
+                                  "size": [
+                                    122,
+                                    16
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Legend line",
+                                      "type": "RECTANGLE",
+                                      "size": [
+                                        18,
+                                        3
+                                      ],
+                                      "style": {
+                                        "fill": "#15796f"
+                                      }
+                                    },
+                                    {
+                                      "name": "Legend label",
+                                      "type": "TEXT",
+                                      "text": "Remaining points",
+                                      "style": {
+                                        "fill": "#000000",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Ideal legend",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 6,
+                                    "align": "CENTER"
+                                  },
+                                  "size": [
+                                    83,
+                                    16
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Legend line",
+                                      "type": "RECTANGLE",
+                                      "size": [
+                                        18,
+                                        2
+                                      ],
+                                      "style": {
+                                        "fill": "#b2bdb7"
+                                      }
+                                    },
+                                    {
+                                      "name": "Legend label",
+                                      "type": "TEXT",
+                                      "text": "Ideal pace",
+                                      "style": {
+                                        "fill": "#000000",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Status",
+                                  "type": "INSTANCE",
+                                  "component": "Badge",
+                                  "properties": {
+                                    "Status dot": false,
+                                    "Label": "Today · 16 Oct",
+                                    "Variant": "Accent",
+                                    "Appearance": "Soft"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 4,
+                                    "padding": [
+                                      0,
+                                      8,
+                                      0,
+                                      8
+                                    ],
+                                    "align": "CENTER",
+                                    "justify": "CENTER"
+                                  },
+                                  "size": [
+                                    98,
+                                    20
+                                  ],
+                                  "style": {
+                                    "fill": "#e8f4f0",
+                                    "radius": 999
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Axis unit",
+                              "type": "TEXT",
+                              "text": "Story points remaining",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            },
+                            {
+                              "name": "Burndown plot",
+                              "type": "FRAME",
+                              "size": [
+                                680,
+                                238
+                              ],
+                              "children": [
+                                {
+                                  "name": "Date tick",
+                                  "type": "TEXT",
+                                  "text": "23",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Date tick",
+                                  "type": "TEXT",
+                                  "text": "22",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Date tick",
+                                  "type": "TEXT",
+                                  "text": "21",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Date tick",
+                                  "type": "TEXT",
+                                  "text": "20",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Date tick",
+                                  "type": "TEXT",
+                                  "text": "19",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Date tick",
+                                  "type": "TEXT",
+                                  "text": "16",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Date tick",
+                                  "type": "TEXT",
+                                  "text": "15",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Date tick",
+                                  "type": "TEXT",
+                                  "text": "14",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Date tick",
+                                  "type": "TEXT",
+                                  "text": "13",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Date tick",
+                                  "type": "TEXT",
+                                  "text": "12",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Current value",
+                                  "type": "TEXT",
+                                  "text": "18 pts",
+                                  "style": {
+                                    "fill": "#15796f",
+                                    "fontSize": 13,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                {
+                                  "name": "Daily point",
+                                  "type": "ELLIPSE",
+                                  "size": [
+                                    8,
+                                    8
+                                  ],
+                                  "style": {
+                                    "fill": "#15796f",
+                                    "stroke": "#ffffff"
+                                  }
+                                },
+                                {
+                                  "name": "Daily point",
+                                  "type": "ELLIPSE",
+                                  "size": [
+                                    8,
+                                    8
+                                  ],
+                                  "style": {
+                                    "fill": "#15796f",
+                                    "stroke": "#ffffff"
+                                  }
+                                },
+                                {
+                                  "name": "Daily point",
+                                  "type": "ELLIPSE",
+                                  "size": [
+                                    8,
+                                    8
+                                  ],
+                                  "style": {
+                                    "fill": "#15796f",
+                                    "stroke": "#ffffff"
+                                  }
+                                },
+                                {
+                                  "name": "Daily point",
+                                  "type": "ELLIPSE",
+                                  "size": [
+                                    8,
+                                    8
+                                  ],
+                                  "style": {
+                                    "fill": "#15796f",
+                                    "stroke": "#ffffff"
+                                  }
+                                },
+                                {
+                                  "name": "Daily point",
+                                  "type": "ELLIPSE",
+                                  "size": [
+                                    8,
+                                    8
+                                  ],
+                                  "style": {
+                                    "fill": "#15796f",
+                                    "stroke": "#ffffff"
+                                  }
+                                },
+                                {
+                                  "name": "Remaining trend",
+                                  "type": "VECTOR",
+                                  "size": [
+                                    267,
+                                    72
+                                  ],
+                                  "style": {
+                                    "stroke": "#15796f"
+                                  }
+                                },
+                                {
+                                  "name": "Ideal trend",
+                                  "type": "VECTOR",
+                                  "size": [
+                                    600,
+                                    180
+                                  ],
+                                  "style": {
+                                    "stroke": "#b2bdb7"
+                                  }
+                                },
+                                {
+                                  "name": "Today marker",
+                                  "type": "RECTANGLE",
+                                  "size": [
+                                    1,
+                                    180
+                                  ],
+                                  "style": {
+                                    "fill": "#cbdcd4"
+                                  }
+                                },
+                                {
+                                  "name": "Horizontal grid",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 12,
+                                    "align": "CENTER"
+                                  },
+                                  "size": [
+                                    660,
+                                    16
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Axis tick",
+                                      "type": "TEXT",
+                                      "text": "0",
+                                      "style": {
+                                        "fill": "#71717a",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    },
+                                    {
+                                      "name": "Gridline",
+                                      "type": "RECTANGLE",
+                                      "size": [
+                                        610,
+                                        1
+                                      ],
+                                      "style": {
+                                        "fill": "#e1e8e4"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Horizontal grid",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 12,
+                                    "align": "CENTER"
+                                  },
+                                  "size": [
+                                    660,
+                                    16
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Axis tick",
+                                      "type": "TEXT",
+                                      "text": "10",
+                                      "style": {
+                                        "fill": "#71717a",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    },
+                                    {
+                                      "name": "Gridline",
+                                      "type": "RECTANGLE",
+                                      "size": [
+                                        610,
+                                        1
+                                      ],
+                                      "style": {
+                                        "fill": "#e1e8e4"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Horizontal grid",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 12,
+                                    "align": "CENTER"
+                                  },
+                                  "size": [
+                                    660,
+                                    16
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Axis tick",
+                                      "type": "TEXT",
+                                      "text": "20",
+                                      "style": {
+                                        "fill": "#71717a",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    },
+                                    {
+                                      "name": "Gridline",
+                                      "type": "RECTANGLE",
+                                      "size": [
+                                        610,
+                                        1
+                                      ],
+                                      "style": {
+                                        "fill": "#e1e8e4"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Horizontal grid",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 12,
+                                    "align": "CENTER"
+                                  },
+                                  "size": [
+                                    660,
+                                    16
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Axis tick",
+                                      "type": "TEXT",
+                                      "text": "30",
+                                      "style": {
+                                        "fill": "#71717a",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    },
+                                    {
+                                      "name": "Gridline",
+                                      "type": "RECTANGLE",
+                                      "size": [
+                                        610,
+                                        1
+                                      ],
+                                      "style": {
+                                        "fill": "#e1e8e4"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Date axis",
+                              "type": "TEXT",
+                              "text": "October 2026 · working days",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Content panel",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 20,
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        410,
+                        379
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Section heading",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "SPACE_BETWEEN"
+                          },
+                          "size": [
+                            370,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "name": "Title",
+                              "type": "TEXT",
+                              "text": "Recent delivery",
+                              "style": {
+                                "fill": "#000000",
+                                "fontSize": 18,
+                                "fontWeight": 600
+                              }
+                            },
+                            {
+                              "name": "Context",
+                              "type": "TEXT",
+                              "text": "Points",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Completed point trend",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 12
+                          },
+                          "size": [
+                            370,
+                            295
+                          ],
+                          "children": [
+                            {
+                              "name": "Unit",
+                              "type": "TEXT",
+                              "text": "Completed story points",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            },
+                            {
+                              "name": "Completed point plot",
+                              "type": "FRAME",
+                              "size": [
+                                360,
+                                239
+                              ],
+                              "children": [
+                                {
+                                  "name": "Sprint label",
+                                  "type": "TEXT",
+                                  "text": "Sprint 03",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Completed point bar",
+                                  "type": "RECTANGLE",
+                                  "size": [
+                                    48,
+                                    162
+                                  ],
+                                  "style": {
+                                    "fill": "#15796f"
+                                  }
+                                },
+                                {
+                                  "name": "Point value",
+                                  "type": "TEXT",
+                                  "text": "27",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                {
+                                  "name": "Sprint label",
+                                  "type": "TEXT",
+                                  "text": "Sprint 02",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Completed point bar",
+                                  "type": "RECTANGLE",
+                                  "size": [
+                                    48,
+                                    144
+                                  ],
+                                  "style": {
+                                    "fill": "#a8cbc0"
+                                  }
+                                },
+                                {
+                                  "name": "Point value",
+                                  "type": "TEXT",
+                                  "text": "24",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                {
+                                  "name": "Sprint label",
+                                  "type": "TEXT",
+                                  "text": "Sprint 01",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Completed point bar",
+                                  "type": "RECTANGLE",
+                                  "size": [
+                                    48,
+                                    120
+                                  ],
+                                  "style": {
+                                    "fill": "#a8cbc0"
+                                  }
+                                },
+                                {
+                                  "name": "Point value",
+                                  "type": "TEXT",
+                                  "text": "20",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                {
+                                  "name": "Baseline",
+                                  "type": "RECTANGLE",
+                                  "size": [
+                                    310,
+                                    1
+                                  ],
+                                  "style": {
+                                    "fill": "#e1e8e4"
+                                  }
+                                },
+                                {
+                                  "name": "Value tick",
+                                  "type": "TEXT",
+                                  "text": "0",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Value tick",
+                                  "type": "TEXT",
+                                  "text": "10",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Value tick",
+                                  "type": "TEXT",
+                                  "text": "20",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Value tick",
+                                  "type": "TEXT",
+                                  "text": "30",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Trend explanation",
+                              "type": "TEXT",
+                              "text": "Last 3 completed sprints · Sprint 04 excluded",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Delivery interpretation",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 20
+                  },
+                  "size": [
+                    1152,
+                    220
+                  ],
+                  "children": [
+                    {
+                      "name": "Content panel",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 20,
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        450,
+                        201
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Section heading",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "SPACE_BETWEEN"
+                          },
+                          "size": [
+                            410,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "name": "Title",
+                              "type": "TEXT",
+                              "text": "Work by status",
+                              "style": {
+                                "fill": "#000000",
+                                "fontSize": 18,
+                                "fontWeight": 600
+                              }
+                            },
+                            {
+                              "name": "Context",
+                              "type": "TEXT",
+                              "text": "10 tasks · 30 pts",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Status breakdown",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 15
+                          },
+                          "size": [
+                            410,
+                            117
+                          ],
+                          "children": [
+                            {
+                              "name": "Status row",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 12,
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                410,
+                                18
+                              ],
+                              "children": [
+                                {
+                                  "name": "Status",
+                                  "type": "TEXT",
+                                  "text": "To do",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Bar track",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row"
+                                  },
+                                  "size": [
+                                    220,
+                                    8
+                                  ],
+                                  "style": {
+                                    "fill": "#f4f4f5",
+                                    "radius": 4
+                                  },
+                                  "children": [
+                                    {
+                                      "name": "Task proportion",
+                                      "type": "RECTANGLE",
+                                      "size": [
+                                        62,
+                                        8
+                                      ],
+                                      "style": {
+                                        "fill": "#bbc6c0",
+                                        "radius": 4
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Count and points",
+                                  "type": "TEXT",
+                                  "text": "3 · 7 pts",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Status row",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 12,
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                410,
+                                18
+                              ],
+                              "children": [
+                                {
+                                  "name": "Status",
+                                  "type": "TEXT",
+                                  "text": "In progress",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Bar track",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row"
+                                  },
+                                  "size": [
+                                    220,
+                                    8
+                                  ],
+                                  "style": {
+                                    "fill": "#f4f4f5",
+                                    "radius": 4
+                                  },
+                                  "children": [
+                                    {
+                                      "name": "Task proportion",
+                                      "type": "RECTANGLE",
+                                      "size": [
+                                        42,
+                                        8
+                                      ],
+                                      "style": {
+                                        "fill": "#15796f",
+                                        "radius": 4
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Count and points",
+                                  "type": "TEXT",
+                                  "text": "2 · 8 pts",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Status row",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 12,
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                410,
+                                18
+                              ],
+                              "children": [
+                                {
+                                  "name": "Status",
+                                  "type": "TEXT",
+                                  "text": "In review",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Bar track",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row"
+                                  },
+                                  "size": [
+                                    220,
+                                    8
+                                  ],
+                                  "style": {
+                                    "fill": "#f4f4f5",
+                                    "radius": 4
+                                  },
+                                  "children": [
+                                    {
+                                      "name": "Task proportion",
+                                      "type": "RECTANGLE",
+                                      "size": [
+                                        21,
+                                        8
+                                      ],
+                                      "style": {
+                                        "fill": "#c59a4e",
+                                        "radius": 4
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Count and points",
+                                  "type": "TEXT",
+                                  "text": "1 · 3 pts",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Status row",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 12,
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                410,
+                                18
+                              ],
+                              "children": [
+                                {
+                                  "name": "Status",
+                                  "type": "TEXT",
+                                  "text": "Done",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Bar track",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row"
+                                  },
+                                  "size": [
+                                    220,
+                                    8
+                                  ],
+                                  "style": {
+                                    "fill": "#f4f4f5",
+                                    "radius": 4
+                                  },
+                                  "children": [
+                                    {
+                                      "name": "Task proportion",
+                                      "type": "RECTANGLE",
+                                      "size": [
+                                        83,
+                                        8
+                                      ],
+                                      "style": {
+                                        "fill": "#7daf9d",
+                                        "radius": 4
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Count and points",
+                                  "type": "TEXT",
+                                  "text": "4 · 12 pts",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Content panel",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 20,
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        682,
+                        220
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Section heading",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "SPACE_BETWEEN"
+                          },
+                          "size": [
+                            642,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "name": "Title",
+                              "type": "TEXT",
+                              "text": "A small review can unblock the next step",
+                              "style": {
+                                "fill": "#000000",
+                                "fontSize": 18,
+                                "fontWeight": 600
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Actionable insight",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "gap": 12
+                          },
+                          "size": [
+                            642,
+                            136
+                          ],
+                          "children": [
+                            {
+                              "name": "lightbulb",
+                              "type": "FRAME",
+                              "size": [
+                                23,
+                                23
+                              ]
+                            },
+                            {
+                              "name": "Insight",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "column",
+                                "gap": 12
+                              },
+                              "size": [
+                                607,
+                                136
+                              ],
+                              "children": [
+                                {
+                                  "name": "Progress explanation",
+                                  "type": "TEXT",
+                                  "text": "18 points remain, slightly above the ideal pace of 16.7. The sprint needs an average of 3.6 points per remaining working day.",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 14,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Recommendation",
+                                  "type": "TEXT",
+                                  "text": "Review WR-104 today to unblock the mobile menu. Keep the remaining 7 to-do points in focus before adding scope.",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Insight action",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row"
+                                  },
+                                  "size": [
+                                    129,
+                                    36
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Action",
+                                      "type": "INSTANCE",
+                                      "component": "Button",
+                                      "properties": {
+                                        "Trailing icon": false,
+                                        "Leading icon": false,
+                                        "Label": "Review WR-104",
+                                        "Variant": "Outline",
+                                        "Size": "md",
+                                        "State": "Default"
+                                      },
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 8,
+                                        "padding": [
+                                          0,
+                                          14,
+                                          0,
+                                          14
+                                        ],
+                                        "align": "CENTER",
+                                        "justify": "CENTER"
+                                      },
+                                      "size": [
+                                        129,
+                                        36
+                                      ],
+                                      "style": {
+                                        "fill": "#ffffff",
+                                        "stroke": "#e4e4e7",
+                                        "radius": 8
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Report method",
+                  "type": "TEXT",
+                  "text": "Points count as complete only when a task is Done. Sprint scope has stayed at 30 points. Illustrative Acme Studio project data.",
+                  "style": {
+                    "fill": "#71717a",
+                    "fontSize": 12,
+                    "fontWeight": 400
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tokens": {
+    "colours": [
+      {
+        "value": "#71717a",
+        "uses": 189
+      },
+      {
+        "value": "#ffffff",
+        "uses": 169
+      },
+      {
+        "value": "#000000",
+        "uses": 139
+      },
+      {
+        "value": "#e8f4f0",
+        "uses": 85
+      },
+      {
+        "value": "#fafafa",
+        "uses": 35
+      },
+      {
+        "value": "#15796f",
+        "uses": 32
+      },
+      {
+        "value": "#f0f3f1",
+        "uses": 32
+      },
+      {
+        "value": "#20332e",
+        "uses": 21
+      },
+      {
+        "value": "#718079",
+        "uses": 21
+      },
+      {
+        "value": "#fff4df",
+        "uses": 16
+      },
+      {
+        "value": "#e1e8e4",
+        "uses": 14
+      },
+      {
+        "value": "#11665d",
+        "uses": 11
+      },
+      {
+        "value": "#f8faf9",
+        "uses": 9
+      },
+      {
+        "value": "#f1f5f3",
+        "uses": 9
+      },
+      {
+        "value": "#edf6ee",
+        "uses": 9
+      },
+      {
+        "value": "#f4f4f5",
+        "uses": 8
+      },
+      {
+        "value": "#a8cbc0",
+        "uses": 2
+      },
+      {
+        "value": "#9b6415",
+        "uses": 1
+      },
+      {
+        "value": "#b2bdb7",
+        "uses": 1
+      },
+      {
+        "value": "#cbdcd4",
+        "uses": 1
+      },
+      {
+        "value": "#bbc6c0",
+        "uses": 1
+      },
+      {
+        "value": "#c59a4e",
+        "uses": 1
+      },
+      {
+        "value": "#7daf9d",
+        "uses": 1
+      }
+    ],
+    "radii": [
+      {
+        "value": 999,
+        "uses": 124
+      },
+      {
+        "value": 8,
+        "uses": 95
+      },
+      {
+        "value": 6,
+        "uses": 72
+      },
+      {
+        "value": 5,
+        "uses": 72
+      },
+      {
+        "value": 4,
+        "uses": 31
+      },
+      {
+        "value": 9,
+        "uses": 9
+      },
+      {
+        "value": 10,
+        "uses": 5
+      }
+    ],
+    "fontSizes": [
+      {
+        "value": 12,
+        "uses": 167
+      },
+      {
+        "value": 13,
+        "uses": 123
+      },
+      {
+        "value": 18,
+        "uses": 32
+      },
+      {
+        "value": 11,
+        "uses": 22
+      },
+      {
+        "value": 14,
+        "uses": 21
+      },
+      {
+        "value": 25,
+        "uses": 13
+      },
+      {
+        "value": 28,
+        "uses": 9
+      }
+    ]
+  }
+}

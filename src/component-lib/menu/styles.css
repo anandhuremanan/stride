@@ -1,0 +1,224 @@
+/*
+ * Menu styles.
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (set them on :root to theme every component at once) and fall back to the
+ * same default palette otherwise. Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.mn-root {
+  --mn-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --mn-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --mn-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --mn-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --mn-hover: var(--gbs-hover, var(--dg-hover, light-dark(#f4f4f5, #1f1f23)));
+  --mn-accent: var(--gbs-accent, var(--dg-accent, light-dark(#2563eb, #60a5fa)));
+  --mn-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --mn-danger: var(--gbs-danger, var(--dg-danger, light-dark(#dc2626, #f87171)));
+  --mn-shadow: var(--gbs-shadow, var(--dg-shadow, 0 10px 30px -8px light-dark(rgb(0 0 0 / 0.18), rgb(0 0 0 / 0.6))));
+  --mn-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --mn-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --mn-item-radius: 5px;
+  --mn-min-width: 180px;
+  --mn-duration: 120ms;
+
+  position: fixed;
+  inset: auto;
+  z-index: 60;
+  min-width: var(--mn-min-width);
+  max-width: min(320px, calc(100vw - 16px));
+  margin: 0;
+  padding: 4px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--mn-border);
+  border-radius: var(--mn-radius);
+  background: var(--mn-bg);
+  color: var(--mn-fg);
+  box-shadow: var(--mn-shadow);
+  color-scheme: inherit;
+  font-size: var(--mn-font-size);
+  line-height: 1.4;
+  scrollbar-width: var(--gbs-scrollbar-width, thin);
+  scrollbar-color: var(--gbs-scrollbar-thumb, light-dark(#c4c4ca, #3f3f46))
+    var(--gbs-scrollbar-track, transparent);
+}
+
+:where(.dark, [data-theme="dark"]) .mn-root {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .mn-root {
+  color-scheme: light;
+}
+
+:where(.mn-root) *,
+:where(.mn-root) *::before,
+:where(.mn-root) *::after {
+  box-sizing: border-box;
+}
+
+/* The list takes focus before the first item does; that flash of an outline
+   around the whole menu is not useful. */
+.mn-root:focus,
+.mn-list:focus {
+  outline: none;
+}
+
+.mn-root:popover-open {
+  animation: mn-in var(--mn-duration) ease;
+}
+@keyframes mn-in {
+  from {
+    opacity: 0;
+    translate: 0 -2px;
+  }
+}
+.mn-root:where([data-side="top"]):popover-open {
+  animation-name: mn-in-top;
+}
+@keyframes mn-in-top {
+  from {
+    opacity: 0;
+    translate: 0 2px;
+  }
+}
+
+.mn-list {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- items */
+
+.mn-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 6px 8px;
+  border-radius: var(--mn-item-radius);
+  cursor: default;
+  user-select: none;
+}
+.mn-item:hover:not([data-disabled]) {
+  background: var(--mn-hover);
+}
+/* Menus move focus rather than tracking a separate active item, so the
+   focused item is the highlighted one. */
+.mn-item:focus {
+  background: var(--mn-hover);
+  outline: none;
+}
+.mn-item:focus-visible {
+  outline: 2px solid var(--mn-focus);
+  outline-offset: -2px;
+}
+.mn-item[data-disabled] {
+  color: var(--mn-muted);
+  cursor: not-allowed;
+}
+.mn-item:where([data-destructive]):not([data-disabled]) {
+  color: var(--mn-danger);
+}
+
+.mn-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mn-icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  color: var(--mn-muted);
+}
+.mn-item:where([data-destructive]) .mn-icon {
+  color: inherit;
+}
+
+.mn-shortcut {
+  flex: none;
+  margin-inline-start: auto;
+  padding-inline-start: 12px;
+  color: var(--mn-muted);
+  font-size: 0.92em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The indicator column keeps labels aligned whether or not an item is
+   checked, so the list does not shift as things are toggled. */
+.mn-indicator {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: var(--mn-accent);
+}
+.mn-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* -------------------------------------------------------------- groups */
+
+.mn-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.mn-group-label {
+  padding: 6px 8px 2px;
+  color: var(--mn-muted);
+  font-size: 0.85em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.mn-separator {
+  height: 1px;
+  margin: 4px -4px;
+  background: var(--mn-border);
+}
+
+/* ------------------------------------------------------------ submenus */
+
+.mn-sub-trigger .mn-sub-arrow {
+  flex: none;
+  margin-inline-start: auto;
+  color: var(--mn-muted);
+}
+/* The arrow points into the submenu, which is on the other side in RTL. */
+.mn-root:dir(rtl) .mn-sub-arrow {
+  rotate: 180deg;
+}
+.mn-sub-trigger[aria-expanded="true"] {
+  background: var(--mn-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mn-root:popover-open {
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .mn-root {
+    border: 1px solid CanvasText;
+  }
+  .mn-item:focus {
+    outline: 2px solid Highlight;
+    outline-offset: -2px;
+  }
+}

@@ -1,0 +1,263 @@
+/*
+ * Tabs styles.
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (set them on :root to theme every component at once) and fall back to the
+ * same default palette otherwise. Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.tb-root {
+  --tb-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --tb-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --tb-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  /*
+   * Unselected tabs are darker than ordinary muted text. A tab is a control,
+   * not a hint, and the strip usually sits on the page's own background
+   * rather than on a white card — where the shared muted grey only just
+   * clears 4.5:1, and misses it on anything tinted.
+   */
+  --tb-tab-fg: var(--gbs-tab-fg, light-dark(#5b5b64, #a1a1aa));
+  --tb-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --tb-hover: var(--gbs-hover, var(--dg-hover, light-dark(#f4f4f5, #1f1f23)));
+  --tb-track: var(--gbs-subtle, light-dark(#f4f4f5, #18181b));
+  --tb-accent: var(--gbs-accent, var(--dg-accent, light-dark(#2563eb, #60a5fa)));
+  --tb-accent-soft: var(--gbs-accent-soft, var(--dg-accent-soft, light-dark(#eff6ff, #172554)));
+  --tb-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --tb-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --tb-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --tb-height: 36px;
+  --tb-px: 12px;
+  --tb-duration: 200ms;
+
+  color-scheme: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  font-size: var(--tb-font-size);
+  line-height: 1.4;
+  color: var(--tb-fg);
+}
+
+:where(.dark, [data-theme="dark"]) .tb-root {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .tb-root {
+  color-scheme: light;
+}
+
+:where(.tb-root) *,
+:where(.tb-root) *::before,
+:where(.tb-root) *::after {
+  box-sizing: border-box;
+}
+
+.tb-root:where([data-size="sm"]) {
+  --tb-height: 30px;
+  --tb-px: 10px;
+  --tb-font-size: 12px;
+}
+.tb-root:where([data-size="lg"]) {
+  --tb-height: 44px;
+  --tb-px: 16px;
+  --tb-font-size: 14px;
+}
+.tb-root:where([data-orientation="vertical"]) {
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* ---------------------------------------------------------------- list */
+
+.tb-list {
+  position: relative;
+  display: flex;
+  flex: none;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tb-root:where([data-orientation="vertical"]) .tb-list {
+  flex-direction: column;
+  overflow: visible;
+}
+
+.tb-tab {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: var(--tb-height);
+  padding: 0 var(--tb-px);
+  border: 0;
+  border-radius: calc(var(--tb-radius) - 2px);
+  background: transparent;
+  color: var(--tb-tab-fg);
+  font: inherit;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 120ms ease;
+}
+.tb-root:where([data-orientation="vertical"]) .tb-tab {
+  justify-content: flex-start;
+}
+.tb-tab:hover:not([aria-disabled="true"]),
+.tb-tab[aria-selected="true"] {
+  color: var(--tb-fg);
+}
+.tb-tab:focus-visible {
+  outline: 2px solid var(--tb-focus);
+  outline-offset: -2px;
+}
+.tb-tab[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.tb-icon {
+  display: inline-flex;
+}
+.tb-icon > svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+.tb-badge {
+  min-width: 18px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--tb-hover);
+  color: var(--tb-fg);
+  font-size: 0.85em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+  text-align: center;
+}
+.tb-tab[aria-selected="true"] .tb-badge {
+  background: var(--tb-accent-soft);
+  color: var(--tb-accent);
+}
+
+/* The indicator is measured in JS; it slides between tabs. */
+.tb-indicator {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    left var(--tb-duration) ease,
+    top var(--tb-duration) ease,
+    width var(--tb-duration) ease,
+    height var(--tb-duration) ease;
+}
+.tb-list[style*="--tb-indicator-size"] .tb-indicator {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------------- line */
+
+.tb-root:where([data-variant="line"]) .tb-list {
+  border-bottom: 1px solid var(--tb-border);
+}
+.tb-root:where([data-variant="line"]) .tb-indicator {
+  bottom: -1px;
+  left: var(--tb-indicator-start);
+  width: var(--tb-indicator-size);
+  height: 2px;
+  border-radius: 2px;
+  background: var(--tb-accent);
+}
+.tb-root:where([data-variant="line"]):where([data-orientation="vertical"]) .tb-list {
+  border-bottom: 0;
+  border-inline-end: 1px solid var(--tb-border);
+}
+.tb-root:where([data-variant="line"]):where([data-orientation="vertical"]) .tb-indicator {
+  top: var(--tb-indicator-start);
+  bottom: auto;
+  left: auto;
+  inset-inline-end: -1px;
+  width: 2px;
+  height: var(--tb-indicator-size);
+}
+
+/* --------------------------------------------------------------- pills */
+
+.tb-root:where([data-variant="pills"]) .tb-indicator {
+  top: 0;
+  left: var(--tb-indicator-start);
+  width: var(--tb-indicator-size);
+  height: 100%;
+  border-radius: calc(var(--tb-radius) - 2px);
+  background: var(--tb-accent-soft);
+}
+.tb-root:where([data-variant="pills"]) .tb-tab[aria-selected="true"] {
+  color: var(--tb-accent);
+}
+.tb-root:where([data-variant="pills"]):where([data-orientation="vertical"]) .tb-indicator {
+  top: var(--tb-indicator-start);
+  left: 0;
+  width: 100%;
+  height: var(--tb-indicator-size);
+}
+
+/* ------------------------------------------------------------ enclosed */
+
+.tb-root:where([data-variant="enclosed"]) .tb-list {
+  padding: 3px;
+  border-radius: var(--tb-radius);
+  background: var(--tb-track);
+}
+.tb-root:where([data-variant="enclosed"]) .tb-indicator {
+  top: 3px;
+  bottom: 3px;
+  left: var(--tb-indicator-start);
+  width: var(--tb-indicator-size);
+  border-radius: calc(var(--tb-radius) - 2px);
+  background: var(--tb-bg);
+  box-shadow: 0 1px 3px light-dark(rgb(0 0 0 / 0.12), rgb(0 0 0 / 0.5));
+}
+.tb-root:where([data-variant="enclosed"]) .tb-tab {
+  height: calc(var(--tb-height) - 6px);
+}
+.tb-root:where([data-variant="enclosed"]):where([data-orientation="vertical"]) .tb-indicator {
+  top: var(--tb-indicator-start);
+  bottom: auto;
+  left: 3px;
+  right: 3px;
+  width: auto;
+  height: var(--tb-indicator-size);
+}
+
+/* Before the indicator is measured (server render), mark the selected tab statically. */
+.tb-root:where([data-variant="line"]) .tb-list:not([style*="--tb-indicator-size"]) .tb-tab[aria-selected="true"] {
+  box-shadow: inset 0 -2px 0 var(--tb-accent);
+}
+
+/* --------------------------------------------------------------- panel */
+
+.tb-panel {
+  flex: 1 1 auto;
+  min-width: 0;
+  border-radius: 4px;
+}
+.tb-panel:focus-visible {
+  outline: 2px solid var(--tb-focus);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tb-root {
+    --tb-duration: 0s;
+  }
+}
+
+@media (forced-colors: active) {
+  .tb-indicator {
+    background: Highlight;
+  }
+}

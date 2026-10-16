@@ -1,0 +1,295 @@
+/*
+ * Input and OtpInput styles.
+ *
+ * Tokens read the shared --gbs-* variables when they are set on an ancestor
+ * (set them on :root to theme every component at once) and fall back to the
+ * same default palette otherwise. Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.in-root {
+  --in-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --in-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --in-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --in-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --in-hover: var(--gbs-hover, var(--dg-hover, light-dark(#f4f4f5, #1f1f23)));
+  --in-input-bg: var(--gbs-input-bg, var(--dg-input-bg, light-dark(#ffffff, #121216)));
+  --in-readonly-bg: var(--gbs-readonly-bg, light-dark(#fafafa, #0e0e12));
+  --in-accent: var(--gbs-accent, var(--dg-accent, light-dark(#2563eb, #60a5fa)));
+  --in-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --in-danger: var(--gbs-danger, var(--dg-danger, light-dark(#dc2626, #f87171)));
+  --in-radius: var(--gbs-radius, var(--dg-radius, 8px));
+  --in-font-size: var(--gbs-font-size, var(--dg-font-size, 13px));
+  --in-height: 36px;
+  --in-px: 10px;
+  --in-cell: 42px;
+
+  color-scheme: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+  font-size: var(--in-font-size);
+  line-height: 1.4;
+  color: var(--in-fg);
+}
+
+:where(.dark, [data-theme="dark"]) .in-root {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) .in-root {
+  color-scheme: light;
+}
+
+:where(.in-root) *,
+:where(.in-root) *::before,
+:where(.in-root) *::after {
+  box-sizing: border-box;
+}
+
+.in-root:where([data-size="sm"]) {
+  --in-height: 30px;
+  --in-font-size: 12px;
+  --in-px: 8px;
+  --in-cell: 34px;
+}
+.in-root:where([data-size="lg"]) {
+  --in-height: 44px;
+  --in-font-size: 14px;
+  --in-px: 12px;
+  --in-cell: 50px;
+}
+
+.in-label {
+  font-weight: 500;
+}
+.in-label[data-required]::after {
+  content: " *";
+  color: var(--in-danger);
+}
+.in-footer {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.in-description {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--in-muted);
+  font-size: 0.92em;
+}
+.in-count {
+  flex: none;
+  margin-inline-start: auto;
+  color: var(--in-muted);
+  font-size: 0.92em;
+  font-variant-numeric: tabular-nums;
+}
+.in-count[data-over] {
+  color: var(--in-danger);
+}
+.in-error {
+  color: var(--in-danger);
+  font-size: 0.92em;
+}
+
+/* --------------------------------------------------------------- input */
+
+.in-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  height: var(--in-height);
+  padding: 0 calc(var(--in-px) - 4px) 0 var(--in-px);
+  border: 1px solid var(--in-border);
+  border-radius: var(--in-radius);
+  background: var(--in-input-bg);
+  cursor: text;
+}
+.in-control:hover:not([data-disabled]) {
+  border-color: color-mix(in oklab, var(--in-border), var(--in-fg) 25%);
+}
+.in-control:focus-within {
+  outline: 2px solid var(--in-focus);
+  outline-offset: -1px;
+}
+.in-control[data-invalid] {
+  border-color: var(--in-danger);
+  outline-color: var(--in-danger);
+}
+.in-control[data-readonly] {
+  background: var(--in-readonly-bg);
+}
+.in-control[data-disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.in-input {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+.in-input::placeholder {
+  color: var(--in-muted);
+}
+.in-input:disabled {
+  cursor: not-allowed;
+}
+/* Keep browser autofill from painting its own background over the field. */
+.in-input:autofill {
+  box-shadow: 0 0 0 100px var(--in-input-bg) inset;
+  -webkit-text-fill-color: var(--in-fg);
+}
+
+.in-adornment {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  color: var(--in-muted);
+  white-space: nowrap;
+}
+.in-adornment:where([data-side="trailing"]) {
+  padding-inline-end: 4px;
+}
+
+.in-icon-button {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--in-muted);
+  cursor: pointer;
+}
+.in-icon-button:hover:not(:disabled) {
+  background: var(--in-hover);
+  color: var(--in-fg);
+}
+.in-icon-button:focus-visible {
+  outline: 2px solid var(--in-focus);
+  outline-offset: 1px;
+}
+
+/* ----------------------------------------------------------------- otp */
+
+.in-otp {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  max-width: 100%;
+}
+/*
+ * The real input covers the cells but draws nothing: the cells show its value,
+ * and it still receives typing, paste, autofill and assistive technology.
+ */
+.in-otp-input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: transparent;
+  caret-color: transparent;
+  font-size: 16px; /* 16px keeps iOS from zooming in on focus */
+  letter-spacing: 0;
+  cursor: text;
+}
+.in-otp-input::selection {
+  background: transparent;
+}
+.in-otp-input:autofill {
+  box-shadow: none;
+  -webkit-text-fill-color: transparent;
+}
+.in-otp-input:disabled {
+  cursor: not-allowed;
+}
+
+.in-otp-cell {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--in-cell);
+  height: calc(var(--in-cell) * 1.15);
+  border: 1px solid var(--in-border);
+  border-radius: var(--in-radius);
+  background: var(--in-input-bg);
+  font-size: 1.35em;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  transition: border-color 120ms ease;
+}
+.in-otp-cell[data-filled] {
+  border-color: color-mix(in oklab, var(--in-border), var(--in-fg) 30%);
+}
+.in-otp-cell[data-active] {
+  outline: 2px solid var(--in-focus);
+  outline-offset: -1px;
+}
+.in-otp[data-invalid] .in-otp-cell {
+  border-color: var(--in-danger);
+}
+.in-otp[data-invalid] .in-otp-cell[data-active] {
+  outline-color: var(--in-danger);
+}
+.in-otp[data-disabled] .in-otp-cell {
+  opacity: 0.55;
+}
+
+.in-otp-caret {
+  width: 1.5px;
+  height: 1.1em;
+  background: currentColor;
+  animation: in-caret 1s steps(2, jump-none) infinite;
+}
+@keyframes in-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.in-otp-separator {
+  flex: none;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--in-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .in-otp-caret {
+    animation: none;
+  }
+  .in-otp-cell {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .in-otp-cell[data-active],
+  .in-control:focus-within {
+    outline-color: Highlight;
+  }
+}

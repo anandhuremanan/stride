@@ -1,0 +1,319 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Tab",
+    "folder": "tabs",
+    "exports": [
+      "Tab",
+      "TabList",
+      "TabPanel",
+      "Tabs",
+      "TabsContext"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/index.ts",
+      "core/navigation.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Tabs.tsx",
+      "react/context.ts"
+    ],
+    "sourceHash": "sha256:3d8e29857c59101e547f234c45735db68cc87ee143cc87d841372ec612e2c663"
+  },
+  "props": [
+    {
+      "name": "activation",
+      "type": "enum",
+      "values": [
+        "automatic",
+        "manual"
+      ],
+      "typeText": "TabsActivation | undefined",
+      "required": false,
+      "default": "automatic",
+      "origin": "derived",
+      "description": "Default `automatic`: arrow keys select as they move.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "autoFocus",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "badge",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "A small count or label after the text, e.g. unread items.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "children",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Selected tab at first. Without either, the first enabled tab is selected.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "form",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "icon",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "An icon before the tab's text.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "keepMounted",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Overrides `keepMounted` on `Tabs` for this panel.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "onValueChange",
+      "type": "function",
+      "signature": "((value: string) => void) | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The newly selected tab. Not fired when the same tab is clicked again.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "orientation",
+      "type": "enum",
+      "values": [
+        "horizontal",
+        "vertical"
+      ],
+      "typeText": "TabsOrientation | undefined",
+      "required": false,
+      "default": "horizontal",
+      "origin": "derived",
+      "description": "Default `horizontal`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "role",
+      "type": "other",
+      "typeText": "AriaRole | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "sm"
+      ],
+      "typeText": "TabsSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "typeText": "string",
+      "required": true,
+      "origin": "derived"
+    },
+    {
+      "name": "variant",
+      "type": "enum",
+      "values": [
+        "enclosed",
+        "line",
+        "pills"
+      ],
+      "typeText": "TabsVariant | undefined",
+      "required": false,
+      "default": "line",
+      "origin": "derived",
+      "description": "Default `line`.",
+      "descriptionOrigin": "jsdoc"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "ButtonHTMLAttributes<HTMLButtonElement>",
+      "omitted": [
+        "type",
+        "value"
+      ],
+      "passthrough": true
+    },
+    {
+      "from": "HTMLAttributes<HTMLDivElement>",
+      "omitted": [
+        "defaultValue",
+        "onChange"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onValueChange",
+      "signature": "((value: string) => void) | undefined"
+    }
+  ],
+  "slots": [],
+  "states": [
+    {
+      "attr": "data-orientation",
+      "values": [
+        "vertical"
+      ]
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "lg",
+        "sm"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    {
+      "attr": "data-value"
+    },
+    {
+      "attr": "data-variant",
+      "values": [
+        "enclosed",
+        "line",
+        "pills"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 11,
+    "propsDescribed": 9,
+    "describedPct": 82,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

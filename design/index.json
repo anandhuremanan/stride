@@ -1,0 +1,651 @@
+{
+  "screens": [
+    {
+      "name": "Workspace overview",
+      "page": "Foundations",
+      "file": "workspace-overview.json",
+      "size": [
+        1440,
+        1152
+      ],
+      "nodes": 193,
+      "repeatedRegions": [
+        {
+          "name": "Navigation item",
+          "times": 8
+        },
+        {
+          "name": "Navigation link",
+          "times": 8
+        },
+        {
+          "name": "Person",
+          "times": 8
+        },
+        {
+          "name": "Avatar",
+          "times": 8
+        },
+        {
+          "name": "Status",
+          "times": 7
+        },
+        {
+          "name": "Name",
+          "times": 6
+        },
+        {
+          "name": "Summary",
+          "times": 5
+        },
+        {
+          "name": "folder",
+          "times": 4
+        },
+        {
+          "name": "Metric",
+          "times": 4
+        },
+        {
+          "name": "Section heading",
+          "times": 4
+        },
+        {
+          "name": "Title",
+          "times": 4
+        },
+        {
+          "name": "Content panel",
+          "times": 3
+        }
+      ],
+      "componentsNamed": [
+        "Menu item",
+        "Avatar",
+        "Breadcrumb item",
+        "Breadcrumb separator",
+        "Button",
+        "Stat",
+        "Badge",
+        "Progress"
+      ]
+    },
+    {
+      "name": "Projects",
+      "page": "Foundations",
+      "file": "projects.json",
+      "size": [
+        1440,
+        1000
+      ],
+      "nodes": 100,
+      "repeatedRegions": [
+        {
+          "name": "Navigation item",
+          "times": 8
+        },
+        {
+          "name": "Navigation link",
+          "times": 8
+        },
+        {
+          "name": "folder",
+          "times": 4
+        },
+        {
+          "name": "Summary card",
+          "times": 4
+        }
+      ],
+      "componentsNamed": [
+        "Menu item",
+        "Avatar",
+        "Breadcrumb item",
+        "Breadcrumb separator",
+        "Button",
+        "Input",
+        "Select trigger",
+        "Card"
+      ]
+    },
+    {
+      "name": "My tasks",
+      "page": "Foundations",
+      "file": "my-tasks.json",
+      "size": [
+        1440,
+        1218
+      ],
+      "nodes": 172,
+      "repeatedRegions": [
+        {
+          "name": "Status",
+          "times": 12
+        },
+        {
+          "name": "Navigation item",
+          "times": 8
+        },
+        {
+          "name": "Navigation link",
+          "times": 8
+        },
+        {
+          "name": "Personal task",
+          "times": 6
+        },
+        {
+          "name": "Checklist item",
+          "times": 6
+        },
+        {
+          "name": "Task",
+          "times": 6
+        },
+        {
+          "name": "Task title",
+          "times": 6
+        },
+        {
+          "name": "Project context",
+          "times": 6
+        },
+        {
+          "name": "Priority",
+          "times": 6
+        },
+        {
+          "name": "Due date",
+          "times": 6
+        },
+        {
+          "name": "Date",
+          "times": 6
+        },
+        {
+          "name": "Task status",
+          "times": 6
+        }
+      ],
+      "componentsNamed": [
+        "Menu item",
+        "Avatar",
+        "Breadcrumb item",
+        "Breadcrumb separator",
+        "Button",
+        "Input",
+        "Select trigger",
+        "Checkbox",
+        "Badge"
+      ]
+    },
+    {
+      "name": "Website redesign · Backlog",
+      "page": "Foundations",
+      "file": "website-redesign-backlog.json",
+      "size": [
+        1440,
+        1612
+      ],
+      "nodes": 388,
+      "repeatedRegions": [
+        {
+          "name": "Status",
+          "times": 31
+        },
+        {
+          "name": "Column heading",
+          "times": 21
+        },
+        {
+          "name": "Person",
+          "times": 20
+        },
+        {
+          "name": "Avatar",
+          "times": 20
+        },
+        {
+          "name": "Task row",
+          "times": 18
+        },
+        {
+          "name": "Select task",
+          "times": 18
+        },
+        {
+          "name": "Task identifier",
+          "times": 18
+        },
+        {
+          "name": "Task title",
+          "times": 18
+        },
+        {
+          "name": "Task type",
+          "times": 18
+        },
+        {
+          "name": "Priority",
+          "times": 18
+        },
+        {
+          "name": "Estimate",
+          "times": 18
+        },
+        {
+          "name": "Assignee",
+          "times": 18
+        }
+      ],
+      "componentsNamed": [
+        "Menu item",
+        "Avatar",
+        "Breadcrumb item",
+        "Breadcrumb separator",
+        "Button",
+        "Tab",
+        "Input",
+        "Select trigger",
+        "Badge",
+        "Grid selection cell",
+        "Grid header cell",
+        "Grid cell"
+      ]
+    },
+    {
+      "name": "Website redesign · Sprints",
+      "page": "Foundations",
+      "file": "website-redesign-sprints.json",
+      "size": [
+        1440,
+        1286
+      ],
+      "nodes": 190,
+      "repeatedRegions": [
+        {
+          "name": "Status",
+          "times": 13
+        },
+        {
+          "name": "Navigation item",
+          "times": 8
+        },
+        {
+          "name": "Navigation link",
+          "times": 8
+        },
+        {
+          "name": "Title",
+          "times": 8
+        },
+        {
+          "name": "Action",
+          "times": 5
+        },
+        {
+          "name": "Status summary",
+          "times": 5
+        },
+        {
+          "name": "folder",
+          "times": 4
+        },
+        {
+          "name": "Project tab",
+          "times": 4
+        },
+        {
+          "name": "Content panel",
+          "times": 4
+        },
+        {
+          "name": "Section heading",
+          "times": 4
+        },
+        {
+          "name": "Context",
+          "times": 4
+        },
+        {
+          "name": "Count",
+          "times": 4
+        }
+      ],
+      "componentsNamed": [
+        "Menu item",
+        "Avatar",
+        "Breadcrumb item",
+        "Breadcrumb separator",
+        "Button",
+        "Tab",
+        "Badge",
+        "Progress",
+        "Date field"
+      ]
+    },
+    {
+      "name": "Website redesign · Board",
+      "page": "Foundations",
+      "file": "website-redesign-board.json",
+      "size": [
+        1440,
+        1248
+      ],
+      "nodes": 145,
+      "repeatedRegions": [
+        {
+          "name": "Summary card",
+          "times": 10
+        },
+        {
+          "name": "Navigation item",
+          "times": 8
+        },
+        {
+          "name": "Navigation link",
+          "times": 8
+        },
+        {
+          "name": "Person",
+          "times": 6
+        },
+        {
+          "name": "Avatar",
+          "times": 6
+        },
+        {
+          "name": "Status",
+          "times": 5
+        },
+        {
+          "name": "folder",
+          "times": 4
+        },
+        {
+          "name": "Project tab",
+          "times": 4
+        },
+        {
+          "name": "Status column",
+          "times": 4
+        },
+        {
+          "name": "Column heading",
+          "times": 4
+        },
+        {
+          "name": "Status label",
+          "times": 4
+        },
+        {
+          "name": "Column title",
+          "times": 4
+        }
+      ],
+      "componentsNamed": [
+        "Menu item",
+        "Avatar",
+        "Breadcrumb item",
+        "Breadcrumb separator",
+        "Button",
+        "Tab",
+        "Badge",
+        "Progress",
+        "Input",
+        "Select trigger",
+        "Card"
+      ]
+    },
+    {
+      "name": "Task detail · WR-104",
+      "page": "Foundations",
+      "file": "task-detail-wr-104.json",
+      "size": [
+        1440,
+        1237
+      ],
+      "nodes": 142,
+      "repeatedRegions": [
+        {
+          "name": "Navigation item",
+          "times": 8
+        },
+        {
+          "name": "Navigation link",
+          "times": 8
+        },
+        {
+          "name": "Task property",
+          "times": 5
+        },
+        {
+          "name": "folder",
+          "times": 4
+        },
+        {
+          "name": "Person",
+          "times": 4
+        },
+        {
+          "name": "Avatar",
+          "times": 4
+        },
+        {
+          "name": "Project tab",
+          "times": 4
+        },
+        {
+          "name": "Content panel",
+          "times": 4
+        },
+        {
+          "name": "Section heading",
+          "times": 4
+        },
+        {
+          "name": "Title",
+          "times": 4
+        },
+        {
+          "name": "Checklist item",
+          "times": 3
+        }
+      ],
+      "componentsNamed": [
+        "Menu item",
+        "Avatar",
+        "Breadcrumb item",
+        "Breadcrumb separator",
+        "Tab",
+        "Badge",
+        "Card",
+        "Modal",
+        "Checkbox",
+        "Textarea",
+        "Button",
+        "Select trigger",
+        "Date field"
+      ]
+    },
+    {
+      "name": "Website redesign · Reports",
+      "page": "Foundations",
+      "file": "website-redesign-reports.json",
+      "size": [
+        1440,
+        1215
+      ],
+      "nodes": 196,
+      "repeatedRegions": [
+        {
+          "name": "Date tick",
+          "times": 10
+        },
+        {
+          "name": "Navigation item",
+          "times": 8
+        },
+        {
+          "name": "Navigation link",
+          "times": 8
+        },
+        {
+          "name": "Title",
+          "times": 5
+        },
+        {
+          "name": "Status",
+          "times": 5
+        },
+        {
+          "name": "Daily point",
+          "times": 5
+        },
+        {
+          "name": "folder",
+          "times": 4
+        },
+        {
+          "name": "Project tab",
+          "times": 4
+        },
+        {
+          "name": "Content panel",
+          "times": 4
+        },
+        {
+          "name": "Section heading",
+          "times": 4
+        },
+        {
+          "name": "Horizontal grid",
+          "times": 4
+        },
+        {
+          "name": "Axis tick",
+          "times": 4
+        }
+      ],
+      "componentsNamed": [
+        "Menu item",
+        "Avatar",
+        "Breadcrumb item",
+        "Breadcrumb separator",
+        "Tab",
+        "Select trigger",
+        "Stat",
+        "Badge",
+        "Button"
+      ]
+    },
+    {
+      "name": "Team & settings",
+      "page": "Foundations",
+      "file": "team-settings.json",
+      "size": [
+        1440,
+        1062
+      ],
+      "nodes": 166,
+      "repeatedRegions": [
+        {
+          "name": "Navigation item",
+          "times": 8
+        },
+        {
+          "name": "Navigation link",
+          "times": 8
+        },
+        {
+          "name": "Filter",
+          "times": 7
+        },
+        {
+          "name": "Person",
+          "times": 6
+        },
+        {
+          "name": "Avatar",
+          "times": 6
+        },
+        {
+          "name": "Role",
+          "times": 5
+        },
+        {
+          "name": "Status",
+          "times": 5
+        },
+        {
+          "name": "folder",
+          "times": 4
+        },
+        {
+          "name": "Team member",
+          "times": 4
+        },
+        {
+          "name": "Member identity",
+          "times": 4
+        },
+        {
+          "name": "Member details",
+          "times": 4
+        },
+        {
+          "name": "Name",
+          "times": 4
+        }
+      ],
+      "componentsNamed": [
+        "Menu item",
+        "Avatar",
+        "Breadcrumb item",
+        "Breadcrumb separator",
+        "Button",
+        "Badge",
+        "Select trigger",
+        "Input"
+      ]
+    }
+  ],
+  "theme": [
+    {
+      "variable": "--gbs-accent",
+      "value": "#15796f",
+      "seenOn": 32,
+      "why": "the most-used saturated colour"
+    },
+    {
+      "variable": "--gbs-fg",
+      "value": "#000000",
+      "seenOn": 139,
+      "why": "the darkest colour, used for text"
+    },
+    {
+      "variable": "--gbs-bg",
+      "value": "#ffffff",
+      "seenOn": 169,
+      "why": "the lightest colour, used for surfaces"
+    },
+    {
+      "variable": "--gbs-muted",
+      "value": "#71717a",
+      "seenOn": 189,
+      "why": "a desaturated mid tone"
+    },
+    {
+      "variable": "--gbs-radius",
+      "value": "999px",
+      "seenOn": 124
+    },
+    {
+      "variable": "--gbs-font-size",
+      "value": "12px",
+      "seenOn": 167
+    }
+  ],
+  "builtFromLibrary": true,
+  "howToUse": "Read this index first and say which kit component each repeated region maps to, so the mapping can be corrected before any screen is built. Then take one screen at a time: figma_frame with designFile set to its file, get_component for each component before writing it, install_component for what is missing, and validate_usage on the JSX before moving to the next screen."
+}

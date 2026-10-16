@@ -1,0 +1,296 @@
+{
+  "passportVersion": "1.0.0",
+  "identity": {
+    "component": "Avatar",
+    "folder": "avatar",
+    "exports": [
+      "Avatar",
+      "AvatarGroup"
+    ]
+  },
+  "source": {
+    "libraryVersion": "2.6.1",
+    "files": [
+      "core/identity.ts",
+      "core/index.ts",
+      "core/types.ts",
+      "index.ts",
+      "react/Avatar.tsx",
+      "react/AvatarGroup.tsx",
+      "react/locale.ts",
+      "react/props.ts"
+    ],
+    "sourceHash": "sha256:541aa6ca5c99e64fba414881c07cc3c29244e03c09b665a4934690d633cc20e1"
+  },
+  "props": [
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "aria-labelledby",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "children",
+      "type": "other",
+      "typeText": "ReactNode",
+      "required": false,
+      "origin": "derived",
+      "description": "An icon or anything else to show instead of initials.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "classNames",
+      "type": "other",
+      "typeText": "Partial<Record<AvatarSlot, string>> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "decorative",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "default": false,
+      "origin": "derived",
+      "description": "Marks the avatar as decoration, for a name printed next to it.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "typeText": "boolean | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "initials",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Overrides the text derived from `name`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "Names the set, e.g. \"Assigned to\". A list of faces with no name says nothing.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "localeText",
+      "type": "other",
+      "typeText": "Partial<AvatarLocaleText> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "default": 4,
+      "origin": "derived",
+      "description": "How many slots there are, the overflow bubble included. Default 4.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "default": "",
+      "origin": "derived",
+      "description": "The person or thing. Used for the alternative text, for the initials and\nfor the colour, so the same person is always the same colour.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "ref",
+      "type": "other",
+      "typeText": "Ref<HTMLSpanElement> | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "role",
+      "type": "other",
+      "typeText": "AriaRole | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": [
+        "circle",
+        "square"
+      ],
+      "typeText": "AvatarShape | undefined",
+      "required": false,
+      "default": "circle",
+      "origin": "derived",
+      "description": "Default `circle`.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": [
+        "lg",
+        "md",
+        "sm",
+        "xl",
+        "xs"
+      ],
+      "typeText": "AvatarSize | undefined",
+      "required": false,
+      "default": "md",
+      "origin": "derived",
+      "description": "Default `md` (32px).",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "src",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "The image. If it fails to load, the avatar falls back to the initials\nrather than showing a broken image, so `name` is worth setting too.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "status",
+      "type": "enum",
+      "values": [
+        "away",
+        "busy",
+        "offline",
+        "online"
+      ],
+      "typeText": "AvatarStatus | undefined",
+      "required": false,
+      "origin": "derived",
+      "description": "A presence dot in the corner.",
+      "descriptionOrigin": "jsdoc"
+    },
+    {
+      "name": "style",
+      "type": "other",
+      "typeText": "CSSProperties | undefined",
+      "required": false,
+      "origin": "derived"
+    },
+    {
+      "name": "tabIndex",
+      "type": "number",
+      "typeText": "number | undefined",
+      "required": false,
+      "origin": "inherited"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "typeText": "string | undefined",
+      "required": false,
+      "origin": "inherited"
+    }
+  ],
+  "inherits": [
+    {
+      "from": "HTMLAttributes<HTMLSpanElement>",
+      "omitted": [
+        "children"
+      ],
+      "passthrough": true
+    }
+  ],
+  "events": [],
+  "slots": [
+    "root",
+    "image",
+    "fallback",
+    "status",
+    "overflow"
+  ],
+  "states": [
+    {
+      "attr": "data-shape",
+      "values": [
+        "square"
+      ]
+    },
+    {
+      "attr": "data-size",
+      "values": [
+        "lg",
+        "sm",
+        "xl",
+        "xs"
+      ]
+    },
+    {
+      "attr": "data-status",
+      "values": [
+        "away",
+        "busy",
+        "online"
+      ]
+    },
+    {
+      "attr": "data-theme",
+      "values": [
+        "dark",
+        "light"
+      ]
+    }
+  ],
+  "accessibility": {
+    "supplied": [],
+    "required": []
+  },
+  "composition": {},
+  "operations": {},
+  "intentDomains": [],
+  "safeMutations": {},
+  "examples": [],
+  "coverage": {
+    "propsTotal": 10,
+    "propsDescribed": 10,
+    "describedPct": 100,
+    "authoredSections": [
+      "accessibility"
+    ]
+  }
+}

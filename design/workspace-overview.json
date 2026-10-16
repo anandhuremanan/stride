@@ -1,0 +1,3274 @@
+{
+  "frame": "Workspace overview",
+  "nodes": [
+    {
+      "name": "Workspace overview",
+      "type": "FRAME",
+      "layout": {
+        "direction": "row"
+      },
+      "size": [
+        1440,
+        1152
+      ],
+      "style": {
+        "fill": "#f8faf9"
+      },
+      "children": [
+        {
+          "name": "Workspace navigation",
+          "type": "FRAME",
+          "layout": {
+            "direction": "column",
+            "gap": 28,
+            "padding": [
+              28,
+              16,
+              20,
+              16
+            ]
+          },
+          "size": [
+            224,
+            1152
+          ],
+          "style": {
+            "fill": "#f1f5f3",
+            "stroke": "#e1e8e4"
+          },
+          "children": [
+            {
+              "name": "Brand",
+              "type": "FRAME",
+              "layout": {
+                "direction": "row",
+                "gap": 10,
+                "padding": [
+                  0,
+                  0,
+                  0,
+                  12
+                ],
+                "align": "CENTER"
+              },
+              "size": [
+                120,
+                30
+              ],
+              "children": [
+                {
+                  "name": "Brand mark",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "align": "CENTER",
+                    "justify": "CENTER"
+                  },
+                  "size": [
+                    30,
+                    30
+                  ],
+                  "style": {
+                    "fill": "#15796f",
+                    "radius": 9
+                  },
+                  "children": [
+                    {
+                      "name": "layers-2",
+                      "type": "FRAME",
+                      "size": [
+                        19,
+                        19
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Brand name",
+                  "type": "TEXT",
+                  "text": "stride",
+                  "style": {
+                    "fill": "#20332e",
+                    "fontSize": 25,
+                    "fontWeight": 400
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Workspace switcher",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 6,
+                "padding": [
+                  12,
+                  12,
+                  12,
+                  12
+                ]
+              },
+              "size": [
+                192,
+                64
+              ],
+              "style": {
+                "fill": "#ffffff",
+                "stroke": "#e1e8e4",
+                "radius": 8
+              },
+              "children": [
+                {
+                  "name": "Workspace",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "align": "CENTER",
+                    "justify": "SPACE_BETWEEN"
+                  },
+                  "size": [
+                    168,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "name": "Workspace name",
+                      "type": "TEXT",
+                      "text": "Acme Studio",
+                      "style": {
+                        "fill": "#000000",
+                        "fontSize": 13,
+                        "fontWeight": 600
+                      }
+                    },
+                    {
+                      "name": "chevrons-up-down",
+                      "type": "FRAME",
+                      "size": [
+                        14,
+                        14
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Plan",
+                  "type": "TEXT",
+                  "text": "Team workspace · 4 members",
+                  "style": {
+                    "fill": "#71717a",
+                    "fontSize": 12,
+                    "fontWeight": 400
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Workspace links",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 4
+              },
+              "size": [
+                192,
+                174
+              ],
+              "children": [
+                {
+                  "name": "Navigation group",
+                  "type": "TEXT",
+                  "text": "WORKSPACE",
+                  "style": {
+                    "fill": "#718079",
+                    "fontSize": 11,
+                    "fontWeight": 600
+                  }
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "fill": "#e8f4f0",
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "layout-dashboard",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Overview",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folders",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Projects",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "circle-check",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "My tasks",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "users",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Team & settings",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Project shortcuts",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 6
+              },
+              "size": [
+                192,
+                182
+              ],
+              "children": [
+                {
+                  "name": "Navigation group",
+                  "type": "TEXT",
+                  "text": "YOUR PROJECTS",
+                  "style": {
+                    "fill": "#718079",
+                    "fontSize": 11,
+                    "fontWeight": 600
+                  }
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Website redesign",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Client portal",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Brand refresh",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Navigation item",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 3,
+                    "padding": [
+                      3,
+                      4,
+                      3,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "style": {
+                    "radius": 6
+                  },
+                  "children": [
+                    {
+                      "name": "folder",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Navigation link",
+                      "type": "INSTANCE",
+                      "component": "Menu item",
+                      "properties": {
+                        "Show shortcut": false,
+                        "Show icon": false,
+                        "Shortcut": "⌘D",
+                        "Label": "Help center",
+                        "Kind": "Default",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "padding": [
+                          6,
+                          8,
+                          6,
+                          8
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        156,
+                        30
+                      ],
+                      "style": {
+                        "radius": 5
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sidebar spacer",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column"
+              },
+              "size": [
+                192,
+                427
+              ]
+            },
+            {
+              "name": "Account",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 16
+              },
+              "size": [
+                192,
+                87
+              ],
+              "children": [
+                {
+                  "name": "Help link",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 10,
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      12
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    175,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "name": "circle-help",
+                      "type": "FRAME",
+                      "size": [
+                        17,
+                        17
+                      ]
+                    },
+                    {
+                      "name": "Help",
+                      "type": "TEXT",
+                      "text": "Help & getting started",
+                      "style": {
+                        "fill": "#71717a",
+                        "fontSize": 13,
+                        "fontWeight": 400
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Divider",
+                  "type": "RECTANGLE",
+                  "size": [
+                    192,
+                    1
+                  ],
+                  "style": {
+                    "fill": "#e1e8e4"
+                  }
+                },
+                {
+                  "name": "Signed-in account",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 10,
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      8
+                    ],
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    192,
+                    36
+                  ],
+                  "children": [
+                    {
+                      "name": "Person",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        24,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "name": "Avatar",
+                          "type": "INSTANCE",
+                          "component": "Avatar",
+                          "properties": {
+                            "Status dot": false,
+                            "Initials": "MC",
+                            "Content": "Initials",
+                            "Size": "sm"
+                          },
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "CENTER"
+                          },
+                          "size": [
+                            24,
+                            24
+                          ],
+                          "style": {
+                            "fill": "#e8f4f0",
+                            "radius": 999
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Account details",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 2
+                      },
+                      "size": [
+                        102,
+                        36
+                      ],
+                      "children": [
+                        {
+                          "name": "Account name",
+                          "type": "TEXT",
+                          "text": "Maya Chen",
+                          "style": {
+                            "fill": "#000000",
+                            "fontSize": 13,
+                            "fontWeight": 600
+                          }
+                        },
+                        {
+                          "name": "Role",
+                          "type": "TEXT",
+                          "text": "Workspace owner",
+                          "style": {
+                            "fill": "#71717a",
+                            "fontSize": 12,
+                            "fontWeight": 400
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "chevron-down",
+                      "type": "FRAME",
+                      "size": [
+                        14,
+                        14
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Application content",
+          "type": "FRAME",
+          "layout": {
+            "direction": "column"
+          },
+          "size": [
+            1216,
+            1152
+          ],
+          "children": [
+            {
+              "name": "App header",
+              "type": "FRAME",
+              "layout": {
+                "direction": "row",
+                "padding": [
+                  0,
+                  32,
+                  0,
+                  32
+                ],
+                "align": "CENTER",
+                "justify": "SPACE_BETWEEN"
+              },
+              "size": [
+                1216,
+                68
+              ],
+              "style": {
+                "fill": "#ffffff",
+                "stroke": "#e1e8e4"
+              },
+              "children": [
+                {
+                  "name": "Breadcrumbs",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 10,
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    188,
+                    22
+                  ],
+                  "children": [
+                    {
+                      "name": "Workspace crumb",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb item",
+                      "properties": {
+                        "Show icon": false,
+                        "Label": "Acme Studio",
+                        "Type": "Link",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 5,
+                        "padding": [
+                          2,
+                          4,
+                          2,
+                          4
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        87,
+                        22
+                      ],
+                      "style": {
+                        "radius": 4
+                      }
+                    },
+                    {
+                      "name": "Separator",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb separator",
+                      "layout": {
+                        "direction": "row",
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        14,
+                        14
+                      ]
+                    },
+                    {
+                      "name": "Current scope",
+                      "type": "INSTANCE",
+                      "component": "Breadcrumb item",
+                      "properties": {
+                        "Show icon": false,
+                        "Label": "Overview",
+                        "Type": "Current",
+                        "State": "Default"
+                      },
+                      "layout": {
+                        "direction": "row",
+                        "gap": 5,
+                        "padding": [
+                          2,
+                          4,
+                          2,
+                          4
+                        ],
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        67,
+                        22
+                      ],
+                      "style": {
+                        "radius": 4
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Header actions",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 20,
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    173,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "name": "Current date",
+                      "type": "TEXT",
+                      "text": "Fri, 16 Oct 2026",
+                      "style": {
+                        "fill": "#71717a",
+                        "fontSize": 12,
+                        "fontWeight": 400
+                      }
+                    },
+                    {
+                      "name": "bell",
+                      "type": "FRAME",
+                      "size": [
+                        18,
+                        18
+                      ]
+                    },
+                    {
+                      "name": "Person",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 8,
+                        "align": "CENTER"
+                      },
+                      "size": [
+                        24,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "name": "Avatar",
+                          "type": "INSTANCE",
+                          "component": "Avatar",
+                          "properties": {
+                            "Status dot": false,
+                            "Initials": "MC",
+                            "Content": "Initials",
+                            "Size": "sm"
+                          },
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "CENTER"
+                          },
+                          "size": [
+                            24,
+                            24
+                          ],
+                          "style": {
+                            "fill": "#e8f4f0",
+                            "radius": 999
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Page content",
+              "type": "FRAME",
+              "layout": {
+                "direction": "column",
+                "gap": 24,
+                "padding": [
+                  32,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              "size": [
+                1216,
+                1084
+              ],
+              "children": [
+                {
+                  "name": "Page heading",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 24,
+                    "align": "CENTER"
+                  },
+                  "size": [
+                    1152,
+                    62
+                  ],
+                  "children": [
+                    {
+                      "name": "Heading",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 8
+                      },
+                      "size": [
+                        1011,
+                        62
+                      ],
+                      "children": [
+                        {
+                          "name": "Page title",
+                          "type": "TEXT",
+                          "text": "Good morning, Maya",
+                          "style": {
+                            "fill": "#20332e",
+                            "fontSize": 28,
+                            "fontWeight": 600
+                          }
+                        },
+                        {
+                          "name": "Page description",
+                          "type": "TEXT",
+                          "text": "Here’s what’s moving across Acme Studio today.",
+                          "style": {
+                            "fill": "#71717a",
+                            "fontSize": 14,
+                            "fontWeight": 400
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Page actions",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "gap": 10
+                      },
+                      "size": [
+                        117,
+                        36
+                      ],
+                      "children": [
+                        {
+                          "name": "Action",
+                          "type": "INSTANCE",
+                          "component": "Button",
+                          "properties": {
+                            "Trailing icon": false,
+                            "Leading icon": false,
+                            "Label": "Create project",
+                            "Variant": "Primary",
+                            "Size": "md",
+                            "State": "Default"
+                          },
+                          "layout": {
+                            "direction": "row",
+                            "gap": 8,
+                            "padding": [
+                              0,
+                              14,
+                              0,
+                              14
+                            ],
+                            "align": "CENTER",
+                            "justify": "CENTER"
+                          },
+                          "size": [
+                            117,
+                            36
+                          ],
+                          "style": {
+                            "fill": "#15796f",
+                            "radius": 8
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Workspace summary",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 16
+                  },
+                  "size": [
+                    1152,
+                    111
+                  ],
+                  "children": [
+                    {
+                      "name": "Metric",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        276,
+                        111
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Summary",
+                          "type": "INSTANCE",
+                          "component": "Stat",
+                          "properties": {
+                            "Change": "+12.5%",
+                            "Show help": true,
+                            "Help": "1 more project in planning",
+                            "Value": "3",
+                            "Show icon": false,
+                            "Label": "Active projects",
+                            "Trend": "None"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "gap": 4
+                          },
+                          "size": [
+                            236,
+                            71
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Metric",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        276,
+                        111
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Summary",
+                          "type": "INSTANCE",
+                          "component": "Stat",
+                          "properties": {
+                            "Change": "+12.5%",
+                            "Show help": true,
+                            "Help": "Tasks done · Website redesign",
+                            "Value": "4 / 10",
+                            "Show icon": false,
+                            "Label": "Sprint 04 progress",
+                            "Trend": "None"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "gap": 4
+                          },
+                          "size": [
+                            236,
+                            71
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Metric",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        276,
+                        111
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Summary",
+                          "type": "INSTANCE",
+                          "component": "Stat",
+                          "properties": {
+                            "Change": "+12.5%",
+                            "Show help": true,
+                            "Help": "Responsive header needs your eyes",
+                            "Value": "1 task",
+                            "Show icon": false,
+                            "Label": "Ready for review",
+                            "Trend": "None"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "gap": 4
+                          },
+                          "size": [
+                            236,
+                            71
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Metric",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        276,
+                        111
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Summary",
+                          "type": "INSTANCE",
+                          "component": "Stat",
+                          "properties": {
+                            "Change": "+12.5%",
+                            "Show help": true,
+                            "Help": "Homepage usability test",
+                            "Value": "23 Oct",
+                            "Show icon": false,
+                            "Label": "Next milestone",
+                            "Trend": "None"
+                          },
+                          "layout": {
+                            "direction": "column",
+                            "gap": 4
+                          },
+                          "size": [
+                            236,
+                            71
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Current sprint",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "column",
+                    "gap": 14
+                  },
+                  "size": [
+                    1152,
+                    134
+                  ],
+                  "children": [
+                    {
+                      "name": "Section heading",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "justify": "SPACE_BETWEEN"
+                      },
+                      "size": [
+                        1152,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "name": "Title",
+                          "type": "TEXT",
+                          "text": "Keep the sprint moving",
+                          "style": {
+                            "fill": "#000000",
+                            "fontSize": 18,
+                            "fontWeight": 600
+                          }
+                        },
+                        {
+                          "name": "Project link",
+                          "type": "TEXT",
+                          "text": "Website redesign → Board",
+                          "style": {
+                            "fill": "#15796f",
+                            "fontSize": 13,
+                            "fontWeight": 500
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Active sprint",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ],
+                        "align": "CENTER",
+                        "justify": "SPACE_BETWEEN"
+                      },
+                      "size": [
+                        1152,
+                        96
+                      ],
+                      "style": {
+                        "fill": "#e8f4f0",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Sprint goal",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 8
+                          },
+                          "size": [
+                            343,
+                            48
+                          ],
+                          "children": [
+                            {
+                              "name": "Sprint heading",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 10,
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                228,
+                                20
+                              ],
+                              "children": [
+                                {
+                                  "name": "Sprint name",
+                                  "type": "TEXT",
+                                  "text": "Sprint 04",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 14,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                {
+                                  "name": "Status",
+                                  "type": "INSTANCE",
+                                  "component": "Badge",
+                                  "properties": {
+                                    "Status dot": false,
+                                    "Label": "Active",
+                                    "Variant": "Accent",
+                                    "Appearance": "Soft"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 4,
+                                    "padding": [
+                                      0,
+                                      8,
+                                      0,
+                                      8
+                                    ],
+                                    "align": "CENTER",
+                                    "justify": "CENTER"
+                                  },
+                                  "size": [
+                                    53,
+                                    20
+                                  ],
+                                  "style": {
+                                    "fill": "#e8f4f0",
+                                    "radius": 999
+                                  }
+                                },
+                                {
+                                  "name": "Sprint dates",
+                                  "type": "TEXT",
+                                  "text": "12–23 Oct 2026",
+                                  "style": {
+                                    "fill": "#11665d",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Goal",
+                              "type": "TEXT",
+                              "text": "Make the new homepage ready for usability testing.",
+                              "style": {
+                                "fill": "#20332e",
+                                "fontSize": 14,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Sprint progress",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 8
+                          },
+                          "size": [
+                            420,
+                            56
+                          ],
+                          "children": [
+                            {
+                              "name": "Progress",
+                              "type": "INSTANCE",
+                              "component": "Progress",
+                              "properties": {
+                                "Show header": true,
+                                "Value": "60",
+                                "Label": "12 / 30 pts complete",
+                                "Variant": "Accent"
+                              },
+                              "layout": {
+                                "direction": "column",
+                                "gap": 6
+                              },
+                              "size": [
+                                420,
+                                32
+                              ]
+                            },
+                            {
+                              "name": "Time remaining",
+                              "type": "TEXT",
+                              "text": "5 working days left · 4 of 10 tasks done",
+                              "style": {
+                                "fill": "#11665d",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Personal work and activity",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 20
+                  },
+                  "size": [
+                    1152,
+                    347
+                  ],
+                  "children": [
+                    {
+                      "name": "Content panel",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 20,
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        738,
+                        347
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Section heading",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "SPACE_BETWEEN"
+                          },
+                          "size": [
+                            698,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "name": "Title",
+                              "type": "TEXT",
+                              "text": "Your next steps",
+                              "style": {
+                                "fill": "#000000",
+                                "fontSize": 18,
+                                "fontWeight": 600
+                              }
+                            },
+                            {
+                              "name": "Context",
+                              "type": "TEXT",
+                              "text": "Maya Chen",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Work list",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column"
+                          },
+                          "size": [
+                            698,
+                            207
+                          ],
+                          "children": [
+                            {
+                              "name": "Next task",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 12,
+                                "padding": [
+                                  15,
+                                  0,
+                                  15,
+                                  0
+                                ],
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                698,
+                                69
+                              ],
+                              "style": {
+                                "stroke": "#e1e8e4"
+                              },
+                              "children": [
+                                {
+                                  "name": "message-square",
+                                  "type": "FRAME",
+                                  "size": [
+                                    17,
+                                    17
+                                  ]
+                                },
+                                {
+                                  "name": "Task",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "column",
+                                    "gap": 5
+                                  },
+                                  "size": [
+                                    605,
+                                    39
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Task title",
+                                      "type": "TEXT",
+                                      "text": "Review responsive header",
+                                      "style": {
+                                        "fill": "#000000",
+                                        "fontSize": 13,
+                                        "fontWeight": 600
+                                      }
+                                    },
+                                    {
+                                      "name": "Task context",
+                                      "type": "TEXT",
+                                      "text": "WR-104 · Website redesign · Review requested by Noah",
+                                      "style": {
+                                        "fill": "#71717a",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Status",
+                                  "type": "INSTANCE",
+                                  "component": "Badge",
+                                  "properties": {
+                                    "Status dot": false,
+                                    "Label": "Today",
+                                    "Variant": "Accent",
+                                    "Appearance": "Soft"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 4,
+                                    "padding": [
+                                      0,
+                                      8,
+                                      0,
+                                      8
+                                    ],
+                                    "align": "CENTER",
+                                    "justify": "CENTER"
+                                  },
+                                  "size": [
+                                    52,
+                                    20
+                                  ],
+                                  "style": {
+                                    "fill": "#fff4df",
+                                    "radius": 999
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Next task",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 12,
+                                "padding": [
+                                  15,
+                                  0,
+                                  15,
+                                  0
+                                ],
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                698,
+                                69
+                              ],
+                              "style": {
+                                "stroke": "#e1e8e4"
+                              },
+                              "children": [
+                                {
+                                  "name": "circle",
+                                  "type": "FRAME",
+                                  "size": [
+                                    17,
+                                    17
+                                  ]
+                                },
+                                {
+                                  "name": "Task",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "column",
+                                    "gap": 5
+                                  },
+                                  "size": [
+                                    602,
+                                    39
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Task title",
+                                      "type": "TEXT",
+                                      "text": "Design case study template",
+                                      "style": {
+                                        "fill": "#000000",
+                                        "fontSize": 13,
+                                        "fontWeight": 600
+                                      }
+                                    },
+                                    {
+                                      "name": "Task context",
+                                      "type": "TEXT",
+                                      "text": "WR-111 · Website redesign · Sprint 05",
+                                      "style": {
+                                        "fill": "#71717a",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Status",
+                                  "type": "INSTANCE",
+                                  "component": "Badge",
+                                  "properties": {
+                                    "Status dot": false,
+                                    "Label": "28 Oct",
+                                    "Variant": "Accent",
+                                    "Appearance": "Soft"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 4,
+                                    "padding": [
+                                      0,
+                                      8,
+                                      0,
+                                      8
+                                    ],
+                                    "align": "CENTER",
+                                    "justify": "CENTER"
+                                  },
+                                  "size": [
+                                    55,
+                                    20
+                                  ],
+                                  "style": {
+                                    "fill": "#f0f3f1",
+                                    "radius": 999
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Next task",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 12,
+                                "padding": [
+                                  15,
+                                  0,
+                                  15,
+                                  0
+                                ],
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                698,
+                                69
+                              ],
+                              "style": {
+                                "stroke": "#e1e8e4"
+                              },
+                              "children": [
+                                {
+                                  "name": "circle",
+                                  "type": "FRAME",
+                                  "size": [
+                                    17,
+                                    17
+                                  ]
+                                },
+                                {
+                                  "name": "Task",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "column",
+                                    "gap": 5
+                                  },
+                                  "size": [
+                                    570,
+                                    39
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Task title",
+                                      "type": "TEXT",
+                                      "text": "Create an error page",
+                                      "style": {
+                                        "fill": "#000000",
+                                        "fontSize": 13,
+                                        "fontWeight": 600
+                                      }
+                                    },
+                                    {
+                                      "name": "Task context",
+                                      "type": "TEXT",
+                                      "text": "WR-117 · Website redesign · Unscheduled",
+                                      "style": {
+                                        "fill": "#71717a",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Status",
+                                  "type": "INSTANCE",
+                                  "component": "Badge",
+                                  "properties": {
+                                    "Status dot": false,
+                                    "Label": "No due date",
+                                    "Variant": "Accent",
+                                    "Appearance": "Soft"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 4,
+                                    "padding": [
+                                      0,
+                                      8,
+                                      0,
+                                      8
+                                    ],
+                                    "align": "CENTER",
+                                    "justify": "CENTER"
+                                  },
+                                  "size": [
+                                    87,
+                                    20
+                                  ],
+                                  "style": {
+                                    "fill": "#f0f3f1",
+                                    "radius": 999
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "List action",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "justify": "SPACE_BETWEEN"
+                          },
+                          "size": [
+                            698,
+                            36
+                          ],
+                          "children": [
+                            {
+                              "name": "Summary",
+                              "type": "TEXT",
+                              "text": "3 open tasks assigned to you",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            },
+                            {
+                              "name": "Action",
+                              "type": "INSTANCE",
+                              "component": "Button",
+                              "properties": {
+                                "Trailing icon": false,
+                                "Leading icon": false,
+                                "Label": "View my tasks",
+                                "Variant": "Outline",
+                                "Size": "md",
+                                "State": "Default"
+                              },
+                              "layout": {
+                                "direction": "row",
+                                "gap": 8,
+                                "padding": [
+                                  0,
+                                  14,
+                                  0,
+                                  14
+                                ],
+                                "align": "CENTER",
+                                "justify": "CENTER"
+                              },
+                              "size": [
+                                120,
+                                36
+                              ],
+                              "style": {
+                                "fill": "#ffffff",
+                                "stroke": "#e4e4e7",
+                                "radius": 8
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Content panel",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column",
+                        "gap": 20,
+                        "padding": [
+                          20,
+                          20,
+                          20,
+                          20
+                        ]
+                      },
+                      "size": [
+                        394,
+                        310
+                      ],
+                      "style": {
+                        "fill": "#ffffff",
+                        "stroke": "#e4e4e7",
+                        "radius": 8
+                      },
+                      "children": [
+                        {
+                          "name": "Section heading",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "align": "CENTER",
+                            "justify": "SPACE_BETWEEN"
+                          },
+                          "size": [
+                            354,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "name": "Title",
+                              "type": "TEXT",
+                              "text": "Recent activity",
+                              "style": {
+                                "fill": "#000000",
+                                "fontSize": 18,
+                                "fontWeight": 600
+                              }
+                            },
+                            {
+                              "name": "Context",
+                              "type": "TEXT",
+                              "text": "Today",
+                              "style": {
+                                "fill": "#71717a",
+                                "fontSize": 12,
+                                "fontWeight": 400
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Activity feed",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 23
+                          },
+                          "size": [
+                            354,
+                            226
+                          ],
+                          "children": [
+                            {
+                              "name": "Activity",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 10
+                              },
+                              "size": [
+                                354,
+                                60
+                              ],
+                              "children": [
+                                {
+                                  "name": "Person",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 8,
+                                    "align": "CENTER"
+                                  },
+                                  "size": [
+                                    24,
+                                    24
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Avatar",
+                                      "type": "INSTANCE",
+                                      "component": "Avatar",
+                                      "properties": {
+                                        "Status dot": false,
+                                        "Initials": "NW",
+                                        "Content": "Initials",
+                                        "Size": "sm"
+                                      },
+                                      "layout": {
+                                        "direction": "row",
+                                        "align": "CENTER",
+                                        "justify": "CENTER"
+                                      },
+                                      "size": [
+                                        24,
+                                        24
+                                      ],
+                                      "style": {
+                                        "fill": "#e8f4f0",
+                                        "radius": 999
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Activity detail",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "column",
+                                    "gap": 5
+                                  },
+                                  "size": [
+                                    320,
+                                    60
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Activity title",
+                                      "type": "TEXT",
+                                      "text": "Noah requested your review",
+                                      "style": {
+                                        "fill": "#000000",
+                                        "fontSize": 13,
+                                        "fontWeight": 500
+                                      }
+                                    },
+                                    {
+                                      "name": "Activity subject",
+                                      "type": "TEXT",
+                                      "text": "WR-104 · Build responsive header",
+                                      "style": {
+                                        "fill": "#71717a",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    },
+                                    {
+                                      "name": "Time",
+                                      "type": "TEXT",
+                                      "text": "24 minutes ago",
+                                      "style": {
+                                        "fill": "#718079",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Activity",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 10
+                              },
+                              "size": [
+                                354,
+                                60
+                              ],
+                              "children": [
+                                {
+                                  "name": "Person",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 8,
+                                    "align": "CENTER"
+                                  },
+                                  "size": [
+                                    24,
+                                    24
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Avatar",
+                                      "type": "INSTANCE",
+                                      "component": "Avatar",
+                                      "properties": {
+                                        "Status dot": false,
+                                        "Initials": "PS",
+                                        "Content": "Initials",
+                                        "Size": "sm"
+                                      },
+                                      "layout": {
+                                        "direction": "row",
+                                        "align": "CENTER",
+                                        "justify": "CENTER"
+                                      },
+                                      "size": [
+                                        24,
+                                        24
+                                      ],
+                                      "style": {
+                                        "fill": "#e8f4f0",
+                                        "radius": 999
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Activity detail",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "column",
+                                    "gap": 5
+                                  },
+                                  "size": [
+                                    320,
+                                    60
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Activity title",
+                                      "type": "TEXT",
+                                      "text": "Priya updated contact form validation",
+                                      "style": {
+                                        "fill": "#000000",
+                                        "fontSize": 13,
+                                        "fontWeight": 500
+                                      }
+                                    },
+                                    {
+                                      "name": "Activity subject",
+                                      "type": "TEXT",
+                                      "text": "WR-106 · Moved to In progress",
+                                      "style": {
+                                        "fill": "#71717a",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    },
+                                    {
+                                      "name": "Time",
+                                      "type": "TEXT",
+                                      "text": "1 hour ago",
+                                      "style": {
+                                        "fill": "#718079",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Activity",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 10
+                              },
+                              "size": [
+                                354,
+                                60
+                              ],
+                              "children": [
+                                {
+                                  "name": "Person",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 8,
+                                    "align": "CENTER"
+                                  },
+                                  "size": [
+                                    24,
+                                    24
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Avatar",
+                                      "type": "INSTANCE",
+                                      "component": "Avatar",
+                                      "properties": {
+                                        "Status dot": false,
+                                        "Initials": "NW",
+                                        "Content": "Initials",
+                                        "Size": "sm"
+                                      },
+                                      "layout": {
+                                        "direction": "row",
+                                        "align": "CENTER",
+                                        "justify": "CENTER"
+                                      },
+                                      "size": [
+                                        24,
+                                        24
+                                      ],
+                                      "style": {
+                                        "fill": "#e8f4f0",
+                                        "radius": 999
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Activity detail",
+                                  "type": "FRAME",
+                                  "layout": {
+                                    "direction": "column",
+                                    "gap": 5
+                                  },
+                                  "size": [
+                                    320,
+                                    60
+                                  ],
+                                  "children": [
+                                    {
+                                      "name": "Activity title",
+                                      "type": "TEXT",
+                                      "text": "Noah completed footer links",
+                                      "style": {
+                                        "fill": "#000000",
+                                        "fontSize": 13,
+                                        "fontWeight": 500
+                                      }
+                                    },
+                                    {
+                                      "name": "Activity subject",
+                                      "type": "TEXT",
+                                      "text": "WR-110 · 2 points delivered",
+                                      "style": {
+                                        "fill": "#71717a",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    },
+                                    {
+                                      "name": "Time",
+                                      "type": "TEXT",
+                                      "text": "Yesterday at 16:20",
+                                      "style": {
+                                        "fill": "#718079",
+                                        "fontSize": 12,
+                                        "fontWeight": 400
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Content panel",
+                  "type": "FRAME",
+                  "layout": {
+                    "direction": "column",
+                    "gap": 20,
+                    "padding": [
+                      20,
+                      20,
+                      20,
+                      20
+                    ]
+                  },
+                  "size": [
+                    1152,
+                    270
+                  ],
+                  "style": {
+                    "fill": "#ffffff",
+                    "stroke": "#e4e4e7",
+                    "radius": 8
+                  },
+                  "children": [
+                    {
+                      "name": "Section heading",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "row",
+                        "align": "CENTER",
+                        "justify": "SPACE_BETWEEN"
+                      },
+                      "size": [
+                        1112,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "name": "Title",
+                          "type": "TEXT",
+                          "text": "Active projects",
+                          "style": {
+                            "fill": "#000000",
+                            "fontSize": 18,
+                            "fontWeight": 600
+                          }
+                        },
+                        {
+                          "name": "Context",
+                          "type": "TEXT",
+                          "text": "3 projects in motion",
+                          "style": {
+                            "fill": "#71717a",
+                            "fontSize": 12,
+                            "fontWeight": 400
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Project list",
+                      "type": "FRAME",
+                      "layout": {
+                        "direction": "column"
+                      },
+                      "size": [
+                        1112,
+                        186
+                      ],
+                      "children": [
+                        {
+                          "name": "Project summary",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "gap": 20,
+                            "padding": [
+                              12,
+                              0,
+                              12,
+                              0
+                            ],
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            1112,
+                            62
+                          ],
+                          "style": {
+                            "stroke": "#e1e8e4"
+                          },
+                          "children": [
+                            {
+                              "name": "Project mark",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "align": "CENTER",
+                                "justify": "CENTER"
+                              },
+                              "size": [
+                                36,
+                                36
+                              ],
+                              "style": {
+                                "fill": "#e8f4f0",
+                                "radius": 8
+                              },
+                              "children": [
+                                {
+                                  "name": "Initials",
+                                  "type": "TEXT",
+                                  "text": "WR",
+                                  "style": {
+                                    "fill": "#11665d",
+                                    "fontSize": 13,
+                                    "fontWeight": 600
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Project name",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                234,
+                                38
+                              ],
+                              "children": [
+                                {
+                                  "name": "Name",
+                                  "type": "TEXT",
+                                  "text": "Website redesign",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                {
+                                  "name": "Completion",
+                                  "type": "TEXT",
+                                  "text": "28 of 42 tasks complete",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Person",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 8,
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                101,
+                                24
+                              ],
+                              "children": [
+                                {
+                                  "name": "Avatar",
+                                  "type": "INSTANCE",
+                                  "component": "Avatar",
+                                  "properties": {
+                                    "Status dot": false,
+                                    "Initials": "MC",
+                                    "Content": "Initials",
+                                    "Size": "sm"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "align": "CENTER",
+                                    "justify": "CENTER"
+                                  },
+                                  "size": [
+                                    24,
+                                    24
+                                  ],
+                                  "style": {
+                                    "fill": "#e8f4f0",
+                                    "radius": 999
+                                  }
+                                },
+                                {
+                                  "name": "Name",
+                                  "type": "TEXT",
+                                  "text": "Maya Chen",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Milestone",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                571,
+                                38
+                              ],
+                              "children": [
+                                {
+                                  "name": "Milestone label",
+                                  "type": "TEXT",
+                                  "text": "Homepage usability test",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Milestone date",
+                                  "type": "TEXT",
+                                  "text": "23 Oct 2026",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Status",
+                              "type": "INSTANCE",
+                              "component": "Badge",
+                              "properties": {
+                                "Status dot": false,
+                                "Label": "Active",
+                                "Variant": "Accent",
+                                "Appearance": "Soft"
+                              },
+                              "layout": {
+                                "direction": "row",
+                                "gap": 4,
+                                "padding": [
+                                  0,
+                                  8,
+                                  0,
+                                  8
+                                ],
+                                "align": "CENTER",
+                                "justify": "CENTER"
+                              },
+                              "size": [
+                                53,
+                                20
+                              ],
+                              "style": {
+                                "fill": "#e8f4f0",
+                                "radius": 999
+                              }
+                            },
+                            {
+                              "name": "arrow-up-right",
+                              "type": "FRAME",
+                              "size": [
+                                17,
+                                17
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Project summary",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "gap": 20,
+                            "padding": [
+                              12,
+                              0,
+                              12,
+                              0
+                            ],
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            1112,
+                            62
+                          ],
+                          "style": {
+                            "stroke": "#e1e8e4"
+                          },
+                          "children": [
+                            {
+                              "name": "Project mark",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "align": "CENTER",
+                                "justify": "CENTER"
+                              },
+                              "size": [
+                                36,
+                                36
+                              ],
+                              "style": {
+                                "fill": "#e8f4f0",
+                                "radius": 8
+                              },
+                              "children": [
+                                {
+                                  "name": "Initials",
+                                  "type": "TEXT",
+                                  "text": "CP",
+                                  "style": {
+                                    "fill": "#11665d",
+                                    "fontSize": 13,
+                                    "fontWeight": 600
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Project name",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                234,
+                                38
+                              ],
+                              "children": [
+                                {
+                                  "name": "Name",
+                                  "type": "TEXT",
+                                  "text": "Client portal",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                {
+                                  "name": "Completion",
+                                  "type": "TEXT",
+                                  "text": "8 of 12 tasks complete",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Person",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 8,
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                119,
+                                24
+                              ],
+                              "children": [
+                                {
+                                  "name": "Avatar",
+                                  "type": "INSTANCE",
+                                  "component": "Avatar",
+                                  "properties": {
+                                    "Status dot": false,
+                                    "Initials": "NW",
+                                    "Content": "Initials",
+                                    "Size": "sm"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "align": "CENTER",
+                                    "justify": "CENTER"
+                                  },
+                                  "size": [
+                                    24,
+                                    24
+                                  ],
+                                  "style": {
+                                    "fill": "#e8f4f0",
+                                    "radius": 999
+                                  }
+                                },
+                                {
+                                  "name": "Name",
+                                  "type": "TEXT",
+                                  "text": "Noah Williams",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Milestone",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                553,
+                                38
+                              ],
+                              "children": [
+                                {
+                                  "name": "Milestone label",
+                                  "type": "TEXT",
+                                  "text": "Beta walkthrough",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Milestone date",
+                                  "type": "TEXT",
+                                  "text": "30 Oct 2026",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Status",
+                              "type": "INSTANCE",
+                              "component": "Badge",
+                              "properties": {
+                                "Status dot": false,
+                                "Label": "Active",
+                                "Variant": "Accent",
+                                "Appearance": "Soft"
+                              },
+                              "layout": {
+                                "direction": "row",
+                                "gap": 4,
+                                "padding": [
+                                  0,
+                                  8,
+                                  0,
+                                  8
+                                ],
+                                "align": "CENTER",
+                                "justify": "CENTER"
+                              },
+                              "size": [
+                                53,
+                                20
+                              ],
+                              "style": {
+                                "fill": "#e8f4f0",
+                                "radius": 999
+                              }
+                            },
+                            {
+                              "name": "arrow-up-right",
+                              "type": "FRAME",
+                              "size": [
+                                17,
+                                17
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Project summary",
+                          "type": "FRAME",
+                          "layout": {
+                            "direction": "row",
+                            "gap": 20,
+                            "padding": [
+                              12,
+                              0,
+                              12,
+                              0
+                            ],
+                            "align": "CENTER"
+                          },
+                          "size": [
+                            1112,
+                            62
+                          ],
+                          "style": {
+                            "stroke": "#e1e8e4"
+                          },
+                          "children": [
+                            {
+                              "name": "Project mark",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "align": "CENTER",
+                                "justify": "CENTER"
+                              },
+                              "size": [
+                                36,
+                                36
+                              ],
+                              "style": {
+                                "fill": "#e8f4f0",
+                                "radius": 8
+                              },
+                              "children": [
+                                {
+                                  "name": "Initials",
+                                  "type": "TEXT",
+                                  "text": "HC",
+                                  "style": {
+                                    "fill": "#11665d",
+                                    "fontSize": 13,
+                                    "fontWeight": 600
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Project name",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                234,
+                                38
+                              ],
+                              "children": [
+                                {
+                                  "name": "Name",
+                                  "type": "TEXT",
+                                  "text": "Help center",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                {
+                                  "name": "Completion",
+                                  "type": "TEXT",
+                                  "text": "6 of 10 tasks complete",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Person",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "row",
+                                "gap": 8,
+                                "align": "CENTER"
+                              },
+                              "size": [
+                                98,
+                                24
+                              ],
+                              "children": [
+                                {
+                                  "name": "Avatar",
+                                  "type": "INSTANCE",
+                                  "component": "Avatar",
+                                  "properties": {
+                                    "Status dot": false,
+                                    "Initials": "PS",
+                                    "Content": "Initials",
+                                    "Size": "sm"
+                                  },
+                                  "layout": {
+                                    "direction": "row",
+                                    "align": "CENTER",
+                                    "justify": "CENTER"
+                                  },
+                                  "size": [
+                                    24,
+                                    24
+                                  ],
+                                  "style": {
+                                    "fill": "#e8f4f0",
+                                    "radius": 999
+                                  }
+                                },
+                                {
+                                  "name": "Name",
+                                  "type": "TEXT",
+                                  "text": "Priya Shah",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Milestone",
+                              "type": "FRAME",
+                              "layout": {
+                                "direction": "column",
+                                "gap": 4
+                              },
+                              "size": [
+                                574,
+                                38
+                              ],
+                              "children": [
+                                {
+                                  "name": "Milestone label",
+                                  "type": "TEXT",
+                                  "text": "Content review",
+                                  "style": {
+                                    "fill": "#000000",
+                                    "fontSize": 13,
+                                    "fontWeight": 400
+                                  }
+                                },
+                                {
+                                  "name": "Milestone date",
+                                  "type": "TEXT",
+                                  "text": "28 Oct 2026",
+                                  "style": {
+                                    "fill": "#71717a",
+                                    "fontSize": 12,
+                                    "fontWeight": 400
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Status",
+                              "type": "INSTANCE",
+                              "component": "Badge",
+                              "properties": {
+                                "Status dot": false,
+                                "Label": "Active",
+                                "Variant": "Accent",
+                                "Appearance": "Soft"
+                              },
+                              "layout": {
+                                "direction": "row",
+                                "gap": 4,
+                                "padding": [
+                                  0,
+                                  8,
+                                  0,
+                                  8
+                                ],
+                                "align": "CENTER",
+                                "justify": "CENTER"
+                              },
+                              "size": [
+                                53,
+                                20
+                              ],
+                              "style": {
+                                "fill": "#e8f4f0",
+                                "radius": 999
+                              }
+                            },
+                            {
+                              "name": "arrow-up-right",
+                              "type": "FRAME",
+                              "size": [
+                                17,
+                                17
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tokens": {
+    "colours": [
+      {
+        "value": "#71717a",
+        "uses": 189
+      },
+      {
+        "value": "#ffffff",
+        "uses": 169
+      },
+      {
+        "value": "#000000",
+        "uses": 139
+      },
+      {
+        "value": "#e8f4f0",
+        "uses": 85
+      },
+      {
+        "value": "#fafafa",
+        "uses": 35
+      },
+      {
+        "value": "#15796f",
+        "uses": 32
+      },
+      {
+        "value": "#f0f3f1",
+        "uses": 32
+      },
+      {
+        "value": "#20332e",
+        "uses": 21
+      },
+      {
+        "value": "#718079",
+        "uses": 21
+      },
+      {
+        "value": "#fff4df",
+        "uses": 16
+      },
+      {
+        "value": "#e1e8e4",
+        "uses": 14
+      },
+      {
+        "value": "#11665d",
+        "uses": 11
+      },
+      {
+        "value": "#f8faf9",
+        "uses": 9
+      },
+      {
+        "value": "#f1f5f3",
+        "uses": 9
+      },
+      {
+        "value": "#edf6ee",
+        "uses": 9
+      },
+      {
+        "value": "#f4f4f5",
+        "uses": 8
+      },
+      {
+        "value": "#a8cbc0",
+        "uses": 2
+      },
+      {
+        "value": "#9b6415",
+        "uses": 1
+      },
+      {
+        "value": "#b2bdb7",
+        "uses": 1
+      },
+      {
+        "value": "#cbdcd4",
+        "uses": 1
+      },
+      {
+        "value": "#bbc6c0",
+        "uses": 1
+      },
+      {
+        "value": "#c59a4e",
+        "uses": 1
+      },
+      {
+        "value": "#7daf9d",
+        "uses": 1
+      }
+    ],
+    "radii": [
+      {
+        "value": 999,
+        "uses": 124
+      },
+      {
+        "value": 8,
+        "uses": 95
+      },
+      {
+        "value": 6,
+        "uses": 72
+      },
+      {
+        "value": 5,
+        "uses": 72
+      },
+      {
+        "value": 4,
+        "uses": 31
+      },
+      {
+        "value": 9,
+        "uses": 9
+      },
+      {
+        "value": 10,
+        "uses": 5
+      }
+    ],
+    "fontSizes": [
+      {
+        "value": 12,
+        "uses": 167
+      },
+      {
+        "value": 13,
+        "uses": 123
+      },
+      {
+        "value": 18,
+        "uses": 32
+      },
+      {
+        "value": 11,
+        "uses": 22
+      },
+      {
+        "value": 14,
+        "uses": 21
+      },
+      {
+        "value": 25,
+        "uses": 13
+      },
+      {
+        "value": 28,
+        "uses": 9
+      }
+    ]
+  }
+}

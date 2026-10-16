@@ -1,0 +1,206 @@
+/*
+ * Badge and Tag styles.
+ *
+ * One tinted pill in six variants and three appearances; the variant only ever
+ * sets --bd-accent, so adding one is a single rule. Tokens read the shared
+ * --gbs-* variables when they are set on an ancestor (set them on :root to
+ * theme every component at once). Rules are unlayered: they beat a framework
+ * reset on specificity, and lose to anything you pass through `className`.
+ * With Tailwind v4, import this file after the framework and inside its
+ * components layer - see the README.
+ */
+
+.bd-root,
+.bd-tag {
+  --bd-fg: var(--gbs-fg, var(--dg-fg, light-dark(#18181b, #f4f4f5)));
+  --bd-muted: var(--gbs-muted, var(--dg-muted, light-dark(#71717a, #a1a1aa)));
+  --bd-bg: var(--gbs-bg, var(--dg-bg, light-dark(#ffffff, #0b0b0e)));
+  --bd-border: var(--gbs-border, var(--dg-border, light-dark(#e4e4e7, #27272a)));
+  --bd-on-accent: var(--gbs-accent-fg, var(--dg-accent-fg, light-dark(#ffffff, #0b1220)));
+  --bd-focus: var(--gbs-focus, var(--dg-focus, light-dark(#2563eb, #60a5fa)));
+  --bd-accent-color: var(--gbs-accent, var(--dg-accent, light-dark(#2563eb, #60a5fa)));
+  --bd-success: var(--gbs-success, light-dark(#15803d, #4ade80));
+  --bd-warning: var(--gbs-warning, light-dark(#b45309, #fbbf24));
+  --bd-danger: var(--gbs-danger, var(--dg-danger, light-dark(#dc2626, #f87171)));
+  --bd-info: var(--gbs-info, var(--bd-accent-color));
+  --bd-font-size: calc(var(--gbs-font-size, var(--dg-font-size, 13px)) - 1px);
+  --bd-radius: 999px;
+  --bd-height: 20px;
+  --bd-px: 8px;
+  /* Neutral is the text colour rather than a hue, so it reads as "no state". */
+  --bd-accent: var(--bd-fg);
+
+  color-scheme: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  height: var(--bd-height);
+  padding: 0 var(--bd-px);
+  border: 1px solid transparent;
+  border-radius: var(--bd-radius);
+  font-size: var(--bd-font-size);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+:where(.dark, [data-theme="dark"]) :is(.bd-root, .bd-tag) {
+  color-scheme: dark;
+}
+:where(.light, [data-theme="light"]) :is(.bd-root, .bd-tag) {
+  color-scheme: light;
+}
+
+:where(.bd-root, .bd-tag) *,
+:where(.bd-root, .bd-tag) *::before,
+:where(.bd-root, .bd-tag) *::after {
+  box-sizing: border-box;
+}
+
+.bd-root:where([data-variant="accent"]),
+.bd-tag:where([data-variant="accent"]) {
+  --bd-accent: var(--bd-accent-color);
+}
+.bd-root:where([data-variant="success"]),
+.bd-tag:where([data-variant="success"]) {
+  --bd-accent: var(--bd-success);
+}
+.bd-root:where([data-variant="warning"]),
+.bd-tag:where([data-variant="warning"]) {
+  --bd-accent: var(--bd-warning);
+}
+.bd-root:where([data-variant="danger"]),
+.bd-tag:where([data-variant="danger"]) {
+  --bd-accent: var(--bd-danger);
+}
+.bd-root:where([data-variant="info"]),
+.bd-tag:where([data-variant="info"]) {
+  --bd-accent: var(--bd-info);
+}
+
+/* --------------------------------------------------------- appearances */
+
+.bd-root:where([data-appearance="soft"]),
+.bd-tag:where([data-appearance="soft"]) {
+  background: color-mix(in oklab, var(--bd-accent) 12%, var(--bd-bg));
+  color: color-mix(in oklab, var(--bd-accent) 85%, var(--bd-fg));
+}
+.bd-root:where([data-appearance="solid"]),
+.bd-tag:where([data-appearance="solid"]) {
+  background: var(--bd-accent);
+  color: var(--bd-on-accent);
+}
+/* Neutral solid would be black on near-black text; invert it instead. */
+.bd-root:where([data-variant="neutral"]):where([data-appearance="solid"]),
+.bd-tag:where([data-variant="neutral"]):where([data-appearance="solid"]) {
+  background: var(--bd-fg);
+  color: var(--bd-bg);
+}
+.bd-root:where([data-appearance="outline"]),
+.bd-tag:where([data-appearance="outline"]) {
+  border-color: color-mix(in oklab, var(--bd-accent) 40%, var(--bd-border));
+  color: color-mix(in oklab, var(--bd-accent) 85%, var(--bd-fg));
+}
+
+.bd-root:where([data-size="sm"]),
+.bd-tag:where([data-size="sm"]) {
+  --bd-height: 17px;
+  --bd-px: 6px;
+  --bd-font-size: 11px;
+}
+
+/* A counter is a circle until it needs to be a pill. */
+.bd-root[data-count] {
+  justify-content: center;
+  min-width: var(--bd-height);
+  padding: 0 5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.bd-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.bd-icon {
+  display: inline-flex;
+  flex: none;
+}
+.bd-icon > svg {
+  width: 12px;
+  height: 12px;
+}
+.bd-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Project fix: with the root's line-height of 1, fonts whose descenders
+     reach below 1em (Segoe UI, Inter) were clipped by the overflow. */
+  line-height: 1.3;
+}
+
+/* ------------------------------------------------------------------ tag */
+
+.bd-tag {
+  --bd-px: 8px;
+  padding-inline-end: 4px;
+}
+.bd-tag:not(:has(.bd-remove)) {
+  padding-inline-end: var(--bd-px);
+}
+
+.bd-remove {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.bd-remove:hover:not(:disabled) {
+  background: color-mix(in oklab, currentColor 18%, transparent);
+  opacity: 1;
+}
+.bd-remove:focus-visible {
+  outline: 2px solid var(--bd-focus);
+  outline-offset: 1px;
+}
+.bd-remove:disabled {
+  cursor: not-allowed;
+}
+.bd-tag[data-disabled] {
+  opacity: 0.6;
+}
+
+.bd-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (forced-colors: active) {
+  .bd-root,
+  .bd-tag {
+    border-color: CanvasText;
+  }
+  .bd-root:where([data-appearance="solid"]),
+  .bd-tag:where([data-appearance="solid"]) {
+    background: Highlight;
+    color: HighlightText;
+  }
+}
